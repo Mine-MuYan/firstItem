@@ -10,9 +10,7 @@ class RegisterAction extends Action{
 			R('Base/footer');
 			$this->display();
 		}
-	public function index(){
-		    echo 123;
-    }
+	
 		/**
 		 * 函数名：regist
 		 * 功能：用户注册方法

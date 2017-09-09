@@ -46,7 +46,7 @@
 		public function findpwd(){
 
 			$mail = M('mail_template');
-			$con = $mail->where()->find();
+			$con = $mail-> where()->find();
 
 			$str = $con['content'];
 			eval("\$str = \"$str\";");

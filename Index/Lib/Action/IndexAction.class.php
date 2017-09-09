@@ -7,6 +7,7 @@ class IndexAction extends Action {
 		}
 
   	function index(){
+
     		/**(1)获取商品分类数据，分类类表显示的时候合并显示为两级分类
     		即顶级分类为最大分类，其下面的所有子分类都处理成二级分类显示
     		*/
