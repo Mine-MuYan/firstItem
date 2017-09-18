@@ -7,7 +7,7 @@ return array(
  	'DB_NAME'=> 'yongchuang',              	// 数据库名称
  	'DB_USER'=> 'root',              	// 用户名
 // 	'DB_PWD'=> 'a7788904',        	  		// 密码
- 	'DB_PWD'=> '123456',        	  		// 密码
+ 	'DB_PWD'=> '',        	  		// 密码
  	'DB_PORT'=> 3306,        	 	 	// 端口
  	'DB_PREFIX'=> 'mss_', 		  	 	// 数据库表前缀
  	// 'DB_DSN'=>'mysql://root:@localhost:3306/thinkphp', // 使用DSN方式配置数据库信息
