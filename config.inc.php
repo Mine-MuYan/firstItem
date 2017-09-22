@@ -13,9 +13,9 @@ return array(
  	// 'DB_DSN'=>'mysql://root:@localhost:3306/thinkphp', // 使用DSN方式配置数据库信息
 
  	/************************* 调试设置 *************************/
-	//'APP_DEBUG'=> true,		  		 // 开启调试模式
-	//'APP_STATUS' => 'debug', 		 //应用调试模式状态			
-	//'SHOW_PAGE_TRACE'=> true,	  	 // 显示调试信息  
+	'APP_DEBUG'=> true,		  		 // 开启调试模式
+	'APP_STATUS' => 'debug', 		 //应用调试模式状态
+	'SHOW_PAGE_TRACE'=> true,	  	 // 显示调试信息
 
 	/************************* 模版设置 *************************/
 	// 'URL_PATHINFO_DEPR'=>'-',	// 修改URL的分隔符

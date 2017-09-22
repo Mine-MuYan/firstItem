@@ -26,7 +26,7 @@ class IndexAction extends Action {
 				$arr = array();
 				//以,为标识分割字符串成数组
 				$arr = explode(',',$vo['path']);
-			
+
 				//判断分类是否为其子分类，如果是，则并接
 				if(in_array($row['id'],$arr)){
 					//获取商品分类下的所有商品
@@ -66,7 +66,7 @@ class IndexAction extends Action {
 		/**(3)获取首页掌柜 推荐的商品
     		*/
 		$tdata = $goods->where("tuijian=1 AND issell=1")->select();
-		
+
 		/**(4)获取新品上架商品
     		*/
 		$zdata = $goods->where("zuixin=1 AND issell=1")->select();
