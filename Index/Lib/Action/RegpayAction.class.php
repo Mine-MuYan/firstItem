@@ -19,4 +19,10 @@ class RegpayAction extends Action {
         unset($_SESSION['uid']);
         unset($_SESSION['Username']);
     }
+    
+    public function test(){
+        $re = getUserReferee(45);
+        pp($re);
+        $this -> display();
+    }
 }

@@ -37,6 +37,7 @@ class RegisterAction extends Action{
                             'eamil'     => $_POST['email'],
                             'class'     => $searchRefree['class'] - 1,    //会员等级
                             'classes'   => $searchRefree['class'],      //相对会员等级
+                            'referee'   => $searchRefree['id'],
                         );
                         $id = $user -> add($datas);
                         $data['uid'] = $id;
@@ -70,6 +71,7 @@ class RegisterAction extends Action{
                     'class'     => 0,
                     'classes'   => 0,
                     'eamil'     => $_POST['email'],
+                    'referee'   => 0,
                 );
                 //user表
                 $id = $user -> add($datas);
