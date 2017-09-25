@@ -19,7 +19,8 @@ class RegisterAction extends Action{
         $user = M('user');            //用户注册表
         $info = M('userinfo');        //用户详细信息表
         $relation = M('user_relation');   //用户关系表
-        $isset = $user->where(array('username'=>$_POST['username']))->find(); // 查询用户名是否被注册
+//        $isset = $user->where(array('username'=>$_POST['username']))->find(); // 查询用户名是否被注册
+        $isset = [];
         if(empty($isset)){
             if($_POST['refreeName']){//如果推荐人有值
                 if($_POST['refreeName'] == $_POST['username']){
@@ -34,7 +35,7 @@ class RegisterAction extends Action{
                             'paystatus' => 3,
                             'regtime'   => time(),
                             'regip'     => $_SERVER['REMOTE_ADDR'],
-                            'eamil'     => $_POST['email'],
+                            'email'     => $_POST['email'],
                             'class'     => $searchRefree['class'] - 1,    //会员等级
                             'classes'   => $searchRefree['class'],      //相对会员等级
                             'referee'   => $searchRefree['id'],
@@ -49,12 +50,22 @@ class RegisterAction extends Action{
                         //注册关系表
                         $reRela = $relation -> add($relationData);
                         $reInfo = $info -> add($data);
-                        if($reRela && $reInfo){
+                        $jifenData = array(
+                            'uid'   => $id,
+                        );
+                        $reJifen = M('user_jifenyide') -> add($jifenData);
+                        regGiveUserBonus($id);
+                        regInsertRelation($id);
+                        regInsertClass($id);
+                        checkUserBouns($id);
+                        if($reRela && $reInfo && $reJifen){
                             //给上级发奖励（关键代码）
-                            $this -> assign('waitSecond','3');
-                            $this -> success('注册成功,请等待审核','__APP__/Index/index');
+//                            $this -> assign('waitSecond','3');
+//                            $this -> success('注册成功,请等待审核','__APP__/Index/index');
+                            pp('注册成功');
                         }else{
-                            $this -> error('注册失败，请重新注册!','__APP__/Register/register');
+//                            $this -> error('注册失败，请重新注册!','__APP__/Register/register');
+                            pp('注册失败');
                         }
                     }else{
                         $this -> error('该推荐人不存在!','__APP__/Register/register');
@@ -70,7 +81,7 @@ class RegisterAction extends Action{
                     'regip'     => $_SERVER['REMOTE_ADDR'],
                     'class'     => 0,
                     'classes'   => 0,
-                    'eamil'     => $_POST['email'],
+                    'email'     => $_POST['email'],
                     'referee'   => 0,
                 );
                 //user表

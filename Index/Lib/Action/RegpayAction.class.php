@@ -21,8 +21,9 @@ class RegpayAction extends Action {
     }
     
     public function test(){
-        $re = getUserReferee(45);
-        pp($re);
+    
+        $id = 50;
+        pp(checkUserBouns($id));
         $this -> display();
     }
 }
