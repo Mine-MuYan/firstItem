@@ -54,18 +54,11 @@ class RegisterAction extends Action{
                             'uid'   => $id,
                         );
                         $reJifen = M('user_jifenyide') -> add($jifenData);
-                        regGiveUserBonus($id);
-                        regInsertRelation($id);
-                        regInsertClass($id);
-                        checkUserBouns($id);
-                        if($reRela && $reInfo && $reJifen){
-                            //给上级发奖励（关键代码）
-//                            $this -> assign('waitSecond','3');
-//                            $this -> success('注册成功,请等待审核','__APP__/Index/index');
-                            pp('注册成功');
+                        if($reRela && $reInfo && $reJifen && regGiveUserBonus($id) && regInsertRelation($id) && regInsertClass($id)){
+                            $this -> assign('waitSecond','3');
+                            $this -> success('注册成功,请等待审核','__APP__/Index/index');
                         }else{
-//                            $this -> error('注册失败，请重新注册!','__APP__/Register/register');
-                            pp('注册失败');
+                            $this -> error('注册失败，请重新注册!','__APP__/Register/register');
                         }
                     }else{
                         $this -> error('该推荐人不存在!','__APP__/Register/register');

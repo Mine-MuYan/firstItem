@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 100125
 File Encoding         : 65001
 
-Date: 2017-09-22 16:27:25
+Date: 2017-09-26 18:04:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -813,9 +813,9 @@ CREATE TABLE `mss_jifenyide_log` (
   `uid` int(11) DEFAULT NULL COMMENT '用户id',
   `info` text CHARACTER SET utf8,
   `time` datetime DEFAULT NULL COMMENT '创建时间',
-  `type` int(11) DEFAULT NULL COMMENT '1积分相关 2.易得币相关.',
+  `type` int(11) DEFAULT NULL COMMENT '1、原始会员注册； 2、一级会员注册；3、二级会员注册;4、三级会员注册',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of mss_jifenyide_log
@@ -823,6 +823,59 @@ CREATE TABLE `mss_jifenyide_log` (
 INSERT INTO `mss_jifenyide_log` VALUES ('16', '36', '用户s3717956399成功注册获得积分10000', '2017-07-02 01:26:56', '1');
 INSERT INTO `mss_jifenyide_log` VALUES ('17', '36', '用户s3717956399的上级推荐者s371795639成功获得注册积分抽成3300', '2017-07-02 01:26:56', '1');
 INSERT INTO `mss_jifenyide_log` VALUES ('18', '36', '用户s3717956399的上上级推荐者hupeng1成功获得注册积分抽成200', '2017-07-02 01:26:56', '1');
+INSERT INTO `mss_jifenyide_log` VALUES ('19', '47', ',1000', '2017-09-25 11:53:28', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('20', '48', ',1000', '2017-09-25 11:57:53', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('21', '49', ',1000', '2017-09-25 14:32:42', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('22', '0', ',1000', '2017-09-25 14:33:32', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('23', '0', ',1000', '2017-09-25 14:40:48', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('24', '50', ',1000', '2017-09-25 14:41:28', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('25', '50', ',1000', '2017-09-25 14:43:33', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('26', '50', ',1000', '2017-09-25 14:44:06', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('27', '50', ',1000', '2017-09-25 14:44:14', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('28', '50', ',1000', '2017-09-25 14:44:41', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('29', '50', ',1000', '2017-09-25 14:45:21', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('30', '50', '39,1000,推荐人46,1000', '2017-09-25 15:36:33', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('31', '50', '39,1000,推荐人46,1000', '2017-09-25 15:36:57', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('32', '50', '39,1000,推荐人46,1000', '2017-09-25 15:37:36', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('33', '50', '39,1000,推荐人46,1000', '2017-09-25 15:39:27', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('34', '50', '39,1000,推荐人46,1000', '2017-09-25 15:39:55', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('35', '50', '46,1000,推荐人51,1000', '2017-09-25 15:45:50', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('36', '50', '46,1000,推荐人51,1000', '2017-09-25 15:46:53', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('37', '50', '46,1000,推荐人51,1000', '2017-09-25 15:46:54', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('38', '50', '46,1000,推荐人51,1000', '2017-09-25 15:47:38', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('39', '50', '46,1000,推荐人51,1000', '2017-09-25 15:48:06', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('40', '50', '46,1000,推荐人51,1000', '2017-09-25 15:48:11', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('41', '52', '46,400,推荐人51,1000,二级推荐人50,1000', '2017-09-25 15:50:55', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('42', '53', '46,400,推荐人51,1000,二级推荐人50,1000', '2017-09-25 15:53:01', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('43', '0', ',1000', '2017-09-25 15:53:44', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('44', '54', '46,400,0级51,1000,推荐人50,1000', '2017-09-25 16:01:21', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('45', '55', '原始会员：46,奖励400,一级会员:51,1000,一级会员（推荐人）:50,奖励：1000', '2017-09-26 10:37:31', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('46', '55', '原始会员：46,奖励400,一级会员:51,1000,一级会员（推荐人）:50,奖励：1000', '2017-09-26 10:39:50', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('47', '55', '原始会员：46,奖励400,一级会员:51,1000,一级会员（推荐人）:50,奖励：1000', '2017-09-26 10:41:31', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('48', '55', '一级会员：46,奖励400,二级会员:51,1000,三级会员（推荐人）:50,奖励：1000', '2017-09-26 10:42:52', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('49', '55', '一级会员：46,奖励400,二级会员:51,奖励1000,三级会员（推荐人）:50,奖励：1000', '2017-09-26 10:43:21', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('50', '55', '一级会员：46,奖励400,二级会员:51,奖励1000,三级会员（推荐人）:50,奖励：1000', '2017-09-26 10:44:07', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('51', '55', '一级会员：46,奖励400,二级会员:51,奖励1000,三级会员（推荐人）:50,奖励：1000', '2017-09-26 10:45:10', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('52', '55', '55注册成功，一级会员46奖励400,二级会员51奖励1000,三级会员（推荐人）50奖励1000', '2017-09-26 10:47:10', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('53', '56', '56注册成功，一级会员46奖励400,二级会员51奖励1000,三级会员（推荐人）50奖励1000', '2017-09-26 14:39:33', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('54', '57', '57注册成功，奖励一级会员51现金280，积分120,奖励二级会员50现金700，积分300,奖励三级会员（推荐人）54现金700，积分300。', '2017-09-26 16:31:05', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('55', '58', '58注册成功，奖励一级会员50现金280，积分120,奖励二级会员54现金700，积分300,奖励三级会员（推荐人）56现金700，积分300。', '2017-09-26 16:35:00', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('56', '59', '59注册成功，奖励一级会员46现金280，积分120,奖励二级会员51现金700，积分300,奖励三级会员（推荐人）50现金700，积分300。', '2017-09-26 16:36:34', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('57', '60', '60注册成功，奖励原始会员39现金700，积分300,奖励一级会员46现金700，积分300。', '2017-09-26 16:37:47', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('58', '63', '原始会员63注册成功，奖励1000积分，并赠送10000易得币。', '2017-09-26 16:55:06', '1');
+INSERT INTO `mss_jifenyide_log` VALUES ('59', '64', '原始会员aaa013注册成功，奖励1000积分，并赠送10000易得币。', '2017-09-26 17:11:13', '1');
+INSERT INTO `mss_jifenyide_log` VALUES ('60', '66', '66注册成功，奖励原始会员aaa000现金700，积分300,奖励一级会员aaa1123现金700，积分300。', '2017-09-26 17:13:15', '3');
+INSERT INTO `mss_jifenyide_log` VALUES ('61', '67', 'new100注册成功，奖励原始会员获取数据失败现金700，积分300。', '2017-09-26 17:39:14', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('62', '68', 'aaa33333注册成功，奖励一级会员aaa000现金280，积分120,奖励二级会员aaa1123现金700，积分300,奖励三级会员（推荐人）aaa223现金700，积分300。', '2017-09-26 17:45:04', '4');
+INSERT INTO `mss_jifenyide_log` VALUES ('63', '69', 'aaa012223注册成功，奖励原始会员获取数据失败现金700，积分300。', '2017-09-26 17:49:23', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('64', '65', 'aaa113注册成功，奖励原始会员aaa013现金700，积分300。', '2017-09-26 17:56:49', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('65', '65', 'aaa113注册成功，奖励原始会员aaa013现金700，积分300。', '2017-09-26 17:57:19', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('66', '65', 'aaa113注册成功，奖励原始会员aaa013现金700，积分300。', '2017-09-26 17:59:23', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('67', '65', 'aaa113注册成功，奖励原始会员aaa013现金700，积分300。', '2017-09-26 18:00:21', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('68', '65', 'aaa113注册成功，奖励原始会员aaa013现金700，积分300。', '2017-09-26 18:00:55', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('69', '70', 'aaa0122234注册成功，奖励原始会员aaa013现金700，积分300。', '2017-09-26 18:01:35', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('70', '71', 'aaa10015注册成功，奖励原始会员aaa013现金700，积分300。', '2017-09-26 18:02:32', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('71', '72', 'aaa0133注册成功，奖励原始会员aaa013现金700，积分300。', '2017-09-26 18:03:59', '2');
 
 -- ----------------------------
 -- Table structure for mss_links
@@ -4581,30 +4634,52 @@ CREATE TABLE `mss_user` (
   `recnum` int(11) NOT NULL DEFAULT '0' COMMENT '直推会员数',
   `bounsday` int(11) NOT NULL DEFAULT '0' COMMENT '补贴天数',
   `paystatus` tinyint(1) NOT NULL DEFAULT '0' COMMENT '支付状态 0：未支付；1：支付失败；2：支付成功',
+  `referee` int(11) DEFAULT NULL COMMENT '推荐人',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_user
 -- ----------------------------
-INSERT INTO `mss_user` VALUES ('13', 'demo', '4297f44b13955235245b2497399d7a93', 'demo@qq.com', 'headpic.gif', '1392204146', '127.0.0.1', '2', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('20', 'qinwei', 'e10adc3949ba59abbe56e057f20f883e', 'qinwei@123.com', 'headpic.gif', '1392346918', '192.168.130.53', '2', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('21', 'gx4852', '955e42c853b4fdabcb954fb5bb5441f8', '137105161@qq.com', '57617a81155620b6f0ecdfaba6e5235.jpg', '1392357570', '192.168.130.213', '2', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('25', 'hupeng11', 'e10adc3949ba59abbe56e057f20f883e', '111@qq.com', 'headpic.gif', '1415771197', '127.0.0.1', '3', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('24', 'hupeng', 'e10adc3949ba59abbe56e057f20f883e', 'guchengwuyue@163.com', 'headpic.gif', '1415771053', '127.0.0.1', '1', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('26', 'hupeng1', 'e10adc3949ba59abbe56e057f20f883e', '610796224@qq.com', 'headpic.gif', '1458129295', '127.0.0.1', '1', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('29', 's371795639', '3498b03102c161de190f19d12b20a322', '371795639@qq.com', 'headpic.gif', '1498662312', '::1', '1', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('37', 'afonso', '', '', 'headpic.gif', '0', '', '1', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('38', 'afonso1', '', '37179563@qq.com', 'headpic.gif', '0', '', '1', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('36', 's3717956399', 'e10adc3949ba59abbe56e057f20f883e', '3717956391@qq.com', 'headpic.gif', '1498747445', '::1', '2', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('39', 'iselly', '2befc4e7961699a90fc94270d44d73c7', 'mine_muyan@qq.com', 'headpic.gif', '1506049745', '127.0.0.1', '1', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('40', '', 'eabd8ce9404507aa8c22714d3f5eada9', null, 'headpic.gif', '1506067367', '127.0.0.1', '1', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('41', 'aaa222', 'eb0dff1c3d6739e71d7360c6e0aa4510', null, 'headpic.gif', '1506067698', '127.0.0.1', '1', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('42', 'aaa333', 'ed7f94d0172510fd8a76f12ca0eddeb1', null, 'headpic.gif', '1506067777', '127.0.0.1', '1', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('43', 'aaa444', '465f2c282960f7e01e7ac4a167b13ac8', null, 'headpic.gif', '1506068304', '127.0.0.1', '1', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('44', 'aaa555', 'd7dd6b6f2c4a3996f8c22a9d93a030e5', null, 'headpic.gif', '1506068358', '127.0.0.1', '1', '0', '0', '0', '0', '0');
+INSERT INTO `mss_user` VALUES ('13', 'demo', '4297f44b13955235245b2497399d7a93', 'demo@qq.com', 'headpic.gif', '1392204146', '127.0.0.1', '2', '0', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('20', 'qinwei', 'e10adc3949ba59abbe56e057f20f883e', 'qinwei@123.com', 'headpic.gif', '1392346918', '192.168.130.53', '2', '0', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('21', 'gx4852', '955e42c853b4fdabcb954fb5bb5441f8', '137105161@qq.com', '57617a81155620b6f0ecdfaba6e5235.jpg', '1392357570', '192.168.130.213', '2', '0', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('25', 'hupeng11', 'e10adc3949ba59abbe56e057f20f883e', '111@qq.com', 'headpic.gif', '1415771197', '127.0.0.1', '3', '0', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('24', 'hupeng', 'e10adc3949ba59abbe56e057f20f883e', 'guchengwuyue@163.com', 'headpic.gif', '1415771053', '127.0.0.1', '1', '0', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('26', 'hupeng1', 'e10adc3949ba59abbe56e057f20f883e', '610796224@qq.com', 'headpic.gif', '1458129295', '127.0.0.1', '1', '0', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('29', 's371795639', '3498b03102c161de190f19d12b20a322', '371795639@qq.com', 'headpic.gif', '1498662312', '::1', '1', '0', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('37', 'afonso', '', '', 'headpic.gif', '0', '', '1', '0', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('38', 'afonso1', '', '37179563@qq.com', 'headpic.gif', '0', '', '1', '0', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('36', 's3717956399', 'e10adc3949ba59abbe56e057f20f883e', '3717956391@qq.com', 'headpic.gif', '1498747445', '::1', '2', '0', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('39', 'iselly', '2befc4e7961699a90fc94270d44d73c7', 'mine_muyan@qq.com', 'headpic.gif', '1506049745', '127.0.0.1', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `mss_user` VALUES ('46', 'aaa000', '6829b4940c8c717af0b4e746055a492f', null, 'headpic.gif', '1506311496', '127.0.0.1', '1', '1', '1', '0', '0', '0', '39');
+INSERT INTO `mss_user` VALUES ('47', 'aaa111', 'eabd8ce9404507aa8c22714d3f5eada9', 'aaa111@qq.com', 'headpic.gif', '1506311608', '127.0.0.1', '1', '0', '0', '0', '0', '3', '46');
+INSERT INTO `mss_user` VALUES ('48', 'aaa1111', 'b442f0c3119308bed4451d04b017bdf7', 'aaa1111@qq.com', 'headpic.gif', '1506311873', '127.0.0.1', '1', '0', '0', '0', '0', '3', '46');
+INSERT INTO `mss_user` VALUES ('49', 'aaa11111', '5cda0cd6e6cce148075eb3d460953e7b', 'aaa11111@qq.cpm', 'headpic.gif', '1506321162', '127.0.0.1', '1', '-1', '-1', '0', '0', '3', '47');
+INSERT INTO `mss_user` VALUES ('50', 'aaa223', 'eabd8ce9404507aa8c22714d3f5eada9', 'aaa123@qq.com', 'headpic.gif', '1506321688', '127.0.0.1', '1', '2', '2', '0', '0', '3', '51');
+INSERT INTO `mss_user` VALUES ('51', 'aaa1123', 'a8c551dae6ef8687ff42b11f77cc18b1', 'aaa1123@qq.com', 'headpic.gif', '1506325420', '127.0.0.1', '1', '1', '1', '0', '0', '0', '46');
+INSERT INTO `mss_user` VALUES ('52', 'aaa3123', '807eb6f2ff0d7023219962bd3a073331', 'aaa3123@qq.com', 'headpic.gif', '1506325855', '127.0.0.1', '1', '3', '3', '0', '0', '3', '50');
+INSERT INTO `mss_user` VALUES ('53', 'aaa31233', 'bc85b58fada84540fcfb475abe0c3278', 'aaa31233@qq.com', 'headpic.gif', '1506325981', '127.0.0.1', '1', '3', '3', '0', '0', '3', '50');
+INSERT INTO `mss_user` VALUES ('54', 'aaa3313', '4e81fbce4ba4329a493d1f424122caed', 'aaa3313@qq.com', 'headpic.gif', '1506326481', '127.0.0.1', '1', '3', '3', '0', '0', '3', '50');
+INSERT INTO `mss_user` VALUES ('55', 'aaa3433', '6393d1baadde81d3f072613ec46fa07c', 'aaa3433@qq.com', 'headpic.gif', '1506393451', '127.0.0.1', '1', '3', '3', '0', '0', '3', '54');
+INSERT INTO `mss_user` VALUES ('56', 'aaa3315', '5555d4834e4effbb4e75e7c728fa4d37', 'aaa3315@qq.com', 'headpic.gif', '1506407973', '127.0.0.1', '1', '3', '3', '0', '0', '3', '54');
+INSERT INTO `mss_user` VALUES ('57', 'aaa3316', '96e79218965eb72c92a549dd5a330112', 'aaa3316@qq.com', 'headpic.gif', '1506414665', '127.0.0.1', '1', '3', '3', '0', '0', '3', '56');
+INSERT INTO `mss_user` VALUES ('58', 'aaa3317', '96e79218965eb72c92a549dd5a330112', 'aa3317@qq.com', 'headpic.gif', '1506414900', '127.0.0.1', '1', '3', '3', '0', '0', '3', '57');
+INSERT INTO `mss_user` VALUES ('59', 'aaa3319', '96e79218965eb72c92a549dd5a330112', 'aaa3319@qq.com', 'headpic.gif', '1506414994', '127.0.0.1', '1', '3', '3', '0', '0', '3', '50');
+INSERT INTO `mss_user` VALUES ('60', 'aaa212', '96e79218965eb72c92a549dd5a330112', 'aaa212@qq.com', 'headpic.gif', '1506415067', '127.0.0.1', '1', '2', '2', '0', '0', '3', '46');
+INSERT INTO `mss_user` VALUES ('61', 'aaa010', 'a75cf31e63acd0dae05f394b37472dad', 'aaa010@qq.com', 'headpic.gif', '1506415180', '127.0.0.1', '1', '-1', '0', '0', '0', '3', '39');
+INSERT INTO `mss_user` VALUES ('62', 'new000', '670b14728ad9902aecba32e22fa4f6bd', 'new000@qq.com', 'headpic.gif', '1506415286', '127.0.0.1', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `mss_user` VALUES ('63', 'aaa011', '62212c5dbd2fd987739a1d353b5197cf', 'aaa011@qq.com', 'headpic.gif', '1506416102', '127.0.0.1', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `mss_user` VALUES ('64', 'aaa013', 'ef92104cff5a091f0523882f874e4dac', 'aaa013@qq.com', 'headpic.gif', '1506417066', '127.0.0.1', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `mss_user` VALUES ('65', 'aaa113', '0eb98f4a5970bcb205e9b68903a40926', 'aaa113@qq.com', 'headpic.gif', '1506417134', '127.0.0.1', '1', '1', '1', '0', '0', '3', '64');
+INSERT INTO `mss_user` VALUES ('66', 'aaa2113', 'cd812ce50540b3f39f4d631762413989', 'aaa2113@qq.com', 'headpic.gif', '1506417195', '127.0.0.1', '1', '1', '1', '0', '0', '3', '51');
+INSERT INTO `mss_user` VALUES ('67', 'new100', '96e79218965eb72c92a549dd5a330112', 'new100@qq.com', 'headpic.gif', '1506418754', '127.0.0.1', '1', '-1', '0', '0', '0', '3', '62');
+INSERT INTO `mss_user` VALUES ('68', 'aaa33333', 'eabd8ce9404507aa8c22714d3f5eada9', 'aaa0111@qq.com', 'headpic.gif', '1506419104', '127.0.0.1', '1', '3', '3', '0', '0', '3', '50');
+INSERT INTO `mss_user` VALUES ('69', 'aaa012223', '0349f1177f41be9ae2559dde77da037a', 'aaa012223@qq.com', 'headpic.gif', '1506419363', '127.0.0.1', '1', '1', '1', '0', '0', '3', '64');
+INSERT INTO `mss_user` VALUES ('70', 'aaa0122234', '96e79218965eb72c92a549dd5a330112', 'aaa0122234@qq.com', 'headpic.gif', '1506420095', '127.0.0.1', '1', '1', '1', '0', '0', '3', '64');
+INSERT INTO `mss_user` VALUES ('71', 'aaa10015', '96e79218965eb72c92a549dd5a330112', 'aaa10015@qq.com', 'headpic.gif', '1506420152', '127.0.0.1', '1', '-1', '0', '0', '0', '3', '64');
+INSERT INTO `mss_user` VALUES ('72', 'aaa0133', '86185617e5fc5067bf4b250507bc4bd5', 'aaa0133@qq.com', 'headpic.gif', '1506420239', '127.0.0.1', '1', '1', '1', '0', '0', '3', '64');
 
 -- ----------------------------
 -- Table structure for mss_userinfo
@@ -4645,6 +4720,34 @@ INSERT INTO `mss_userinfo` VALUES ('41', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('42', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('43', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('44', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('45', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('46', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('47', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('48', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('49', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('50', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('51', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('52', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('53', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('54', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('55', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('56', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('57', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('58', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('59', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('60', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('61', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('62', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('63', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('64', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('65', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('66', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('67', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('68', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('69', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('70', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('71', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('72', '3', '', '', '0', '', '', '', '');
 
 -- ----------------------------
 -- Table structure for mss_user_admin
@@ -4671,29 +4774,79 @@ INSERT INTO `mss_user_admin` VALUES ('3', 'a2', '202cb962ac59075b964b07152d234b7
 INSERT INTO `mss_user_admin` VALUES ('4', 'selly', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36', 'ademo@qq.com', '0', '1506049785');
 
 -- ----------------------------
+-- Table structure for mss_user_config
+-- ----------------------------
+DROP TABLE IF EXISTS `mss_user_config`;
+CREATE TABLE `mss_user_config` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `value` int(11) DEFAULT NULL COMMENT '比例',
+  `ratio` float(8,2) DEFAULT NULL COMMENT '比率',
+  `commet` varchar(255) DEFAULT NULL COMMENT '此配置项的简介',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of mss_user_config
+-- ----------------------------
+INSERT INTO `mss_user_config` VALUES ('1', '1', '1.00', '计算规则：值*比率（比率最多两位小数）');
+INSERT INTO `mss_user_config` VALUES ('2', '70', '0.01', '分享时现金拨比');
+INSERT INTO `mss_user_config` VALUES ('3', '30', '0.01', '分享时积分拨比');
+INSERT INTO `mss_user_config` VALUES ('4', '1000', '1.00', '直推分享时推荐人可得现金数');
+INSERT INTO `mss_user_config` VALUES ('5', '1000', '1.00', '直推分享时推荐人的推荐人（二级推荐人）可得现金数');
+INSERT INTO `mss_user_config` VALUES ('6', '400', '1.00', '直推分享时推荐人的推荐人的推荐人（三级推荐人）可得现金数');
+INSERT INTO `mss_user_config` VALUES ('7', '1000', '1.00', '注册时赠送积分数量');
+INSERT INTO `mss_user_config` VALUES ('8', '10000', '1.00', '注册时赠送易得币数量');
+
+-- ----------------------------
 -- Table structure for mss_user_jifenyide
 -- ----------------------------
 DROP TABLE IF EXISTS `mss_user_jifenyide`;
 CREATE TABLE `mss_user_jifenyide` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
   `uid` int(11) NOT NULL COMMENT '用户id',
-  `jifen` int(11) DEFAULT '0' COMMENT '用户积分',
-  `yide` int(11) DEFAULT '0' COMMENT '用户易得币',
+  `jifen` decimal(8,2) DEFAULT '0.00' COMMENT '用户积分',
+  `yide` decimal(8,2) DEFAULT '0.00' COMMENT '用户易得币',
+  `cash` decimal(8,2) DEFAULT '0.00' COMMENT '现金',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of mss_user_jifenyide
 -- ----------------------------
-INSERT INTO `mss_user_jifenyide` VALUES ('1', '29', '87400', '20000');
-INSERT INTO `mss_user_jifenyide` VALUES ('2', '26', '2600', '0');
-INSERT INTO `mss_user_jifenyide` VALUES ('24', '36', '10000', '0');
-INSERT INTO `mss_user_jifenyide` VALUES ('25', '13', '10000', '300');
-INSERT INTO `mss_user_jifenyide` VALUES ('26', '20', '12000', '200');
-INSERT INTO `mss_user_jifenyide` VALUES ('27', '21', '10000', '0');
-INSERT INTO `mss_user_jifenyide` VALUES ('28', '25', '10000', '0');
-INSERT INTO `mss_user_jifenyide` VALUES ('29', '24', '80000', '0');
-INSERT INTO `mss_user_jifenyide` VALUES ('30', '44', '0', '10000');
+INSERT INTO `mss_user_jifenyide` VALUES ('1', '29', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('2', '26', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('24', '36', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('25', '13', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('26', '20', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('27', '21', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('28', '25', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('29', '24', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('30', '44', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('31', '46', '720.00', '0.00', '1680.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('32', '39', '300.00', '0.00', '700.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('33', '51', '600.00', '0.00', '1400.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('34', '53', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('35', '50', '300.00', '0.00', '700.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('36', '54', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('37', '55', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('38', '56', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('39', '57', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('40', '58', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('41', '59', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('42', '60', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('43', '61', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('44', '0', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('45', '62', '1000.00', '10000.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('46', '63', '1000.00', '10000.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('47', '64', '1000.00', '10000.00', '7000.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('48', '65', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('49', '66', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('50', '67', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('51', '68', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('52', '69', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('53', '70', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('54', '71', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('55', '72', '0.00', '0.00', '0.00');
 
 -- ----------------------------
 -- Table structure for mss_user_relation
@@ -4703,25 +4856,44 @@ CREATE TABLE `mss_user_relation` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(11) DEFAULT NULL COMMENT '用户id',
   `pid` int(11) DEFAULT '0' COMMENT '上级id,0代表顶级会员',
-  `relation` varchar(255) DEFAULT NULL COMMENT '跟此ID有关系的所有会员ID',
+  `relation` varchar(255) DEFAULT '' COMMENT '跟此ID的上三级推荐人ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of mss_user_relation
 -- ----------------------------
-INSERT INTO `mss_user_relation` VALUES ('11', '13', '29', null);
-INSERT INTO `mss_user_relation` VALUES ('12', '29', '26', null);
-INSERT INTO `mss_user_relation` VALUES ('13', '20', '26', null);
-INSERT INTO `mss_user_relation` VALUES ('14', '36', '29', null);
-INSERT INTO `mss_user_relation` VALUES ('15', '21', '25', null);
-INSERT INTO `mss_user_relation` VALUES ('16', '25', '24', null);
-INSERT INTO `mss_user_relation` VALUES ('17', '24', '26', null);
-INSERT INTO `mss_user_relation` VALUES ('18', '26', '0', null);
-INSERT INTO `mss_user_relation` VALUES ('19', '37', '0', null);
-INSERT INTO `mss_user_relation` VALUES ('20', '38', '37', null);
-INSERT INTO `mss_user_relation` VALUES ('21', '43', '0', null);
-INSERT INTO `mss_user_relation` VALUES ('22', '44', '0', null);
+INSERT INTO `mss_user_relation` VALUES ('23', '45', '39', null);
+INSERT INTO `mss_user_relation` VALUES ('24', '46', '0', '46,51,');
+INSERT INTO `mss_user_relation` VALUES ('25', '47', '46', null);
+INSERT INTO `mss_user_relation` VALUES ('26', '48', '46', null);
+INSERT INTO `mss_user_relation` VALUES ('27', '49', '47', null);
+INSERT INTO `mss_user_relation` VALUES ('28', '0', '47', null);
+INSERT INTO `mss_user_relation` VALUES ('29', '0', '47', null);
+INSERT INTO `mss_user_relation` VALUES ('30', '50', '47', '46,51,');
+INSERT INTO `mss_user_relation` VALUES ('31', '51', '46', '46,51,');
+INSERT INTO `mss_user_relation` VALUES ('32', '52', '50', null);
+INSERT INTO `mss_user_relation` VALUES ('33', '53', '50', null);
+INSERT INTO `mss_user_relation` VALUES ('35', '54', '50', null);
+INSERT INTO `mss_user_relation` VALUES ('36', '55', '54', '46,51,50,');
+INSERT INTO `mss_user_relation` VALUES ('37', '56', '54', '46,51,50,');
+INSERT INTO `mss_user_relation` VALUES ('38', '57', '56', '51,50,54');
+INSERT INTO `mss_user_relation` VALUES ('39', '58', '57', '50,54,56');
+INSERT INTO `mss_user_relation` VALUES ('40', '59', '50', '46,51,50');
+INSERT INTO `mss_user_relation` VALUES ('41', '60', '46', '39,46');
+INSERT INTO `mss_user_relation` VALUES ('42', '61', '39', '');
+INSERT INTO `mss_user_relation` VALUES ('43', '0', '39', '');
+INSERT INTO `mss_user_relation` VALUES ('44', '62', '0', '');
+INSERT INTO `mss_user_relation` VALUES ('45', '63', '0', '');
+INSERT INTO `mss_user_relation` VALUES ('46', '64', '0', '');
+INSERT INTO `mss_user_relation` VALUES ('47', '65', '64', '6');
+INSERT INTO `mss_user_relation` VALUES ('48', '66', '51', '46,51');
+INSERT INTO `mss_user_relation` VALUES ('49', '67', '62', '');
+INSERT INTO `mss_user_relation` VALUES ('50', '68', '50', '46,51,50');
+INSERT INTO `mss_user_relation` VALUES ('51', '69', '64', '6');
+INSERT INTO `mss_user_relation` VALUES ('52', '70', '64', '6');
+INSERT INTO `mss_user_relation` VALUES ('53', '71', '64', '');
+INSERT INTO `mss_user_relation` VALUES ('54', '72', '64', '6');
 
 -- ----------------------------
 -- Table structure for mss_user_set
