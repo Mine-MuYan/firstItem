@@ -67,7 +67,6 @@ function getUserReferee($id){
 }
 
 
-
 /**
  * 获取用户的某项信息
  * @param $id       integer 用户ID
@@ -78,11 +77,41 @@ function getUser($id,$field){
     $tbUser = M('user');
     $re = $tbUser -> where("id = $id") -> find();
     if($re){
-        $res = $re[$field];
+        if($field == '*'){
+            $res = $re;
+        }else{
+            $res = $re[$field];
+        }
     }else{
         $res = '获取数据失败';
     }
     return $res;
+}
+
+
+//根据ID查找用户的推荐信息、金额
+function getUserRefCash($id){
+    if(count($id) == 1){
+        $re = getUser($id,'*');
+        $rr = getUserCash($id);
+        $re['jifen']    = $rr['jifen'];
+        $re['yide']     = $rr['yide'];
+        $re['cash']     = $rr['cash'];
+        
+    }else{
+        $tbUser = M('user');
+        $map['id'] = array('in',$id);
+        $re = $tbUser -> where($map) -> order('id desc , regtime desc') -> select();
+        foreach($re as $k => $v){
+            $rr = getUserCash($v['id']);
+            $re[$k]['jifen']    = $rr['jifen'];
+            $re[$k]['yide']     = $rr['yide'];
+            $re[$k]['cash']     = $rr['cash'];
+            $ref = getUser($v['referee'],'username');
+            $re[$k]['refName']  = $ref;
+        }
+    }
+    return $re;
 }
 
 
@@ -159,6 +188,21 @@ function getUserReferees($id){
 
 
 /**
+ * 获取用户的资金
+ * @param $id   integer     用户ID
+ * @return mixed|string
+ */
+function getUserCash($id){
+    $re = M('user_jifenyide') -> where("uid = $id") -> find();
+    if($re){
+        return $re;
+    }else{
+        return '无此用户';
+    }
+}
+
+
+/**
  * 注册时给推荐人发奖励
  * @param $id   integer     用户ID
  * @return boolean  true: 奖励发放成功，且记录已写入 / false:奖励发放失败
@@ -191,7 +235,8 @@ function regGiveUserBonus($id){
             $username0 = getUser($referee,'username');
             $bouns00 = $configVal1*$configMon1;
             $bouns01 = $configVal1*$configMon2;
-            $logData['info'] = $username.'注册成功，奖励原始会员'.$username0.'现金'.$bouns00.'，积分'.$bouns01.'。';
+            $logData['uids'] = $referee;
+            $logData['info'] = $username.'注册成功，奖励您（'.$username0.'）现金'.$bouns00.'，积分'.$bouns01.'。';
             $logData['type'] = 2;
             break;
         case 2:
@@ -199,7 +244,8 @@ function regGiveUserBonus($id){
             $bouns01 = $configVal2*$configMon2;
             $bouns11 = $configVal1*$configMon1;
             $bouns12 = $configVal1*$configMon2;
-            $logData['info'] = $username.'注册成功，奖励原始会员'.$username0.'现金'.$bouns00.'，积分'.$bouns01.',奖励一级会员'.$username1.'现金'.$bouns11.'，积分'.$bouns12.'。';
+            $logData['uids'] = $referee[0].','.$referee[1];
+            $logData['info'] = $username.'注册成功，奖励原始会员'.$username0.'现金'.$bouns00.'，积分'.$bouns01.',奖励您（'.$username1.'）现金'.$bouns11.'，积分'.$bouns12.'。';
             $logData['type'] = 3;
             break;
         case 3:
@@ -209,13 +255,14 @@ function regGiveUserBonus($id){
             $bouns12 = $configVal2*$configMon2;
             $bouns21 = $configVal1*$configMon1;
             $bouns22 = $configVal1*$configMon2;
-            $logData['info'] = $username.'注册成功，奖励一级会员'.$username0.'现金'.$bouns00.'，积分'.$bouns01.',奖励二级会员'.$username1.'现金'.$bouns11.'，积分'.$bouns12.',奖励三级会员（推荐人）'.$username2.'现金'.$bouns21.'，积分'.$bouns22.'。';
+            $logData['uids'] = $referee[0].','.$referee[1].','.$referee[2];
+            $logData['info'] = $username.'注册成功，奖励一级会员'.$username0.'现金'.$bouns00.'，积分'.$bouns01.',奖励二级会员'.$username1.'现金'.$bouns11.'，积分'.$bouns12.',奖励您（'.$username2.'）现金'.$bouns21.'，积分'.$bouns22.'。';
             $logData['type'] = 4;
             break;
     }
     //推荐人发放奖励
     $re00 = $tbUserCoin -> where("uid = $referee") -> setInc('cash',$bouns00);
-    $re01 = $tbUserCoin -> where("uid = $referee") -> setInc('cash',$bouns00);
+    $re01 = $tbUserCoin -> where("uid = $referee") -> setInc('jifen',$bouns01);
     $re11 = $tbUserCoin -> where("uid = $referee[0]") -> setInc('cash',$bouns00);
     $re12 = $tbUserCoin -> where("uid = $referee[0]") -> setInc('jifen',$bouns01);
     $re21 = $tbUserCoin -> where("uid = $referee[1]") -> setInc('cash',$bouns11);
@@ -243,23 +290,19 @@ function regInsertRelation($id){
     $tbUserRelation = M('user_relation');
     $referee    = getUserReferees($id);
     $count      = count($referee);
-    if(is_string($referee)){
-        $data['relation'] = $referee[0];
-    }else{
-        switch($count){
-            case 0:
-                $data['relation'] = '';
-                break;
-            case 1:
-                $data['relation'] = $referee[0];
-                break;
-            case 2:
-                $data['relation'] = $referee[0].','.$referee[1];
-                break;
-            case 3:
-                $data['relation'] = $referee[0].','.$referee[1].','.$referee[2];
-                break;
-        }
+    switch($count){
+        case 0:
+            $data['relation'] = '';
+            break;
+        case 1:
+            $data['relation'] = $referee;
+            break;
+        case 2:
+            $data['relation'] = $referee[0].','.$referee[1];
+            break;
+        case 3:
+            $data['relation'] = $referee[0].','.$referee[1].','.$referee[2];
+            break;
     }
     //推荐人
     $re = $tbUserRelation -> where("uid = $id") -> save($data);
@@ -313,20 +356,28 @@ function regInsertClass($id){
  */
 function refereeCount($id,$what){
     $tbUser     = M('user');
-    $re = $tbUser -> where("referee = $id") -> select();
+    $re = $tbUser -> where("referee = $id") -> order('id desc , regtime desc') -> select();
     if($re){
         switch($what){
             case 'count':
                 $res = count($re);
                 break;
             case 'select':
+                foreach($re as $k => $v){
+                    $cash = getUserCash($v['id']);
+                    $re[$k]['jifen']    = $cash['jifen'];
+                    $re[$k]['yide']     = $cash['yide'];
+                    $re[$k]['cash']     = $cash['cash'];
+                    $ref = getUser($v['referee'],'username');
+                    $re[$k]['refName']  = $ref;
+                }
                 $res = $re;
                 break;
             default:
                 $res = '参数错误';
         }
     }else{
-        $res = '此用户未邀请过其他人';
+        $res = '';
     }
     return $res;
 }
@@ -349,11 +400,32 @@ function refereeCounts($id,$what,$field = '*'){
         case 'select':
             $res = $re;
             break;
+        case 'uid':
+            foreach($re as $k => $v){
+                $ids[] = $re[$k]['uid'];
+            }
+            $res = $ids;
+            break;
         default:
             $res = '参数错误';
             break;
     }
     return $res;
+}
+
+/**
+ * 获取注册时的消息
+ * @param $id   integer 用户ID
+ * @return bool|mixed
+ */
+function getNotice($id){
+    $tbRealtion = M('jifenyide_log');
+    $re = $tbRealtion -> where("FIND_IN_SET($id, uids)") -> order('time desc')-> select();
+    if($re){
+        return $re;
+    }else{
+        return false;
+    }
 }
 
 
@@ -402,10 +474,11 @@ function getUserConfig($id,$what = 'value'){
             );
             return $config;
             break;
+        case 'all':
+            return $re;
         default:
             return '参数错误';
     }
-    
 }
 
 

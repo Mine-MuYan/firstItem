@@ -115,6 +115,19 @@
 			R('Base/header');
 			R('Base/footer');
 			$this->assign('data',$data);
+			
+			//直推
+            $refThis    = refereeCount($_SESSION['uid'],'select');
+            //所有推荐的人
+            $OtherId    = refereeCounts($_SESSION['uid'],'uid');
+            $refOther   = getUserRefCash($OtherId);
+            //消息通知
+            $notice     = getNotice($_SESSION['uid']);
+            $this -> assign('notice',$notice);
+            $this -> assign('refThis',$refThis);
+            $this -> assign('refOther',$refOther);
+            
+            
 			$this->display();
 		}
 

@@ -391,4 +391,48 @@
 				return $upload->getUploadFileInfo();
 			}
 		}
+        
+        
+        function userConfig(){
+		    $re = M('user_config')-> select();
+		    foreach($re as $k => $v){
+                $re[$k]['values'] = $re[$k]['value'] * $re[$k]['ratio'];
+            }
+		    $this -> assign('re',$re);
+            $this -> display();
+        }
+        
+        function userConfigEdit(){
+            $id = $_GET['id'];
+            $re = getUserConfig($id,'all');
+            $this -> assign('re',$re);
+            $this -> display();
+        }
+        
+        function userConfigEdits(){
+            $id         = $_POST['id'];
+            $data = array(
+                'value'     => $_POST['value'],
+                'ratio'     => $_POST['ratio'],
+                'comment'   => $_POST['comment'],
+            );
+            M('user_config')-> where("id = $id") -> save($data);
+            $this -> success('修改成功','__URL__/userConfig');
+        }
+        
+        function userConfigAdd(){
+            
+            $this -> display();
+        }
+        
+        
+        function userConfigAdds(){
+            $data = array(
+                'value'     => $_POST['value'],
+                'ratio'     => $_POST['ratio'],
+                'comment'   => $_POST['comment'],
+            );
+            M('user_config') -> add($data);
+            $this -> success('添加成功','__URL__/userConfig');
+        }
 	}

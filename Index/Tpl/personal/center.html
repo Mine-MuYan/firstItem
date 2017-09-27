@@ -15,7 +15,7 @@
 	<meta name="description" content="">
 	
 	
-	<!-- bootstarp css 文件引入 -->
+	<!-- bootstrap css 文件引入 -->
 	<link rel="stylesheet" href="__PUBLIC__/index/css/bootstrap.css">
 	<link rel="stylesheet" href="__PUBLIC__/index/css/bootstrap-theme.css">
 	<!-- // bootstrap css 文件引入 -->
@@ -39,8 +39,8 @@
 	<script src="__PUBLIC__/index/js/modernizr.min.js"></script>
 	
 	<!-- 挂载bootstrap js 文件 -->
-	<script src="__PUBLIC__/index/js/bootstarp.js"></script>
-	<!-- // 挂载 bootstarp js 文件 -->
+	<script src="__PUBLIC__/index/js/bootstrap.js"></script>
+	<!-- // 挂载 bootstrap js 文件 -->
 	
 	<!-- PARTICULAR PAGES CSS FILES 特定页面css文件 -->
 	<link rel="stylesheet" href="__PUBLIC__/index/css/innerpage.css">
@@ -102,6 +102,7 @@
 			}
 		.h30px {
 				height: 30px;
+				font-size: 18px;
 			}
 		/* 定义error警示色 */
 		.error {
@@ -291,35 +292,45 @@
   					}else{
   						alert('验证失败');
   					}
-  				}
+  				})
   			})
   		})
   	</script>
 	<script>
 	$(function(){
+        $("#person-relation").hide();
+        $("#person-notice").hide();
 		$("#a-info").click(function(){
 			$("#person-info").css("display", "block");
-			$("#person-safe, #person-address, #person-goods, #person-footprint, #person-collect").css("display", "none");
+			$("#person-notice,#person-relation,#person-safe, #person-address, #person-goods, #person-footprint, #person-collect").css("display", "none");
 		});
+        $("#a-referee").click(function(){
+            $("#person-relation").css("display", "block");
+            $("#person-notice,#person-safe,#person-info, #person-address, #person-goods, #person-footprint, #person-collect").css("display", "none");
+        });
+        $("#a-notice").click(function(){
+            $("#person-notice").css("display", "block");
+            $("#person-relation,#person-safe,#person-info, #person-address, #person-goods, #person-footprint, #person-collect").css("display", "none");
+        });
 		$("#a-safe").click(function(){
 			$("#person-safe").css("display", "block");
-			$("#person-info, #person-address, #person-goods, #person-footprint, #person-collect").css("display", "none");
+			$("#person-notice,#person-relation,#person-info, #person-address, #person-goods, #person-footprint, #person-collect").css("display", "none");
 		});
 		$("#a-address").click(function(){
 			$("#person-address").css("display", "block");
-			$("#person-info, #person-safe, #person-goods, #person-footprint, #person-collect").css("display", "none");
+			$("#person-notice,#person-relation,#person-info, #person-safe, #person-goods, #person-footprint, #person-collect").css("display", "none");
 		});
 		$("#a-goods").click(function(){
 			$("#person-goods").css("display", "block");
-			$("#person-info, #person-safe, #person-address, #person-footprint, #person-collect").css("display", "none");
+			$("#person-notice,#person-relation,#person-info, #person-safe, #person-address, #person-footprint, #person-collect").css("display", "none");
 		});
 		$("#a-footprint").click(function(){
 			$("#person-footprint").css("display", "block");
-			$("#person-info, #person-safe, #person-address, #person-goods, #person-collect").css("display", "none");
+			$("#person-notice,#person-relation,#person-info, #person-safe, #person-address, #person-goods, #person-collect").css("display", "none");
 		});
 		$("#a-collect").click(function(){
 			$("#person-collect").css("display", "block");
-			$("#person-info, #person-safe, #person-address, #person-goods, #person-footprint").css("display", "none");
+			$("#person-notice,#person-relation,#person-info, #person-safe, #person-address, #person-goods, #person-footprint").css("display", "none");
 		});
 	})
 	</script>
@@ -341,13 +352,13 @@
 						<aside class="col-xs-12 col-sm-4 col-md-3">
 							<section class="side-section">
 								<h3 class="uppercase text-bold"><span class="text-xs">个人中心</span></h3>
-								
 								<ul class="nav nav-tabs nav-stacked">
-									<li><a id="a-info">个人信息</a></li>
-									<li><a id="a-safe">安全中心</a></li>
-									<li><a id="a-address">收货地址</a></li>															
-									<li><a id="a-goods">已买到的宝贝</a></li>
-
+									<li><a style="cursor: pointer;" id="a-info">个人信息</a></li>
+									<li><a style="cursor: pointer;" id="a-referee">直推和团购</a></li>
+									<li><a style="cursor: pointer;" id="a-notice">消息提醒</a></li>
+									<li><a style="cursor: pointer;" id="a-safe">安全中心</a></li>
+									<li><a style="cursor: pointer;" id="a-address">收货地址</a></li>
+									<li><a style="cursor: pointer;" id="a-goods">已买到的宝贝</a></li>
 								</ul>
 							</section>
 								
@@ -378,12 +389,20 @@
 									</div>
 									<div id="checkout-collapse7" class="panel-collapse collapse"> <!--checkout-collapse3!-->
 										<div class="panel-body">
-											<div class="h30px">
-												<p>我的积分币:<{$data.jfyd.jifen}></p>
-											</div>
-											<div class="h30px">
-												<p>我的易得币:<{$data.jfyd.yide}></p>
-											</div>
+											<table class="table table-bordered table-hover text-center">
+												<tr>
+													<td><strong>积分币</strong></td>
+													<td><{$data.jfyd.jifen}></td>
+												</tr>
+												<tr>
+													<td>易得币</td>
+													<td><{$data.jfyd.yide}></td>
+												</tr>
+												<tr>
+													<td>现金</td>
+													<td><{$data.jfyd.cash}></td>
+												</tr>
+											</table>
 											<div class="clearfix"></div>
 										</div>
 									</div>
@@ -419,12 +438,12 @@
 														<div class="col-md-3">
 														 	<div class="form-group stylish-input">
 																<input type="radio" name="sex" class="prettyCheckable m-r" data-label="女" value="2" <{$data.info.sexb}>/>
-															</div>	
+															</div>
 														</div>
 														<div class="col-md-3">
 														 	<div class="form-group stylish-input">
 																<input type="radio" name="sex" class="prettyCheckable m-r" data-label="保密" value="3" <{$data.info.sexc}>/>
-															</div>	
+															</div>
 														</div>
 													</div>
 												</div>
@@ -503,6 +522,114 @@
 									</div>
 								</div>
 							</div>
+							<div class="panel-group checkout person-info" id="person-relation">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse2">
+												直推用户
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse">
+										<div class="panel-body">
+											<table class="table table-border table-hover text-center text-center">
+												<thead>
+													<th class="text-center">用户名</th>
+													<th class="text-center">积分</th>
+													<th class="text-center">易得币</th>
+													<th class="text-center">现金</th>
+													<th class="text-center">注册时间</th>
+												</thead>
+												<notempty name="refThis">
+													<volist name="refThis" id="v">
+														<tbody>
+															<td><{$v.username}></td>
+															<td><{$v.jifen}></td>
+															<td><{$v.yide}></td>
+															<td><{$v.cash}></td>
+															<td><{$v.regtime|date="Y-m-d H:i",###}></td>
+														</tbody>
+													</volist>
+													<else />
+													<td colspan="5" class="text-center">暂无数据</td>
+												</notempty>
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse2">
+												团购用户
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse">
+										<div class="panel-body">
+											<table class="table table-border table-hover text-center text-center">
+												<thead>
+												<th class="text-center">用户名</th>
+												<th class="text-center">积分</th>
+												<th class="text-center">易得币</th>
+												<th class="text-center">现金</th>
+												<th class="text-center">推荐人</th>
+												<th class="text-center">注册时间</th>
+												</thead>
+												<td colspan="6" class="text-center">开发中...</td>
+												<notempty name="refOther">
+													<volist name="refOther" id="v">
+														<!--
+														<tbody>
+														<td><{$v.username}></td>
+														<td><{$v.jifen}></td>
+														<td><{$v.yide}></td>
+														<td><{$v.cash}></td>
+														<td><{$v.refName}></td>
+														<td><{$v.regtime|date="Y-m-d H:i",###}></td>
+														-->
+														</tbody>
+													</volist>
+													<else />
+													<td colspan="6" class="text-center">暂无数据</td>
+												</notempty>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="panel-group checkout person-info" id="person-notice">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse2">
+												消息通知
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse">
+										<div class="panel-body">
+											<table class="table table-border table-hover text-center text-center">
+												<thead>
+													<th class="text-center">时间</th>
+													<th class="text-center">内容</th>
+												</thead>
+												<notempty name="notice">
+													<volist name="notice" id="v">
+													<tbody>
+														<td><{$v.time}></td>
+														<td><{$v.info}></td>
+													</tbody>
+													</volist>
+													<else />
+													<td colspan="2" class="text-center">暂无数据</td>
+												</notempty>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
 							<div class="panel-group checkout person-info" id="person-safe">
 								<div class="panel panel-default">
 									<div class="panel-heading">
@@ -568,7 +695,7 @@
 												<div class="form-group">
 													<label for="realname" class="col-md-3 control-label">真实姓名</label>
 													<div class="col-md-6">
-														<input type="text" class="form-control text" id="realname" <{$data.ureal}> value="<{$data.info.realname|substr=0,3}><{$data.cname}>" 
+														<input type="text" class="form-control text" id="realname" <{$data.ureal}> value="<{$data.info.realname|substr=0,3}><{$data.cname}>"
 														>
 													</div>
 													<div class="col-md-3">
@@ -589,18 +716,18 @@
 												<div class="form-group">
 													<label for="cellphone" class="col-md-3 control-label">手机号</label>
 													<div class="col-md-4">
-														<input type="text" class="form-control text" id="cellphones" name="cellphone" value="" 
+														<input type="text" class="form-control text" id="cellphones" name="cellphone" value=""
 														placeholder="若手机号已存在，此输入框直接变为禁用状态，只显示部分手机号信息，其他以*代替">
 													</div>
 													<div class="col-md-2">
 														<input type="button" class="btn btn-primary pull-right" id="sendvi" value="发送验证码">
 													</div>
-													
+
 												</div>
 												<div class="form-group">
 													<label for="cellphone" class="col-md-3 control-label">验证码</label>
 													<div class="col-md-2">
-														<input type="text" class="form-control text" id="verify" name="verify" value="" 
+														<input type="text" class="form-control text" id="verify" name="verify" value=""
 														placeholder="">
 													</div>
 													<div class="col-md-2">
@@ -631,16 +758,16 @@
 									<div id="checkout-collapse4" class="panel-collapse">
 										<div class="panel-body">
 											<div class="table-responsive">
-												<table class="table table-hover">
+												<table class="table table-hover text-center">
 													<thead>
 														<tr>
-															<th>收货人</th>
-															<th>所在地区</th>
-															<th>街道地址</th>
-															<th>邮编</th>
-															<th>电话号码</th>
-															<th>地址状态</th>
-															<th>操作</th>
+															<th class="text-center">收货人</th>
+															<th class="text-center">所在地区</th>
+															<th class="text-center">街道地址</th>
+															<th class="text-center">邮编</th>
+															<th class="text-center">电话号码</th>
+															<th class="text-center">地址状态</th>
+															<th class="text-center">操作</th>
 														</tr>
 													</thead>
 													<tbody>

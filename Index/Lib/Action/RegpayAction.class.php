@@ -32,9 +32,8 @@ class RegpayAction extends Action {
     }
     
     public function test(){
-    
-        $id = 65;
-        regGiveUserBonus($id);
+        $this -> success('成功','__APP__/Index/index');
+//        pp(regInsertRelation(72));
         $this -> display();
     }
 }
