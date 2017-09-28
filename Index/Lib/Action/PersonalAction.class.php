@@ -118,16 +118,21 @@
 			
 			//直推
             $refThis    = refereeCount($_SESSION['uid'],'select');
+            $refCount   = count($refThis);
             //所有推荐的人
             $OtherId    = refereeCounts($_SESSION['uid'],'uid');
             $refOther   = getUserRefCash($OtherId);
-            //消息通知
-            $notice     = getNotice($_SESSION['uid']);
+            $otherCount = count($refOther);
+            //注册消息通知
+            $notice     = getJifenNotice($_SESSION['uid']);
+            //其他消息通知
+            $notices    = getNotice($_SESSION['uid']);
             $this -> assign('notice',$notice);
+            $this -> assign('notices',$notices);
             $this -> assign('refThis',$refThis);
             $this -> assign('refOther',$refOther);
-            
-            
+            $this -> assign('refCount',$refCount);
+            $this -> assign('otherCount',$otherCount);
 			$this->display();
 		}
 

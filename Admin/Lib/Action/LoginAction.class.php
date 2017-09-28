@@ -22,22 +22,14 @@
 			$admin = M('user_admin');
 			$user = $admin->where(array('username'=>$_POST['username'],'userpwd'=>md5($_POST['userpwd'])))->find();
 			if(!empty($user)){
-			    if($user['ustatus'] == 1){
-                    $_SESSION['id'] 		= $user['id'];						// 写入管理员id到session
-                    $_SESSION['level'] 		= $user['level'];					// 写入管理员权限到session
-                    $_SESSION['level']		= explode(',',$_SESSION['level']);	// 分割管理员权限
-                    $_SESSION['username'] 	= $user['username'];				// 获取管理员用户名
-                    $time['logintime'] 		= time();							// 获取当前时间写入数据库
-                    $admin->where(array('id'=>$user['id']))->save($time);
-                    // 登录成功，显示后台首页
-                    $this->redirect('Index/index');
-                }else if($user['ustatus'] == 2){
-                    $this->error('您的账号尚未激活，请联系邀请人激活账号');
-                }else if($user['ustatus'] == 3){
-                    $this->error('您的账号已被限制登陆，请联系邀请人激活账号');
-                }else{
-                    $this->error('验证失败');
-                }
+                $_SESSION['id'] 		= $user['id'];						// 写入管理员id到session
+                $_SESSION['level'] 		= $user['level'];					// 写入管理员权限到session
+                $_SESSION['level']		= explode(',',$_SESSION['level']);	// 分割管理员权限
+                $_SESSION['username'] 	= $user['username'];				// 获取管理员用户名
+                $time['logintime'] 		= time();							// 获取当前时间写入数据库
+                $admin->where(array('id'=>$user['id']))->save($time);
+                // 登录成功，显示后台首页
+                $this->redirect('Index/index');
 			}else{
 				$this->error('验证失败');
 			}

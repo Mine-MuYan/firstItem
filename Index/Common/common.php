@@ -260,20 +260,25 @@ function regGiveUserBonus($id){
             $logData['type'] = 4;
             break;
     }
-    //推荐人发放奖励
-    $re00 = $tbUserCoin -> where("uid = $referee") -> setInc('cash',$bouns00);
-    $re01 = $tbUserCoin -> where("uid = $referee") -> setInc('jifen',$bouns01);
-    $re11 = $tbUserCoin -> where("uid = $referee[0]") -> setInc('cash',$bouns00);
-    $re12 = $tbUserCoin -> where("uid = $referee[0]") -> setInc('jifen',$bouns01);
-    $re21 = $tbUserCoin -> where("uid = $referee[1]") -> setInc('cash',$bouns11);
-    $re22 = $tbUserCoin -> where("uid = $referee[1]") -> setInc('jifen',$bouns12);
-    $re31 = $tbUserCoin -> where("uid = $referee[2]") -> setInc('cash',$bouns21);
-    $re32 = $tbUserCoin -> where("uid = $referee[2]") -> setInc('jifen',$bouns22);
     //写入记录表
-    $re4 = $tbCoinLog -> add($logData);
-    if((($re00 && $re01) || ($re11 && $re12) || ($re21 && $re22) || ($re31 && $re32)) && $re4){
-        return true;
+    $res0   = $tbCoinLog -> add($logData);
+    //推荐人发放奖励
+    $re00   = $tbUserCoin -> where("uid = $referee") -> setInc('cash',$bouns00);
+    $re01   = $tbUserCoin -> where("uid = $referee") -> setInc('jifen',$bouns01);
+    $re11   = $tbUserCoin -> where("uid = $referee[0]") -> setInc('cash',$bouns00);
+    $re12   = $tbUserCoin -> where("uid = $referee[0]") -> setInc('jifen',$bouns01);
+    $re21   = $tbUserCoin -> where("uid = $referee[1]") -> setInc('cash',$bouns11);
+    $re22   = $tbUserCoin -> where("uid = $referee[1]") -> setInc('jifen',$bouns12);
+    $re31   = $tbUserCoin -> where("uid = $referee[2]") -> setInc('cash',$bouns21);
+    $re32   = $tbUserCoin -> where("uid = $referee[2]") -> setInc('jifen',$bouns22);
+    if((($re00 && $re01) || ($re11 && $re12) || ($re21 && $re22) || ($re31 && $re32))){
+        if($res0){
+            return true;
 //        pp('奖励发放成功，且记录已写入');
+        }else{
+            return false;
+//        pp('奖励发放成功，但记录写入失败');
+        }
     }else{
         return false;
 //        pp('奖励发放失败');
@@ -344,7 +349,6 @@ function regInsertClass($id){
         return false;
 //        pp('写入用户等级失败');
     }
-    
 }
 
 
@@ -418,9 +422,25 @@ function refereeCounts($id,$what,$field = '*'){
  * @param $id   integer 用户ID
  * @return bool|mixed
  */
-function getNotice($id){
+function getJifenNotice($id){
     $tbRealtion = M('jifenyide_log');
     $re = $tbRealtion -> where("FIND_IN_SET($id, uids)") -> order('time desc')-> select();
+    if($re){
+        return $re;
+    }else{
+        return false;
+    }
+}
+
+
+/**
+ * 获取用户的注册、充值、提现消息
+ * @param $id
+ * @return bool|mixed
+ */
+function getNotice($id){
+    $tbNotice = M('user_notice');
+    $re = $tbNotice -> where("uid = $id") -> order('time desc') -> select();
     if($re){
         return $re;
     }else{
@@ -482,6 +502,27 @@ function getUserConfig($id,$what = 'value'){
 }
 
 
+/**
+ * 注册时写入消息表
+ * @param $id   integer     用户ID
+ * @return bool true：成功；false：失败
+ */
+function regNotice($id){
+    $tbNotice   = M('user_notice');
+    //通知用户注册成功
+    $noticeData = array(
+        'uid'   => $id,
+        'info'  => '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。',
+        'time'  => date('Y-m-d H:i:s'),
+        'type'  => 1
+    );
+    $res  = $tbNotice -> add($noticeData);
+    if($res){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 
 

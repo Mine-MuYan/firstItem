@@ -32,8 +32,24 @@ class RegpayAction extends Action {
     }
     
     public function test(){
-        $this -> success('成功','__APP__/Index/index');
-//        pp(regInsertRelation(72));
+        $city = array('f','s');
+        $this -> sss($city);
+        
         $this -> display();
+    }
+    
+    public function sss($city){
+        $user   = M('user');
+        if(count($city) == 1){
+            $map['username'] = array('like',"%$city%");
+            $reUser = $user -> where($map) -> select();
+        }else{
+            foreach($city as $k => $v){
+                $map['username'] = array('like',"%$city[$k]%");
+                $reUser[] = $user -> where($map) -> select();
+                
+            }
+        }
+        return $reUser;
     }
 }

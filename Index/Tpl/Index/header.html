@@ -76,16 +76,16 @@
 						<ul class="user-menu" >
 							<empty name="Think.session.Username">
 								<!-- 登陆成功后此处隐藏并显示用户名，点击可进入用户中心 -->
-								<li><a blank-"_blank" href="__APP__/Login/login" style="font-size:13px;">登录</a></li>
+								<li><a href="__APP__/Login/login" style="font-size:13px;padding: 8px;color: #fff;border-radius:5px;" class="btn btn-danger">登录</a></li>
 							<else/>
-								<li><a blank-"_blank" href="__APP__/Personal/center"><{$Think.session.Username}></a></li>
+								<li><a href="__APP__/Personal/center" style="font-size:13px;padding: 8px;color: #fff;border-radius:5px;" class="btn btn-danger"><{$Think.session.Username}></a></li>
 							</empty>
 							<!-- 登陆成功后此处隐藏 -->
-							<li><a href="__APP__/Register/register" style="font-size:13px;">注册会员</a></li>
+							<li><a target="_blank" href="__APP__/Register/register" style="font-size:13px;padding: 8px;color: #fff;border-radius:5px;" class="btn btn-danger">注册会员</a></li>
 
 							<!-- 清除cookie -->
 							<notempty name="Think.session.Username">
-							<li><a href="__APP__/Login/loginout" style="font-size:13px;">退出</a></li>
+							<li><a href="__APP__/Login/loginout" style="font-size:13px;padding: 8px;color: #fff;border-radius:5px;" class="btn btn-danger">退出</a></li>
 							</notempty>
 						</ul>
 					</nav>

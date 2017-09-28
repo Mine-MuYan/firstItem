@@ -48,17 +48,40 @@ class RegisterAction extends Action{
                             'pid' => $searchRefree['id'],
                         );
                         //注册关系表
-                        $reRela = $relation -> add($relationData);
-                        $reInfo = $info -> add($data);
+                        $reRela             = $relation -> add($relationData);
+                        $reInfo             = $info -> add($data);
                         $jifenData = array(
                             'uid'   => $id,
                         );
-                        $reJifen = M('user_jifenyide') -> add($jifenData);
-                        if($reRela && $reInfo && $reJifen && regGiveUserBonus($id) && regInsertRelation($id) && regInsertClass($id)){
+                        $reJifen            = M('user_jifenyide') -> add($jifenData);
+                        $reGiveBouns        = regGiveUserBonus($id);
+                        $reInsertRelation   = regInsertRelation($id);
+                        $reInsertClass      = regInsertClass($id);
+                        $reRegNotice        = regNotice($id);
+                        if($reRela && $reInfo && $reJifen && $reGiveBouns && $reInsertRelation && $reInsertClass && $reRegNotice){
                             $this -> assign('waitSecond','3');
-                            $this -> success('注册成功,请等待审核','__APP__/Index/index');
-                        }else{
-                            $this -> error('注册失败，请重新注册!','__APP__/Register/register');
+                            $this -> success('注册成功,快去登陆吧','__APP__/Index/index');
+                        }
+                        /* using when debug
+                         * using when debug
+                        elseif(!$reRela){
+                            $this -> error('关系表写入失败','__APP__/Register/register');
+                        }elseif(!$reInfo){
+                            $this -> error('用户信息表写入失败','__APP__/Register/register');
+                        }elseif(!$reJifen){
+                            $this -> error('积分表写入失败','__APP__/Register/register');
+                        }elseif(!$reGiveBouns){
+                            $this -> error('推荐人奖励发放失败','__APP__/Register/register');
+                        }elseif(!$reInsertRelation){
+                            $this -> error('关系构建失败','__APP__/Register/register');
+                        }elseif(!$reInsertClass){
+                            $this -> error('用户等级写入失败','__APP__/Register/register');
+                        }elseif(!$reRegNotice){
+                            $this -> error('注册消息写入失败','__APP__/Register/register');
+                        }
+                        */
+                        else{
+                            $this -> error('注册失败','__APP__/Register/register');
                         }
                     }else{
                         $this -> error('该推荐人不存在!','__APP__/Register/register');
