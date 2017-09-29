@@ -13,8 +13,8 @@
 	<!-- 页面信息 -->
 	<meta name="keywords" content="">
 	<meta name="description" content="">
-	
-	
+
+
 	<!-- bootstrap css 文件引入 -->
 	<link rel="stylesheet" href="__PUBLIC__/index/css/bootstrap.css">
 	<link rel="stylesheet" href="__PUBLIC__/index/css/bootstrap-theme.css">
@@ -35,13 +35,13 @@
 	<!-- 挂载 jquery.min.js (上线采用)到对象 window 下，若不成功直接加载 -->
 	<script>window.jQuery || document.write('<script src="__PUBLIC__/index/js/jquery.min.js"><\/script>');</script>
 	<!-- // 挂载 jquery.min.js (上线采用)到对象 window 下，若不成功直接加载 -->
-	
+
 	<script src="__PUBLIC__/index/js/modernizr.min.js"></script>
-	
+
 	<!-- 挂载bootstrap js 文件 -->
 	<script src="__PUBLIC__/index/js/bootstrap.js"></script>
 	<!-- // 挂载 bootstrap js 文件 -->
-	
+
 	<!-- PARTICULAR PAGES CSS FILES 特定页面css文件 -->
 	<link rel="stylesheet" href="__PUBLIC__/index/css/innerpage.css">
 	<!-- // PARTICULAR PAGES CSS FILES 特定页面css文件 -->
@@ -49,7 +49,7 @@
 	<!-- 响应式 css 文件 -->
 	<link rel="stylesheet" href="__PUBLIC__/index/css/responsive.css">
 	<!-- // 响应式 css 文件 -->
-	
+
 	<style type="text/css">
 		#file_upload{
 			position:relative;
@@ -69,11 +69,11 @@
 			top:-25px;
 		}
 		/* 格式化div使默认隐藏 */
-		#person-safe, #person-footprint, #person-address, #person-goods, #person-order, #person-collect 
+		#person-safe, #person-footprint, #person-address, #person-goods, #person-order, #person-collect
 		{
 			display: none;
 		}
-		
+
 		/* 定义select 选择器，是背景颜色和页面背景色统一*/
 		.select, .text {
 				background:#EEE;
@@ -139,201 +139,204 @@
 				color: #00F;
 			}
 	</style>
-	<script type="text/javascript" src="__PUBLIC__/uploadify/jquery.uploadify-3.1.min.js"></script>  
-    	<script type="text/javascript">  
-	   	$(function() {  
-		        	$('#file_upload').uploadify({  
-		            'swf'      : '__PUBLIC__/uploadify/uploadify.swf',  
-		            'uploader' : '__PUBLIC__/uploadify/uploadify.php?uid=<{$Think.session.uid}>',
-		            'buttonText': '上传图片'  
-		              
-		            // Your options here  
-		        	});  
-	    	});  
-  	</script>
-  	<script type="text/javascript">
-  		$(function(){
-  			$('.upda').click(function(){
-  				var id = this.id;
-  				$.get("__APP__/Personal/addressFind/id/"+id, function(data){
-  					
-  					$("#xprovence").append("<option value='"+data.province+"'>"+data.province+"</option>")
-  					$("#xcity").append('<option value="'+data.city+'">'+data.city+'</option>');
-  					$("#xcounty").append('<option value="'+data.area+'">'+data.area+'</option>');
-					$("#upostcode").val(data.postcode);
-					$("#ustreet").val(data.street);
-					$("#ureceiptName").val(data.receiver);
-					$("#ucellPhone").val(data.tel);
-					$("#uareaCode").val(data.mobile);
+    <script type="text/javascript" src="__PUBLIC__/uploadify/jquery.uploadify-3.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#file_upload').uploadify({
+                'swf': '__PUBLIC__/uploadify/uploadify.swf',
+                'uploader': '__PUBLIC__/uploadify/uploadify.php?uid=<{$Think.session.uid}>',
+                'buttonText': '上传图片'
 
-				},'json');
-
-  			})
-  		})
-  	</script>
-  	<script type="text/javascript">
-  		$(function(){		
-  			//地址省份province
-			//获取市
-			$("#province").change(function(){
-
-				    var region_id = $(this).val();
-				    var url = "__URL__/getcity/region_id/"+region_id;
-					 $("#city").empty();
-					 $("#area").empty();
-				    var obj = $(this);
-					 $.get(url,function(data){
-		 				for(var i in data){
-		 			
-		 					$("#city").append('<option value="'+data[i].region_id+'">'+data[i].region_name+'</option>');
-		 				}
-							
-					 },'json');
-			})
-
-			$("#city").change(function(){
-				
-				    var region_id = $(this).val();
-				    var url = "__URL__/getarea/region_id/"+region_id;
-				    var obj = $(this);
-					 $.get(url,function(data){
-		 				for(var i in data){
-		 						
-		 					$("#area").append('<option value="'+data[i].region_id+'">'+data[i].region_name+'</option>');
-		 				}
-							
-					 },'json');
-			})
-
-			//地址省份province
-			//获取市
-			$("#sheng").change(function(){
-
-				    var region_id = $(this).val();
-				    var url = "__URL__/getcity/region_id/"+region_id;
-					 $("#shi").empty();
-					 $("#qu").empty();
-				    var obj = $(this);
-					 $.get(url,function(data){
-					 				for(var i in data){
-					 			
-					 						$("#shi").append('<option value="'+data[i].region_id+'">'+data[i].region_name+'</option>');
-					 				}
-							
-					 },'json');
-			})
-
-			$("#shi").change(function(){
-				
-				    var region_id = $(this).val();
-				    var url = "__URL__/getarea/region_id/"+region_id;
-				    var obj = $(this);
-					 $.get(url,function(data){
-					 				for(var i in data){
-					 						
-					 						$("#qu").append('<option value="'+data[i].region_id+'">'+data[i].region_name+'</option>');
-					 				}
-							
-					 },'json');
-			})
-			//地址省份province
-			//获取市
-			$("#xprovence").change(function(){
-
-				    var region_id = $(this).val();
-				    var url = "__URL__/getcity/region_id/"+region_id;
-					 $("#xcity").empty();
-					 $("#xcounty").empty();
-				    var obj = $(this);
-					 $.get(url,function(data){
-					 				for(var i in data){
-					 			
-					 						$("#xcity").append('<option value="'+data[i].region_name+'">'+data[i].region_name+'</option>');
-					 				}
-							
-					 },'json');
-			})
-
-			$("#xcity").change(function(){
-				
-				    var region_id = $(this).val();
-				    var url = "__URL__/getarea/region_id/"+region_id;
-				    var obj = $(this);
-					 $.get(url,function(data){
-					 				for(var i in data){
-					 						
-					 						$("#xcounty").append('<option value="'+data[i].region_name+'">'+data[i].region_name+'</option>');
-					 				}
-							
-					 },'json');
-			})
-	})
-  	</script>
-  	<script type="text/javascript">
-  		$(function(){
-  			$('#sendvi').click(function(){
-  				var phone = $('#cellphones').val();
-  				var verify = Math.floor(Math.random()*100000);
-
-  				$.get("http://121.199.16.178/webservice/sms.php?method=Submit&account=cf_gx4852&password=123456&mobile="+phone+"&content=您的验证码是："+verify+"。请不要把验证码泄露给其他人。", function(msg){
-					alert(msg);
-				},'json');
-
-				$.get("__APP__/Personal/phoneverify/verify/"+verify,function(){
-
-				},'json')
-  			})
-  			$('#query').click(function(){
-
-  				var verify = $("#verify").val();
-  				$.get("__APP__/Personal/isVerify/verify/"+verify,function(date){
-  					if(date == 'true'){
-  						alert('验证成功');
-  					}else{
-  						alert('验证失败');
-  					}
-  				})
-  			})
-  		})
-  	</script>
-	<script>
-	$(function(){
-        $("#person-relation").hide();
-        $("#person-notice").hide();
-		$("#a-info").click(function(){
-			$("#person-info").css("display", "block");
-			$("#person-notice,#person-relation,#person-safe, #person-address, #person-goods, #person-footprint, #person-collect").css("display", "none");
-		});
-        $("#a-referee").click(function(){
-            $("#person-relation").css("display", "block");
-            $("#person-notice,#person-safe,#person-info, #person-address, #person-goods, #person-footprint, #person-collect").css("display", "none");
+                // Your options here
+            });
         });
-        $("#a-notice").click(function(){
-            $("#person-notice").css("display", "block");
-            $("#person-relation,#person-safe,#person-info, #person-address, #person-goods, #person-footprint, #person-collect").css("display", "none");
-        });
-		$("#a-safe").click(function(){
-			$("#person-safe").css("display", "block");
-			$("#person-notice,#person-relation,#person-info, #person-address, #person-goods, #person-footprint, #person-collect").css("display", "none");
-		});
-		$("#a-address").click(function(){
-			$("#person-address").css("display", "block");
-			$("#person-notice,#person-relation,#person-info, #person-safe, #person-goods, #person-footprint, #person-collect").css("display", "none");
-		});
-		$("#a-goods").click(function(){
-			$("#person-goods").css("display", "block");
-			$("#person-notice,#person-relation,#person-info, #person-safe, #person-address, #person-footprint, #person-collect").css("display", "none");
-		});
-		$("#a-footprint").click(function(){
-			$("#person-footprint").css("display", "block");
-			$("#person-notice,#person-relation,#person-info, #person-safe, #person-address, #person-goods, #person-collect").css("display", "none");
-		});
-		$("#a-collect").click(function(){
-			$("#person-collect").css("display", "block");
-			$("#person-notice,#person-relation,#person-info, #person-safe, #person-address, #person-goods, #person-footprint").css("display", "none");
-		});
-	})
-	</script>
+    </script>
+    <script type="text/javascript">
+        $(function(){
+            $('.upda').click(function(){
+                var id = this.id;
+                $.get("__APP__/Personal/addressFind/id/"+id,function(data){
+
+                    $("#xprovence").append("<option value='"+data.province+"'>"+data.province+"</option>")
+                    $("#xcity").append('<option value="'+data.city+'">'+data.city+'</option>');
+                    $("#xcounty").append('<option value="'+data.area+'">'+data.area+'</option>');
+                    $("#upostcode").val(data.postcode);
+                    $("#ustreet").val(data.street);
+                    $("#ureceiptName").val(data.receiver);
+                    $("#ucellPhone").val(data.tel);
+                    $("#uareaCode").val(data.mobile);
+
+                },'json');
+
+            })
+        })
+    </script>
+    <script type="text/javascript">
+        $(function(){
+            //地址省份province
+            //获取市
+            $("#province").change(function(){
+
+                var region_id = $(this).val();
+                var url = "__URL__/getcity/region_id/"+region_id;
+                $("#city").empty();
+                $("#area").empty();
+                var obj = $(this);
+                $.get(url,function(data){
+                    for(var i in data){
+
+                        $("#city").append('<option value="'+data[i].region_id+'">'+data[i].region_name+'</option>');
+                    }
+
+                },'json');
+            })
+
+            $("#city").change(function(){
+
+                var region_id = $(this).val();
+                var url = "__URL__/getarea/region_id/"+region_id;
+                var obj = $(this);
+                $.get(url,function(data){
+                    for(var i in data){
+
+                        $("#area").append('<option value="'+data[i].region_id+'">'+data[i].region_name+'</option>');
+                    }
+
+                },'json');
+            })
+
+            //地址省份province
+            //获取市
+            $("#sheng").change(function(){
+
+                var region_id = $(this).val();
+                var url = "__URL__/getcity/region_id/"+region_id;
+                $("#shi").empty();
+                $("#qu").empty();
+                var obj = $(this);
+                $.get(url,function(data){
+                    for(var i in data){
+
+                        $("#shi").append('<option value="'+data[i].region_id+'">'+data[i].region_name+'</option>');
+                    }
+
+                },'json');
+            })
+
+            $("#shi").change(function(){
+
+                var region_id = $(this).val();
+                var url = "__URL__/getarea/region_id/"+region_id;
+                var obj = $(this);
+                $.get(url,function(data){
+                    for(var i in data){
+
+                        $("#qu").append('<option value="'+data[i].region_id+'">'+data[i].region_name+'</option>');
+                    }
+
+                },'json');
+            })
+            //地址省份province
+            //获取市
+            $("#xprovence").change(function(){
+
+                var region_id = $(this).val();
+                var url = "__URL__/getcity/region_id/"+region_id;
+                $("#xcity").empty();
+                $("#xcounty").empty();
+                var obj = $(this);
+                $.get(url,function(data){
+                    for(var i in data){
+
+                        $("#xcity").append('<option value="'+data[i].region_name+'">'+data[i].region_name+'</option>');
+                    }
+
+                },'json');
+            })
+
+            $("#xcity").change(function(){
+
+                var region_id = $(this).val();
+                var url = "__URL__/getarea/region_id/"+region_id;
+                var obj = $(this);
+                $.get(url,function(data){
+                    for(var i in data){
+
+                        $("#xcounty").append('<option value="'+data[i].region_name+'">'+data[i].region_name+'</option>');
+                    }
+
+                },'json');
+            })
+        })
+    </script>
+    <script type="text/javascript">
+        $(function(){
+            $('#sendvi').click(function(){
+                var phone = $('#cellphones').val();
+                var verify = Math.floor(Math.random()*100000);
+
+                $.get("http://121.199.16.178/webservice/sms.php?method=Submit&account=cf_gx4852&password=123456&mobile="+phone+"&content=您的验证码是："+verify+"。请不要把验证码泄露给其他人。",function(msg){
+                    alert(msg);
+                },'json');
+
+                $.get("__APP__/Personal/phoneverify/verify/"+verify,function(){
+
+                },'json')
+            })
+            $('#query').click(function(){
+
+                var verify = $("#verify").val();
+                $.get("__APP__/Personal/isVerify/verify/"+verify,function(date){
+                    if(date == 'true'){
+                        alert('验证成功');
+                    }else{
+                        alert('验证失败');
+                    }
+                })
+            })
+        })
+    </script>
+    <script>
+        $(function(){
+            $("#person-relation,#person-leveUp,#person-notice").hide();
+            $("#a-info").click(function(){
+                $("#person-info").css("display","block");
+                $("#person-leveUp,#person-notice,#person-relation,#person-safe, #person-address, #person-goods, #person-footprint, #person-collect").css("display","none");
+            });
+            $("#a-referee").click(function(){
+                $("#person-relation").css("display","block");
+                $("#person-leveUp,#person-notice,#person-safe,#person-info, #person-address, #person-goods, #person-footprint, #person-collect").css("display","none");
+            });
+            $("#a-notice").click(function(){
+                $("#person-notice").css("display","block");
+                $("#person-leveUp,#person-relation,#person-safe,#person-info, #person-address, #person-goods, #person-footprint, #person-collect").css("display","none");
+            });
+            $("#a-leveUp").click(function(){
+                $("#person-leveUp").css("display","block");
+                $("#person-notice,#person-relation,#person-safe,#person-info, #person-address, #person-goods, #person-footprint, #person-collect").css("display","none");
+            });
+            $("#a-safe").click(function(){
+                $("#person-safe").css("display","block");
+                $("#person-leveUp,#person-notice,#person-relation,#person-info, #person-address, #person-goods, #person-footprint, #person-collect").css("display","none");
+            });
+            $("#a-address").click(function(){
+                $("#person-address").css("display","block");
+                $("#person-leveUp,#person-notice,#person-relation,#person-info, #person-safe, #person-goods, #person-footprint, #person-collect").css("display","none");
+            });
+            $("#a-goods").click(function(){
+                $("#person-goods").css("display","block");
+                $("#person-leveUp,#person-notice,#person-relation,#person-info, #person-safe, #person-address, #person-footprint, #person-collect").css("display","none");
+            });
+            $("#a-footprint").click(function(){
+                $("#person-footprint").css("display","block");
+                $("#person-leveUp,#person-notice,#person-relation,#person-info, #person-safe, #person-address, #person-goods, #person-collect").css("display","none");
+            });
+            $("#a-collect").click(function(){
+                $("#person-collect").css("display","block");
+                $("#person-leveUp,#person-notice,#person-relation,#person-info, #person-safe, #person-address, #person-goods, #person-footprint").css("display","none");
+            });
+        })
+    </script>
 </head>
 <body>
 	<!-- PAGE WRAPPER 页面封装 -->
@@ -343,10 +346,10 @@
 
 		<!-- SITE MAIN CONTENT 站点主要内容 -->
 		<main id="main-content" role="main">
-		
+
 			<div class="container">
 				<div class="row">
-					
+
 					<div class="m-t-b clearfix">
 						<!-- SIDEBAR 侧边栏 -->
 						<aside class="col-xs-12 col-sm-4 col-md-3">
@@ -356,12 +359,13 @@
 									<li><a style="cursor: pointer;" id="a-info">个人信息</a></li>
 									<li><a style="cursor: pointer;" id="a-referee">直推和团购</a></li>
 									<li><a style="cursor: pointer;" id="a-notice">消息提醒</a></li>
+									<li><a style="cursor: pointer;" id="a-leveUp">升级检测</a></li>
 									<li><a style="cursor: pointer;" id="a-safe">安全中心</a></li>
 									<li><a style="cursor: pointer;" id="a-address">收货地址</a></li>
 									<li><a style="cursor: pointer;" id="a-goods">已买到的宝贝</a></li>
 								</ul>
 							</section>
-								
+
 							<!-- PROMO 商品广告 -->
 							<div class="promo inverse-background" style="background: url('__PUBLIC__/index/images/demo/Barn-Dress-Girl_t.jpg') no-repeat; background-size: auto 100%;">
 								<div class="inner text-center np">
@@ -376,7 +380,7 @@
 							<!-- // PROMO 商品广告 -->
 						</aside>
 						<!-- // SIDEBAR 侧边栏 -->
-						
+
 						<section class="col-xs-12 col-sm-8 col-md-9">
 							<div class="panel-group checkout person-info" id="person-info">
 								<div class="panel panel-default">
@@ -393,14 +397,24 @@
 												<tr>
 													<td style="width: 20%;"><strong>积分币</strong></td>
 													<td><{$data.jfyd.jifen}></td>
+													<td>
+														<a href="">去消费</a>
+													</td>
 												</tr>
 												<tr>
 													<td>易得币</td>
 													<td><{$data.jfyd.yide}></td>
+													<td>
+														<a href="">去消费</a>
+													</td>
 												</tr>
 												<tr>
 													<td>现金</td>
 													<td><{$data.jfyd.cash}></td>
+													<td>
+														<a href="">充值</a>  /
+														<a href="">提现</a>
+													</td>
 												</tr>
 											</table>
 											<div class="clearfix"></div>
@@ -514,7 +528,7 @@
 														<div>
 														<img src="__PUBLIC__/Uploads/headpic/<{$data.user.headpic}>" title="头像" alt="当前头像" class="img100px" id="nowpic">
 														<div id="bg"></div>
-														<a href=""name="file_upload" id="file_upload"></a>
+														<a href="" name="file_upload" id="file_upload"></a>
 													</div>
 													</div>
 
@@ -670,6 +684,24 @@
 													<else />
 													<td colspan="3" class="text-center">暂无数据</td>
 												</notempty>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="panel-group checkout person-info" id="person-leveUp">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse2">
+												升级检测
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse">
+										<div class="panel-body">
+											<table class="table table-border table-hover text-center text-center">
+												开发中...
 											</table>
 										</div>
 									</div>
@@ -951,12 +983,12 @@
 													</div>
 													<div class="col-md-3">
 														<select class="form-control select" id="xcity">
-														
+
 														</select>
 													</div>
 													<div class="col-md-3">
 														<select class="form-control select" id="xcounty">
-															
+
 														</select>
 													</div>
 												</div>
@@ -1099,7 +1131,7 @@
 													<{$o.ostatus}>
 												</div>
 											</div>
-										
+
 										</div>
 									</div>
 								</foreach>
@@ -1142,7 +1174,7 @@
 					</div>
 				</div>
 			</div>
-		
+
 		</main>
 		<!-- // SITE MAIN CONTENT 网站主要内容 -->
 	<!-- 引入页脚文件 -->
@@ -1161,17 +1193,17 @@
 				speed: $this.data('speed') + 'ms',
 				delay: $this.data('start') + 'ms'
 			};
-			if ( configs.left == 'center' && $this.width() !== 0 ) 
+			if ( configs.left == 'center' && $this.width() !== 0 )
 			{
 				configs.left = ( $slider.width() - $this.width() ) / 2;
 			}
-			if ( configs.top == 'center' && $this.height() !== 0 ) 
+			if ( configs.top == 'center' && $this.height() !== 0 )
 			{
 				configs.top = ( $slider.height() - $this.height() ) / 2;
 			}
-			
+
 			$this.data('positions', configs);
-			
+
 			$this.css({
 				'left': configs.left + 'px',
 				'top': configs.top + 'px',
@@ -1179,16 +1211,16 @@
 				'animation-delay': configs.delay
 			});
 		});
-		
+
 		$(window).on('resize', function() {
 			var wW = $(window).width(),
 				zoom = ( wW >= 1170 ) ? 1 : wW / 1349;
 			$('.flex-caption.gfc').css('zoom', zoom);
 		});
 		$(window).trigger('resize');
-		
-		
-		
+
+
+
 		$slider.imagesLoaded(function() {
 			$slider.flexslider({
 				animation: 'slide',
@@ -1206,7 +1238,7 @@
 						var animation = $(this).attr('data-animation');
 						$(this).removeClass(animation);
 					});
-					
+
 					flex_fix_pos(slider.animatingTo + 1);
 				},
 				after: function() {
@@ -1218,13 +1250,13 @@
 				}
 			});
 		});
-		
-		
+
+
 		function flex_fix_pos(i) {
 			$slider.find('.slides > li:eq(' + i + ') .gfc').each(function() {
 				var $this = $(this),
 					pos = $(this).data('positions');
-					
+
 				if ( pos.left == 'center' )
 				{
 					pos.left = ( $slider.width() - $this.width() ) / 2;

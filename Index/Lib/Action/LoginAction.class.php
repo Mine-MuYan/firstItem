@@ -49,7 +49,8 @@
 					if($_GET['username']){
 						$this->ajaxReturn("success");
 					}else{
-						$this->success('验证成功','__APP__');							
+//						$this->success('验证成功','__APP__');
+                        $this -> redirect('Index/index');
 					}	
 				}elseif($data['ustatus'] == 2){
 					$this->error('请先激活账号');
