@@ -32,9 +32,11 @@ class RegpayAction extends Action {
     }
     
     public function test(){
-        $city = array('f','s');
-        $this -> sss($city);
+//        $city = array('f','s');
+//        $this -> sss($city);
         
+        
+        pp(checkUserBouns(76));
         $this -> display();
     }
     

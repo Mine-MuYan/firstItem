@@ -260,6 +260,21 @@ function regGiveUserBonus($id){
             $logData['type'] = 4;
             break;
     }
+    /*
+    $bounsValue = checkUserBouns($id);
+    $confExtra  = getUserConfig(12);
+    switch($bounsValue){
+        case 0:
+            break;
+        case 1:
+            $money = $confExtra;
+            break;
+        case 2:
+            $money = 100;
+            break;
+        
+    }
+    */
     //写入记录表
     $res0   = $tbCoinLog -> add($logData);
     //推荐人发放奖励
@@ -405,6 +420,7 @@ function refereeCounts($id,$what,$field = '*'){
             $res = $re;
             break;
         case 'uid':
+            $ids = [];
             foreach($re as $k => $v){
                 $ids[] = $re[$k]['uid'];
             }
@@ -455,16 +471,19 @@ function getNotice($id){
  * @return int  0：没有资格；1：有；2：有并且可以享受加权分红；3：代码错误
  */
 function checkUserBouns($id){
-    $count = refereeCount($id,'count');
-    $total = refereeCounts($id,'count');
+    $count      = refereeCount($id,'count');
+    $total      = refereeCounts($id,'count');
+    $configVal1 = getUserConfig(9);
+    $configVal2 = getUserConfig(10);
+    $configVal3 = getUserConfig(11);
     switch($count){
-        case $count < 5 :
+        case $count < $configVal1 :
             $re = 0;
             break;
-        case $count >= 5 && $count < 10 :
+        case $count >= $configVal1 && $count < $configVal2 :
             $re = 1;
             break;
-        case $count >= 10 && $total >= 30:
+        case $count >= $configVal2 && $total >= $configVal3:
             $re = 2;
             break;
         default:

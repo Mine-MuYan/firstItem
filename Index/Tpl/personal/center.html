@@ -50,95 +50,110 @@
 	<link rel="stylesheet" href="__PUBLIC__/index/css/responsive.css">
 	<!-- // 响应式 css 文件 -->
 
-	<style type="text/css">
-		#file_upload{
-			position:relative;
-			top:-50px;
-			margin:0px auto;
-			text-align:center;
-			color:white;
-			font-weight:bold;
-		}
-		#bg{
-			width:100%;
-			height:20px;
-			background:black;
-			filter:alpha(opacity=50);
-			opacity:0.5;
-			position:relative;
-			top:-25px;
-		}
-		/* 格式化div使默认隐藏 */
-		#person-safe, #person-footprint, #person-address, #person-goods, #person-order, #person-collect
-		{
-			display: none;
-		}
+    <style type="text/css">
+        #file_upload {
+            position: relative;
+            top: -50px;
+            margin: 0px auto;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
 
-		/* 定义select 选择器，是背景颜色和页面背景色统一*/
-		.select, .text {
-				background:#EEE;
-			}
-		/* 定义file 控件格式，使垂直居中 */
-		.file {
-				display: block;
-				padding-top: 4px;
-			}
-		/* 定义图片 选择器，使宽高固定 */
-		.img40px {
-			width: 40px;
-			height: 40px;
-			}
-		.img60px {
-			width: 60px;
-			height: 60px;
-		}
-		.img80px {
-			width: 80px;
-			height: 80px;
-		}
-		/* 定义固定高度div */
-		.h20px {
-			height: 20px;
-			}
-		.h30px {
-				height: 30px;
-				font-size: 18px;
-			}
-		/* 定义error警示色 */
-		.error {
-				color: #F03 ;
-			}
-		/* 定义灰色背景色 */
-		.back-grey {
-				background: #F2F2F2;
-			}
-		/* 格式化所有padding和marign */
-		.nopm {
-				margin: 0;
-				padding: 0
-			}
-		.nop {
-			padding: 0;
-		}
-		.nom {
-			margin: 0;
-		}
-		/* 重定义clearfix使具有高度 */
-		.clearfix{
-				height: 12px;
-			}
-		/* 重定义th标签 */
-		th {
-  			border-bottom: 2px solid #DDDDDD;
-    		vertical-align: bottom;
-			font-size: 14px;
-			font-weight: 600;
-		}
-		/* 重新定义操作a链接 */
-		.a-handle:link, .a-handle-visited, a-handle:hover, .a-handle:active, .a-handle {
-				color: #00F;
-			}
-	</style>
+        #bg {
+            width: 100%;
+            height: 20px;
+            background: black;
+            filter: alpha(opacity=50);
+            opacity: 0.5;
+            position: relative;
+            top: -25px;
+        }
+
+        /* 格式化div使默认隐藏 */
+        #person-safe, #person-footprint, #person-address, #person-goods, #person-order, #person-collect {
+            display: none;
+        }
+
+        /* 定义select 选择器，是背景颜色和页面背景色统一*/
+        .select, .text {
+            background: #EEE;
+        }
+
+        /* 定义file 控件格式，使垂直居中 */
+        .file {
+            display: block;
+            padding-top: 4px;
+        }
+
+        /* 定义图片 选择器，使宽高固定 */
+        .img40px {
+            width: 40px;
+            height: 40px;
+        }
+
+        .img60px {
+            width: 60px;
+            height: 60px;
+        }
+
+        .img80px {
+            width: 80px;
+            height: 80px;
+        }
+
+        /* 定义固定高度div */
+        .h20px {
+            height: 20px;
+        }
+
+        .h30px {
+            height: 30px;
+            font-size: 18px;
+        }
+
+        /* 定义error警示色 */
+        .error {
+            color: #F03;
+        }
+
+        /* 定义灰色背景色 */
+        .back-grey {
+            background: #F2F2F2;
+        }
+
+        /* 格式化所有padding和marign */
+        .nopm {
+            margin: 0;
+            padding: 0
+        }
+
+        .nop {
+            padding: 0;
+        }
+
+        .nom {
+            margin: 0;
+        }
+
+        /* 重定义clearfix使具有高度 */
+        .clearfix {
+            height: 12px;
+        }
+
+        /* 重定义th标签 */
+        th {
+            border-bottom: 2px solid #DDDDDD;
+            vertical-align: bottom;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* 重新定义操作a链接 */
+        .a-handle:link, .a-handle-visited, a-handle:hover, .a-handle:active, .a-handle {
+            color: #00F;
+        }
+    </style>
     <script type="text/javascript" src="__PUBLIC__/uploadify/jquery.uploadify-3.1.min.js"></script>
     <script type="text/javascript">
         $(function(){
@@ -157,7 +172,7 @@
                 var id = this.id;
                 $.get("__APP__/Personal/addressFind/id/"+id,function(data){
 
-                    $("#xprovence").append("<option value='"+data.province+"'>"+data.province+"</option>")
+                    $("#xprovence").append("<option value='"+data.province+"'>"+data.province+"</option>");
                     $("#xcity").append('<option value="'+data.city+'">'+data.city+'</option>');
                     $("#xcounty").append('<option value="'+data.area+'">'+data.area+'</option>');
                     $("#upostcode").val(data.postcode);
@@ -189,7 +204,7 @@
                     }
 
                 },'json');
-            })
+            });
 
             $("#city").change(function(){
 
@@ -203,7 +218,7 @@
                     }
 
                 },'json');
-            })
+            });
 
             //地址省份province
             //获取市
@@ -221,7 +236,7 @@
                     }
 
                 },'json');
-            })
+            });
 
             $("#shi").change(function(){
 
@@ -235,12 +250,12 @@
                     }
 
                 },'json');
-            })
+            });
             //地址省份province
             //获取市
             $("#xprovence").change(function(){
 
-                var region_id = $(this).val();
+                var region_id = $(this).val();``;
                 var url = "__URL__/getcity/region_id/"+region_id;
                 $("#xcity").empty();
                 $("#xcounty").empty();
@@ -252,7 +267,7 @@
                     }
 
                 },'json');
-            })
+            });
 
             $("#xcity").change(function(){
 
@@ -282,7 +297,7 @@
                 $.get("__APP__/Personal/phoneverify/verify/"+verify,function(){
 
                 },'json')
-            })
+            });
             $('#query').click(function(){
 
                 var verify = $("#verify").val();
@@ -359,7 +374,7 @@
 									<li><a style="cursor: pointer;" id="a-info">个人信息</a></li>
 									<li><a style="cursor: pointer;" id="a-referee">直推和团购</a></li>
 									<li><a style="cursor: pointer;" id="a-notice">消息提醒</a></li>
-									<li><a style="cursor: pointer;" id="a-leveUp">升级检测</a></li>
+									<li><a style="cursor: pointer;" id="a-leveUp">分红说明</a></li>
 									<li><a style="cursor: pointer;" id="a-safe">安全中心</a></li>
 									<li><a style="cursor: pointer;" id="a-address">收货地址</a></li>
 									<li><a style="cursor: pointer;" id="a-goods">已买到的宝贝</a></li>
@@ -558,22 +573,26 @@
 									</div>
 									<div class="panel-collapse">
 										<div class="panel-body">
-											<table class="table table-border table-hover text-center text-center">
+											<table class="table table-bordered table-hover text-center text-center">
 												<thead>
-													<th class="text-center">用户名</th>
-													<th class="text-center">积分</th>
-													<th class="text-center">易得币</th>
-													<th class="text-center">现金</th>
-													<th class="text-center">注册时间</th>
+                                                    <tr>
+                                                        <th class="text-center">用户名</th>
+                                                        <th class="text-center">积分</th>
+                                                        <th class="text-center">易得币</th>
+                                                        <th class="text-center">现金</th>
+                                                        <th class="text-center">注册时间</th>
+                                                    </tr>
 												</thead>
 												<notempty name="refThis">
 													<volist name="refThis" id="v">
 														<tbody>
-															<td><{$v.username}></td>
-															<td><{$v.jifen}></td>
-															<td><{$v.yide}></td>
-															<td><{$v.cash}></td>
-															<td><{$v.regtime|date="Y-m-d H:i",###}></td>
+                                                            <tr>
+                                                                <td><{$v.username}></td>
+                                                                <td><{$v.jifen}></td>
+                                                                <td><{$v.yide}></td>
+                                                                <td><{$v.cash}></td>
+                                                                <td><{$v.regtime|date="Y-m-d H:i",###}></td>
+                                                            </tr>
 														</tbody>
 													</volist>
 													<else />
@@ -593,24 +612,28 @@
 									</div>
 									<div class="panel-collapse">
 										<div class="panel-body">
-											<table class="table table-border table-hover text-center text-center">
+											<table class="table table-bordered table-hover text-center text-center">
 												<thead>
-												<th class="text-center">用户名</th>
-												<th class="text-center">积分</th>
-												<th class="text-center">易得币</th>
-												<th class="text-center">现金</th>
-												<th class="text-center">推荐人</th>
-												<th class="text-center">注册时间</th>
+                                                <tr>
+                                                    <th class="text-center">用户名</th>
+                                                    <th class="text-center">积分</th>
+                                                    <th class="text-center">易得币</th>
+                                                    <th class="text-center">现金</th>
+                                                    <th class="text-center">推荐人</th>
+                                                    <th class="text-center">注册时间</th>
+                                                </tr>
 												</thead>
 												<notempty name="refOther">
 													<volist name="refOther" id="v">
 														<tbody>
+                                                        <tr>
 															<td><{$v.username}></td>
 															<td><{$v.jifen}></td>
 															<td><{$v.yide}></td>
 															<td><{$v.cash}></td>
 															<td><{$v.refName}></td>
 															<td><{$v.regtime|date="Y-m-d H:i",###}></td>
+                                                        </tr>
 														</tbody>
 													</volist>
 													<else />
@@ -632,21 +655,25 @@
 									</div>
 									<div class="panel-collapse">
 										<div class="panel-body">
-											<table class="table table-border table-hover text-center text-center">
+											<table class="table table-bordered table-hover text-center text-center">
 												<thead>
-													<th class="text-center">时间</th>
-													<th class="text-center">内容</th>
+                                                    <tr>
+													    <th class="text-center">时间</th>
+													    <th class="text-center">内容</th>
+                                                    </tr>
 												</thead>
-												<notempty name="notice">
-													<volist name="notice" id="v">
-													<tbody>
-														<td><{$v.time}></td>
-														<td><{$v.info}></td>
-													</tbody>
-													</volist>
-													<else />
-													<td colspan="2" class="text-center">暂无数据</td>
-												</notempty>
+                                                <tbody>
+                                                    <notempty name="notice">
+                                                        <volist name="notice" id="v">
+                                                            <tr>
+                                                                <td><{$v.time}></td>
+                                                                <td><{$v.info}></td>
+                                                            </tr>
+                                                        </volist>
+                                                        <else />
+                                                            <td colspan="2" class="text-center">暂无数据</td>
+                                                    </notempty>
+                                                </tbody>
 											</table>
 										</div>
 									</div>
@@ -661,24 +688,28 @@
 									</div>
 									<div class="panel-collapse">
 										<div class="panel-body">
-											<table class="table table-border table-hover text-center text-center">
+											<table class="table table-bordered table-hover text-center text-center">
 												<thead>
-												<th class="text-center">时间</th>
-												<th class="text-center">内容</th>
-												<th class="text-center">类型</th>
+                                                <tr>
+                                                    <th class="text-center">时间</th>
+                                                    <th class="text-center">内容</th>
+                                                    <th class="text-center">类型</th>
+                                                </tr>
 												</thead>
 												<notempty name="notices">
 													<volist name="notices" id="v">
-														<tbody>
-														<td><{$v.time}></td>
-														<td><{$v.info}></td>
-														<td>
-															<if condition="$v.type eq 1">注册
-																<elseif condition="$v.type eq 2" />充值
-																<elseif condition="$v.type eq 3" />提现
-																<else /> -
-															</if>
-														</td>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><{$v.time}></td>
+                                                                <td><{$v.info}></td>
+                                                                <td>
+                                                                    <if condition="$v.type eq 1">注册
+                                                                        <elseif condition="$v.type eq 2" />充值
+                                                                        <elseif condition="$v.type eq 3" />提现
+                                                                        <else /> -
+                                                                    </if>
+                                                                </td>
+                                                            </tr>
 														</tbody>
 													</volist>
 													<else />
@@ -694,14 +725,32 @@
 									<div class="panel-heading">
 										<h4 class="panel-title">
 											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse2">
-												升级检测
+												分红说明
 											</a>
 										</h4>
 									</div>
 									<div class="panel-collapse">
 										<div class="panel-body">
-											<table class="table table-border table-hover text-center text-center">
-												开发中...
+											<table class="table table-bordered table-hover text-center text-center">
+												<tr>
+                                                    <th class="text-center">序号</th>
+                                                    <th class="text-center">条件</th>
+                                                    <th class="text-center">福利</th>
+												</tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>直推5名会员</td>
+                                                    <td>每新增一名团购会员，补贴100元广告宣传津贴</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>直推10名会员且团购人数达30人</td>
+                                                    <td>可享受公司在全国电动汽车销售业绩加权分红，每月底结算（公司每月取销售车辆每台200元参加分红）</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td colspan="2">购车前100名团购会员，在完成定车交易之日起，每天补贴30元易得币，累计补贴至3000元为止。</td>
+                                                </tr>
 											</table>
 										</div>
 									</div>
