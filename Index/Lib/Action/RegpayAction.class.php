@@ -35,8 +35,8 @@ class RegpayAction extends Action {
 //        $city = array('f','s');
 //        $this -> sss($city);
         
-        
-        pp(checkUserBouns(76));
+        pp(getUserReferees(81));
+        pp(getUserReferee(98));
         $this -> display();
     }
     
@@ -49,7 +49,6 @@ class RegpayAction extends Action {
             foreach($city as $k => $v){
                 $map['username'] = array('like',"%$city[$k]%");
                 $reUser[] = $user -> where($map) -> select();
-                
             }
         }
         return $reUser;

@@ -151,7 +151,8 @@ function getUserClass($id,$class){
 /**
  * 查找此用户的相关上级
  * @param $id       integer     用户ID
- * @return array    数组：原始会员，一级会员，二级会员
+ * @return mixed/array    数组：原始会员，一级会员，二级会员
+ * 推荐人的会员等级是二级或者三级，只找到上两级即可。
  */
 function getUserReferees($id){
     $refID      = getUserReferee($id);              //获取推荐人ID
@@ -175,8 +176,7 @@ function getUserReferees($id){
         case 3:
             $referee1   = getUserReferee($refID);
             $referee2   = getUserReferee($referee1);
-            $referee3   = getUserReferee($referee2);
-            $referees   = $referee3.','.$referee2.','.$referee1;
+            $referees   = $referee2.','.$referee1.','.$refID;
             $referee    = explode(',',$referees);
             break;
         case -1 :
@@ -222,59 +222,59 @@ function regGiveUserBonus($id){
     $username0  = getUser($referee[0],'username');
     $username1  = getUser($referee[1],'username');
     $username2  = getUser($referee[2],'username');
-    $logData = array(
+    $logData    = array(
         'uid'   => $id,
         'time'  => date('Y-m-d H:i:s'),
     );
+    $bounsValue = checkUserBouns($id);
+    $extraMon1  = $bounsValue*$configMon1;
+    $extraMon2  = $bounsValue*$configMon2;
     switch($count){
         case 0:
-            $bouns00 = 0;
-            $bouns01 = 0;
+            $bouns00    = 0;
+            $bouns01    = 0;
             break;
         case 1:
-            $username0 = getUser($referee,'username');
-            $bouns00 = $configVal1*$configMon1;
-            $bouns01 = $configVal1*$configMon2;
+            $username0  = getUser($referee,'username');
+            $bouns00    = ($configVal1+$bounsValue)*$configMon1;
+            $bouns01    = ($configVal1+$bounsValue)*$configMon2;
             $logData['uids'] = $referee;
-            $logData['info'] = $username.'注册成功，奖励您（'.$username0.'）现金'.$bouns00.'，积分'.$bouns01.'。';
+            if($extraMon1 == 0){
+                $logData['info'] = $username.'注册成功，奖励邀请人（'.$username0.'）现金'.$bouns00.'，积分'.$bouns01.'。';
+            }else{
+                $logData['info'] = $username.'注册成功，奖励邀请人（'.$username0.'）现金'.$bouns00.'，积分'.$bouns01.'，额外奖励现金'.$extraMon1.'，积分'.$extraMon2.'。';
+            }
             $logData['type'] = 2;
             break;
         case 2:
-            $bouns00 = $configVal2*$configMon1;
-            $bouns01 = $configVal2*$configMon2;
-            $bouns11 = $configVal1*$configMon1;
-            $bouns12 = $configVal1*$configMon2;
+            $bouns00    = ($configVal2+$bounsValue)*$configMon1;
+            $bouns01    = ($configVal2+$bounsValue)*$configMon2;
+            $bouns11    = ($configVal1+$bounsValue)*$configMon1;
+            $bouns12    = ($configVal1+$bounsValue)*$configMon2;
             $logData['uids'] = $referee[0].','.$referee[1];
-            $logData['info'] = $username.'注册成功，奖励原始会员'.$username0.'现金'.$bouns00.'，积分'.$bouns01.',奖励您（'.$username1.'）现金'.$bouns11.'，积分'.$bouns12.'。';
+            if($extraMon1 == 0){
+                $logData['info'] = $username.'注册成功，奖励原始会员'.$username0.'现金'.$bouns00.'，积分'.$bouns01.',奖励邀请人（'.$username1.'）现金'.$bouns11.'，积分'.$bouns12.'。';
+            }else{
+                $logData['info'] = $username.'注册成功，奖励原始会员'.$username0.'现金'.$bouns00.'，积分'.$bouns01.',奖励邀请人（'.$username1.'）现金'.$bouns11.'，积分'.$bouns12.'，额外奖励邀请人现金'.$extraMon1.'，积分'.$extraMon2.'。';
+            }
             $logData['type'] = 3;
             break;
         case 3:
-            $bouns00 = $configVal3*$configMon1;
-            $bouns01 = $configVal3*$configMon2;
-            $bouns11 = $configVal2*$configMon1;
-            $bouns12 = $configVal2*$configMon2;
-            $bouns21 = $configVal1*$configMon1;
-            $bouns22 = $configVal1*$configMon2;
+            $bouns00    = ($configVal3+$bounsValue)*$configMon1;
+            $bouns01    = ($configVal3+$bounsValue)*$configMon2;
+            $bouns11    = ($configVal2+$bounsValue)*$configMon1;
+            $bouns12    = ($configVal2+$bounsValue)*$configMon2;
+            $bouns21    = ($configVal1+$bounsValue)*$configMon1;
+            $bouns22    = ($configVal1+$bounsValue)*$configMon2;
             $logData['uids'] = $referee[0].','.$referee[1].','.$referee[2];
-            $logData['info'] = $username.'注册成功，奖励一级会员'.$username0.'现金'.$bouns00.'，积分'.$bouns01.',奖励二级会员'.$username1.'现金'.$bouns11.'，积分'.$bouns12.',奖励您（'.$username2.'）现金'.$bouns21.'，积分'.$bouns22.'。';
+            if($extraMon1 == 0){
+                $logData['info'] = $username.'注册成功，奖励一级会员'.$username0.'现金'.$bouns00.'，积分'.$bouns01.',奖励二级会员'.$username1.'现金'.$bouns11.'，积分'.$bouns12.',奖励邀请人（'.$username2.'）现金'.$bouns21.'，积分'.$bouns22.'。';
+            }else{
+                $logData['info'] = $username.'注册成功，奖励一级会员'.$username0.'现金'.$bouns00.'，积分'.$bouns01.',奖励二级会员'.$username1.'现金'.$bouns11.'，积分'.$bouns12.',奖励邀请人（'.$username2.'）现金'.$bouns21.'，积分'.$bouns22.'，额外奖励邀请人现金'.$extraMon1.'，积分'.$extraMon2.'。';
+            }
             $logData['type'] = 4;
             break;
     }
-    /*
-    $bounsValue = checkUserBouns($id);
-    $confExtra  = getUserConfig(12);
-    switch($bounsValue){
-        case 0:
-            break;
-        case 1:
-            $money = $confExtra;
-            break;
-        case 2:
-            $money = 100;
-            break;
-        
-    }
-    */
     //写入记录表
     $res0   = $tbCoinLog -> add($logData);
     //推荐人发放奖励
@@ -288,15 +288,15 @@ function regGiveUserBonus($id){
     $re32   = $tbUserCoin -> where("uid = $referee[2]") -> setInc('jifen',$bouns22);
     if((($re00 && $re01) || ($re11 && $re12) || ($re21 && $re22) || ($re31 && $re32))){
         if($res0){
+//            pp('奖励发放成功，且记录已写入','1');
             return true;
-//        pp('奖励发放成功，且记录已写入');
         }else{
+//            pp('奖励发放成功，但记录写入失败','2');
             return false;
-//        pp('奖励发放成功，但记录写入失败');
         }
     }else{
+//        pp('奖励发放失败','3');
         return false;
-//        pp('奖励发放失败');
     }
 }
 
@@ -327,11 +327,11 @@ function regInsertRelation($id){
     //推荐人
     $re = $tbUserRelation -> where("uid = $id") -> save($data);
     if($re){
-        return true;
 //        pp('构建关系成功');
+        return true;
     }else{
-        return false;
 //        pp('构建关系失败');
+        return false;
     }
 }
 
@@ -358,11 +358,11 @@ function regInsertClass($id){
     }
     $re = $tbUser -> where("id = $id") -> save($data);
     if($re){
-        return true;
 //        pp('写入用户等级成功');
+        return true;
     }else{
-        return false;
 //        pp('写入用户等级失败');
+        return false;
     }
 }
 
@@ -396,9 +396,33 @@ function refereeCount($id,$what){
                 $res = '参数错误';
         }
     }else{
-        $res = '';
+        switch($what){
+            case 'count':
+                $res = 0;
+                break;
+            case 'select':
+                $res = '';
+                break;
+            case 'ssss':
+                $res = '';
+                break;
+            default:
+                $res = '参数错误';
+        }
     }
     return $res;
+}
+
+
+/**
+ * 获取此用户的推荐人，一共推荐了多少人
+ * @param $id   integer     用户ID
+ * @return int|mixed|string
+ */
+function getRefereeCount($id){
+    $ref        = getUserReferee($id);
+    $refCount   = refereeCount($ref,'count');
+    return $refCount;
 }
 
 
@@ -468,26 +492,23 @@ function getNotice($id){
 /**
  * 检测用户是否可以享受广告补贴（加权分红待完善）
  * @param $id   integer 推荐人ID
- * @return int  0：没有资格；1：有；2：有并且可以享受加权分红；3：代码错误
+ * @return int  0：没有资格，不奖励；1：有，奖励广告费；2：奖励广告费并且可以享受加权分红；3：代码错误
  */
 function checkUserBouns($id){
-    $count      = refereeCount($id,'count');
+    $count      = getRefereeCount($id);
     $total      = refereeCounts($id,'count');
     $configVal1 = getUserConfig(9);
     $configVal2 = getUserConfig(10);
     $configVal3 = getUserConfig(11);
-    switch($count){
-        case $count < $configVal1 :
-            $re = 0;
-            break;
-        case $count >= $configVal1 && $count < $configVal2 :
-            $re = 1;
-            break;
-        case $count >= $configVal2 && $total >= $configVal3:
-            $re = 2;
-            break;
-        default:
-            $re = 3;
+    $confExtra  = getUserConfig(12);    //广告费
+    if($count < $configVal1){
+        $re = 0;
+    }elseif($count >= $configVal1 && $count < $configVal2 ){
+        $re = $confExtra;
+    }elseif($count >= $configVal2 && $total >= $configVal3){
+        $re = $confExtra + 1;
+    }else{
+        $re = 0;
     }
     return $re;
 }

@@ -62,22 +62,22 @@ class RegisterAction extends Action{
                             $this -> assign('waitSecond','3');
                             $this -> success('注册成功,快去登陆吧','__APP__/Index/index');
                         }
-                        /* using when debug
-                         * using when debug
+                        /* using when debugging
+                         * using when debugging
                         elseif(!$reRela){
-                            $this -> error('关系表写入失败','__APP__/Register/register');
+                            pp('关系表写入失败','11');
                         }elseif(!$reInfo){
-                            $this -> error('用户信息表写入失败','__APP__/Register/register');
+                            pp('用户信息表写入失败','12');
                         }elseif(!$reJifen){
-                            $this -> error('积分表写入失败','__APP__/Register/register');
+                            pp('积分表写入失败','13');
                         }elseif(!$reGiveBouns){
-                            $this -> error('推荐人奖励发放失败','__APP__/Register/register');
+                            pp('推荐人奖励发放失败','14');
                         }elseif(!$reInsertRelation){
-                            $this -> error('关系构建失败','__APP__/Register/register');
+                            pp('关系构建失败','15');
                         }elseif(!$reInsertClass){
-                            $this -> error('用户等级写入失败','__APP__/Register/register');
+                            pp('用户等级写入失败','16');
                         }elseif(!$reRegNotice){
-                            $this -> error('注册消息写入失败','__APP__/Register/register');
+                            pp('注册消息写入失败','17');
                         }
                         */
                         else{

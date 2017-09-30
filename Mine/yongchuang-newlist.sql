@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 100125
 File Encoding         : 65001
 
-Date: 2017-09-29 14:35:17
+Date: 2017-09-30 15:32:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -64,477 +64,6 @@ CREATE TABLE `mss_admin_log` (
 -- ----------------------------
 -- Records of mss_admin_log
 -- ----------------------------
-INSERT INTO `mss_admin_log` VALUES ('2296', '1500471499', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2295', '1500471344', '1', '管理员admin查看了友情链接列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2294', '1500471274', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2293', '1500471264', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2292', '1500471022', '1', '管理员admin查看了网站配置', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2291', '1500471019', '1', '管理员admin查看了友情链接列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2290', '1500470998', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2289', '1500470934', '1', '管理员admin查看了网站配置', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2288', '1500470881', '1', '管理员admin查看了网站配置', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2287', '1500470879', '1', '管理员admin查看了网站配置', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2286', '1500470873', '1', '管理员admin查看了网站配置', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2285', '1500470831', '1', '管理员admin查看了网站配置', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2284', '1500470829', '1', '管理员admin查看了网站配置', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2283', '1500470828', '1', '管理员admin查看了友情链接列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2282', '1500470456', '1', '管理员admin查看了网站配置', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2281', '1500470454', '1', '管理员admin查看了友情链接列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2280', '1500470453', '1', '管理员admin查看了网站配置', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2279', '1500470451', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2278', '1500470449', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2277', '1500470440', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2276', '1500470429', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2275', '1500470427', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2274', '1500470424', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2273', '1500470421', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2272', '1500470222', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2271', '1500470209', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2270', '1500470207', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2269', '1500470201', '1', '管理员admin查看了友情链接列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2268', '1500470158', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2267', '1500470056', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2266', '1500469993', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2265', '1500469867', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2264', '1499410143', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2263', '1499410000', '1', '管理员admin查看了商品规格列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2262', '1499409992', '1', '管理员admin查看了友情链接列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2261', '1499409989', '1', '管理员admin查看了网站配置', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2260', '1499409970', '1', '管理员admin查看了商品规格列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2259', '1499409828', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2258', '1499327805', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2257', '1499327804', '1', '管理员admin修改了用户s371795639', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2256', '1499327797', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2255', '1499242422', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2254', '1499242410', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2253', '1499241993', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2252', '1499241844', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2251', '1499239388', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2250', '1499175932', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2249', '1499175473', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2248', '1499175171', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2247', '1499174703', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2246', '1499174184', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2245', '1499172967', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2244', '1499164136', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2243', '1499163532', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2242', '1499163299', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2241', '1499161684', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2240', '1499161677', '1', '管理员admin批量删除了用户', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2239', '1499161676', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2238', '1499161670', '1', '管理员admin批量删除了用户', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2237', '1499161665', '1', '管理员admin批量删除了用户', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2236', '1499161664', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2235', '1499161654', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2234', '1499161652', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2233', '1499161638', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2232', '1499161624', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2231', '1499161614', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2230', '1499161598', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2229', '1499161597', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2228', '1499161594', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2227', '1499161573', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2226', '1499161568', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2225', '1499161555', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2224', '1499161549', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2223', '1499161515', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2222', '1499161340', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2221', '1499161335', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2220', '1499161258', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2219', '1499161124', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2218', '1499161118', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2217', '1499160607', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2216', '1499160562', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2215', '1499155495', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2214', '1499155112', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2213', '1499154853', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2212', '1499154829', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2211', '1499154781', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2210', '1499154223', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2209', '1499154214', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2208', '1499154211', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2207', '1499154206', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2206', '1499154205', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2205', '1499154054', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2204', '1499154025', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2203', '1499153846', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2202', '1499153817', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2201', '1499153810', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2200', '1499153728', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2199', '1499153682', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2198', '1499153654', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2197', '1499153652', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2196', '1499153644', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2195', '1499153606', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2194', '1499153356', '1', '管理员admin查看了网站配置', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2193', '1499153320', '1', '管理员admin查看了网站配置', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2192', '1499153296', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2191', '1499153292', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2190', '1499153095', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2189', '1499153089', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2188', '1499152887', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2187', '1499152884', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2186', '1499152883', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2185', '1499152222', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2184', '1499152151', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2183', '1499152149', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2182', '1499152081', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2181', '1499152079', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2180', '1499152077', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2179', '1499152051', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2178', '1499152037', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2177', '1499152012', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2176', '1499152010', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2175', '1499152008', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2174', '1499151974', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2173', '1499151961', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2172', '1499151873', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2171', '1499151866', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2170', '1499151793', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2169', '1499151790', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2168', '1499151764', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2167', '1499151760', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2166', '1499151758', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2165', '1499151734', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2164', '1499151731', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2163', '1499151718', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2162', '1499151707', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2161', '1499151455', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2160', '1499151435', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2159', '1499151433', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2158', '1499150884', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2157', '1499150877', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2156', '1499150868', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2155', '1499150860', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2154', '1499150843', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2153', '1499150838', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2152', '1499150830', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2151', '1499150817', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2150', '1499150791', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2149', '1499150789', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2148', '1499150781', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2147', '1499150779', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2146', '1499150711', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2145', '1499150706', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2144', '1499150678', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2143', '1499150655', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2142', '1499150653', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2141', '1499150651', '1', '管理员admin修改了用户gx4852', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2140', '1499150646', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2139', '1499150644', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2138', '1499150637', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2137', '1499150635', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2136', '1499150620', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2135', '1499150533', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2134', '1499150526', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2133', '1499150474', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2132', '1499150472', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2131', '1499150367', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2130', '1499150330', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2129', '1499150265', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2128', '1499150198', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2127', '1499150178', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2126', '1499150177', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2125', '1499150143', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2124', '1499150115', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2123', '1499150114', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2122', '1499150089', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2121', '1499150086', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2120', '1499150085', '1', '管理员admin修改了用户s371795639', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2119', '1499150071', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2118', '1499150053', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2117', '1499150004', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2116', '1499150002', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2115', '1499150001', '1', '管理员admin修改了用户s3717956399', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2114', '1499149995', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2113', '1499149985', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2112', '1499149983', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2111', '1499149960', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2110', '1499149951', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2109', '1499149923', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2108', '1499149920', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2107', '1499149893', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2106', '1499149883', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2105', '1499149881', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2104', '1499149879', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2103', '1499149845', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2102', '1499149844', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2101', '1499149720', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2100', '1499149718', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2099', '1499149709', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2098', '1499149644', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2097', '1499149600', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2096', '1499149599', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2095', '1499149379', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2094', '1499149328', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2093', '1499149215', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2092', '1499148952', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2090', '1499148940', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2091', '1499148951', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2089', '1499148596', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2087', '1499148349', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2088', '1499148582', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2086', '1499148329', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2085', '1499148297', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2084', '1499148282', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2083', '1499148266', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2082', '1499148187', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2081', '1499148125', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2079', '1499148049', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2080', '1499148077', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2078', '1499148034', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2077', '1499148026', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2076', '1499147961', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2074', '1499147942', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2075', '1499147958', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2073', '1499147912', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2072', '1499147883', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2071', '1499147873', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2070', '1499147867', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2069', '1499147861', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2067', '1499147758', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2068', '1499147788', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2065', '1499147671', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2066', '1499147748', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2064', '1499147669', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2063', '1499147263', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2062', '1499147231', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2060', '1499147114', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2061', '1499147116', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2059', '1499147080', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2058', '1499147073', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2056', '1499147042', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2057', '1499147070', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2055', '1499146961', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2054', '1499146958', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2053', '1499146343', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2052', '1499146320', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2051', '1499146302', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2050', '1499146255', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2049', '1499146092', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2048', '1499146076', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2047', '1499144611', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2045', '1499144062', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2046', '1499144574', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2043', '1499143728', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2044', '1499144040', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2041', '1499143698', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2042', '1499143702', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2040', '1499142878', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2039', '1499063754', '1', '管理员admin查看了网站配置', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2038', '1499063752', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2036', '1499063355', '1', '管理员admin查看了友情链接列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2037', '1499063369', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2035', '1499063354', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2034', '1498987473', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2032', '1498987454', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2033', '1498987472', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2031', '1498987453', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2029', '1498987441', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2030', '1498987451', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2028', '1498987441', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2026', '1498987427', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2027', '1498987437', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2025', '1498987390', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2023', '1498987334', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2024', '1498987335', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2022', '1498987327', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2020', '1498987269', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2021', '1498987270', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2019', '1498987200', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2017', '1498987124', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2018', '1498987199', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2015', '1498987110', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2016', '1498987123', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2014', '1498987102', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2012', '1498987084', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2013', '1498987091', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2010', '1498987034', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2011', '1498987073', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2009', '1498987018', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2007', '1498986880', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2008', '1498987008', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2005', '1498986855', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2006', '1498986861', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2004', '1498986847', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2002', '1498986721', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2003', '1498986787', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2001', '1498986495', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2000', '1498986494', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1998', '1498986458', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1999', '1498986476', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1997', '1498985909', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1995', '1498985618', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1996', '1498985678', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1994', '1498985364', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1993', '1498983633', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1992', '1498983281', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1991', '1498983140', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1990', '1498983097', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1989', '1498983094', '1', '管理员admin查看了分类列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1988', '1498983086', '1', '管理员admin查看了商品规格列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1987', '1498982933', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1986', '1498982932', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1985', '1498982875', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1983', '1498982856', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1984', '1498982874', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1981', '1498982783', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1982', '1498982784', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1980', '1498982769', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1979', '1498982758', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1978', '1498982751', '1', '管理员admin查看了商品规格列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1977', '1498982747', '1', '管理员admin查看了分类列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1976', '1498982653', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1975', '1498982628', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1974', '1498982613', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1973', '1498982588', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1972', '1498982586', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1971', '1498982515', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1970', '1498982505', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1969', '1498982433', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1968', '1498982419', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1967', '1498982416', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1966', '1498982383', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1965', '1498982308', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1964', '1498982306', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1963', '1498982142', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1962', '1498982139', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1961', '1498982134', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1960', '1498982133', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1959', '1498982121', '1', '管理员admin添加了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1958', '1498982014', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1957', '1498981800', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1956', '1498981797', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1955', '1498981695', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1954', '1498981694', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1953', '1498981606', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1952', '1498981605', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1951', '1498981401', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1950', '1498981400', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1949', '1498980908', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1948', '1498980887', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1947', '1498980862', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1946', '1498980861', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1945', '1498980787', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1944', '1498980760', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1943', '1498980750', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1942', '1498980749', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1941', '1498980736', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1940', '1498980728', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1939', '1498980703', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1938', '1498980702', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1937', '1498980688', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1936', '1498980673', '1', '管理员admin修改了商品', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1935', '1498980659', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1934', '1498980151', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1933', '1498980063', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1932', '1498977566', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1931', '1498977563', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1930', '1498977479', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1929', '1498977440', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1928', '1498977439', '1', '管理员admin编辑了管理员r1', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1927', '1498977432', '1', '管理员admin编辑了管理员r1', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1926', '1498977424', '1', '管理员admin编辑了管理员r1', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1925', '1498977417', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1924', '1498977405', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1923', '1498977402', '1', '管理员admin查看了分成日志', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1922', '1498977239', '1', '管理员admin查看了分销设置', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1921', '1498977147', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1919', '1498976187', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1920', '1498977131', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1918', '1498976160', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1917', '1498976129', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1916', '1498975566', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1915', '1498975564', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1914', '1498975561', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1913', '1498975313', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1912', '1498975307', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1911', '1498974962', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1910', '1498974961', '1', '管理员admin编辑了管理员a2', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1909', '1498974936', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1908', '1498974893', '3', '管理员a2查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1907', '1498974889', '3', '管理员a2查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1906', '1498974875', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1904', '1498974859', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1905', '1498974874', '1', '管理员admin编辑了管理员a2', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1903', '1498974847', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1898', '1498974258', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1897', '1498974239', '1', '管理员admin查看了分类列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1896', '1498974232', '1', '管理员admin查看了商品列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1895', '1498973519', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1894', '1498973217', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1893', '1498973216', '1', '管理员admin修改了用户s3717956399', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1892', '1498973174', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1891', '1498973170', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1890', '1498973169', '1', '管理员admin修改了用户s3717956399', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1889', '1498973164', '1', '管理员admin查看了用户列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1899', '1498974782', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1900', '1498974801', '1', '管理员admin编辑了管理员r1', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1901', '1498974811', '1', '管理员admin编辑了管理员r1', '::1');
-INSERT INTO `mss_admin_log` VALUES ('1902', '1498974812', '1', '管理员admin查看了管理员列表', '::1');
-INSERT INTO `mss_admin_log` VALUES ('2297', '1505726157', '4', '管理员selly查看了管理员列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2298', '1505726161', '4', '管理员selly查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2299', '1506049792', '4', '管理员selly查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2300', '1506049807', '4', '管理员selly查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2301', '1506049817', '4', '管理员selly查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2302', '1506049823', '4', '管理员selly查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2303', '1506049843', '4', '管理员selly查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2304', '1506049852', '4', '管理员selly查看了商品列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2305', '1506049858', '4', '管理员selly查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2306', '1506049861', '4', '管理员selly查看了管理员列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2307', '1506049872', '4', '管理员selly查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2308', '1506475874', '4', '管理员selly查看了管理员列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2309', '1506475901', '4', '管理员selly查看了管理员列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2310', '1506475936', '4', '管理员selly添加了管理员', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2311', '1506475944', '4', '管理员selly查看了管理员列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2312', '1506475956', '4', '管理员selly查看了管理员列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2313', '1506475981', '1', '管理员admin查看了管理员列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2314', '1506475989', '1', '管理员admin编辑了管理员selly', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2315', '1506476000', '1', '管理员admin查看了商品列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2316', '1506476005', '1', '管理员admin查看了分类列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2317', '1506476009', '1', '管理员admin查看了友情链接列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2318', '1506476010', '1', '管理员admin查看了网站配置', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2319', '1506476056', '1', '管理员admin查看了管理员列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2320', '1506476250', '1', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2321', '1506476262', '1', '管理员admin修改了用户gx4852', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2322', '1506476263', '1', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2323', '1506476364', '1', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2324', '1506476367', '1', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2325', '1506476371', '1', '管理员admin查看了商品列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2326', '1506476635', '1', '管理员admin查看了管理员列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2327', '1506476679', '1', '管理员admin添加了管理员', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2328', '1506476680', '1', '管理员admin查看了管理员列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2329', '1506476857', '1', '管理员admin查看了管理员列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2330', '1506476963', '1', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2331', '1506476966', '1', '管理员admin查看了管理员列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2332', '1506477018', '5', '管理员isellys查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2333', '1506477032', '5', '管理员isellys查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2334', '1506477070', '5', '管理员isellys查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2335', '1506498470', '1', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2336', '1506505515', '76', '管理员admin查看了网站配置', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2337', '1506505525', '76', '管理员admin查看了网站配置', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2338', '1506505711', '76', '管理员admin查看了网站配置', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2339', '1506505726', '76', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2340', '1506505871', '76', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2341', '1506505882', '76', '管理员admin查看了商品列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2342', '1506505886', '76', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2343', '1506505891', '76', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2344', '1506505934', '76', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2345', '1506505964', '76', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2346', '1506505974', '76', '管理员admin查看了网站配置', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2347', '1506506142', '76', '管理员admin查看了网站配置', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2348', '1506506168', '76', '管理员admin查看了网站配置', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2349', '1506506916', '76', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2350', '1506507807', '76', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2351', '1506509216', '76', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2352', '1506567617', '1', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2353', '1506567620', '1', '管理员admin查看了管理员列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2354', '1506567622', '1', '管理员admin查看了商品列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2355', '1506567625', '1', '管理员admin查看了商品列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2356', '1506567649', '1', '管理员admin查看了用户列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2357', '1506567673', '1', '管理员admin查看了友情链接列表', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2358', '1506567674', '1', '管理员admin查看了网站配置', '127.0.0.1');
-INSERT INTO `mss_admin_log` VALUES ('2359', '1506567694', '1', '管理员admin查看了用户列表', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for mss_carts
@@ -868,7 +397,7 @@ CREATE TABLE `mss_jifenyide_log` (
   `time` datetime DEFAULT NULL COMMENT '创建时间',
   `type` int(11) DEFAULT NULL COMMENT '1、原始会员注册； 2、一级会员注册；3、二级会员注册;4、三级会员注册',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=96 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=115 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_jifenyide_log
@@ -895,6 +424,25 @@ INSERT INTO `mss_jifenyide_log` VALUES ('92', '85', '76,80,81', 'sanji102注册�
 INSERT INTO `mss_jifenyide_log` VALUES ('93', '85', '76,80,81', 'sanji102注册成功，奖励一级会员yuanshi000现金280，积分120,奖励二级会员yiji103现金700，积分300,奖励您（erji100）现金700，积分300。', '2017-09-28 16:49:02', '4');
 INSERT INTO `mss_jifenyide_log` VALUES ('94', '86', '76,80,81', 'sanji103注册成功，奖励一级会员yuanshi000现金280，积分120,奖励二级会员yiji103现金700，积分300,奖励您（erji100）现金700，积分300。', '2017-09-28 16:52:00', '4');
 INSERT INTO `mss_jifenyide_log` VALUES ('95', '87', '80,81,82', 'sanji300注册成功，奖励一级会员yiji103现金280，积分120,奖励二级会员erji100现金700，积分300,奖励您（sanji100）现金700，积分300。', '2017-09-28 17:12:55', '4');
+INSERT INTO `mss_jifenyide_log` VALUES ('96', '88', '76', 'yiji104注册成功，奖励邀请人（yuanshi000）现金700，积分300。', '2017-09-30 10:34:02', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('97', '89', '76', 'yiji105注册成功，奖励邀请人（yuanshi000）现金700，积分300。', '2017-09-30 10:37:56', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('98', '89', '76', 'yiji105注册成功，奖励邀请人（yuanshi000）现金700，积分300。', '2017-09-30 10:39:35', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('99', '89', '76', 'yiji105注册成功，奖励邀请人（yuanshi000）现金700，积分300。', '2017-09-30 10:40:05', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('100', '89', '76', 'yiji105注册成功，奖励邀请人（yuanshi000）现金700，积分300。', '2017-09-30 10:40:36', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('101', '89', '76', 'yiji105注册成功，奖励邀请人（yuanshi000）现金770，积分330，额外奖励现金70，积分30。', '2017-09-30 10:42:09', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('102', '90', '76', 'yiji106注册成功，奖励邀请人（yuanshi000）现金770，积分330，额外奖励现金70，积分30。', '2017-09-30 10:43:03', '2');
+INSERT INTO `mss_jifenyide_log` VALUES ('103', '91', '76,80,81', 'sanji104注册成功，奖励一级会员yuanshi000现金350，积分150,奖励二级会员yiji103现金770，积分330,奖励邀请人（erji100）现金770，积分330，额外奖励邀请人现金70，积分30。', '2017-09-30 11:10:08', '4');
+INSERT INTO `mss_jifenyide_log` VALUES ('104', '92', '76,80,81', 'sanji105注册成功，奖励一级会员yuanshi000现金350，积分150,奖励二级会员yiji103现金770，积分330,奖励邀请人（erji100）现金770，积分330，额外奖励邀请人现金70，积分30。', '2017-09-30 11:11:43', '4');
+INSERT INTO `mss_jifenyide_log` VALUES ('105', '93', '81,82,83', 'sanji400注册成功，奖励一级会员erji100现金350，积分150,奖励二级会员sanji100现金770，积分330,奖励邀请人（sanji200）现金770，积分330，额外奖励邀请人现金70，积分30。', '2017-09-30 11:12:43', '4');
+INSERT INTO `mss_jifenyide_log` VALUES ('106', '94', '76,80,81', 'sanji201注册成功，奖励一级会员yuanshi000现金280，积分120,奖励二级会员yiji103现金700，积分300,奖励邀请人（erji100）现金700，积分300。', '2017-09-30 11:25:48', '4');
+INSERT INTO `mss_jifenyide_log` VALUES ('107', '95', '76,80,81', 'sanji202注册成功，奖励一级会员yuanshi000现金280，积分120,奖励二级会员yiji103现金700，积分300,奖励邀请人（erji100）现金700，积分300。', '2017-09-30 11:26:33', '4');
+INSERT INTO `mss_jifenyide_log` VALUES ('108', '96', '76,80,81', 'sanji203注册成功，奖励一级会员yuanshi000现金280，积分120,奖励二级会员yiji103现金700，积分300,奖励邀请人（erji100）现金700，积分300。', '2017-09-30 11:28:13', '4');
+INSERT INTO `mss_jifenyide_log` VALUES ('109', '97', '76,80,81', 'sanji303注册成功，奖励一级会员yuanshi000现金280，积分120,奖励二级会员yiji103现金700，积分300,奖励邀请人（erji100）现金700，积分300。', '2017-09-30 11:29:57', '4');
+INSERT INTO `mss_jifenyide_log` VALUES ('110', '98', '81,82,83', 'sanji401注册成功，奖励一级会员erji100现金280，积分120,奖励二级会员sanji100现金700，积分300,奖励邀请人（sanji200）现金700，积分300。', '2017-09-30 14:47:30', '4');
+INSERT INTO `mss_jifenyide_log` VALUES ('111', '99', '76,80', 'erji101注册成功，奖励原始会员yuanshi000现金700，积分300,奖励邀请人（yiji103）现金700，积分300。', '2017-09-30 15:23:01', '3');
+INSERT INTO `mss_jifenyide_log` VALUES ('112', '100', '76,80', 'erji103注册成功，奖励原始会员yuanshi000现金770，积分330,奖励邀请人（yiji103）现金770，积分330，额外奖励邀请人现金70，积分30。', '2017-09-30 15:25:32', '3');
+INSERT INTO `mss_jifenyide_log` VALUES ('113', '101', '76,80,100', 'sanji204注册成功，奖励一级会员yuanshi000现金280，积分120,奖励二级会员yiji103现金700，积分300,奖励邀请人（erji103）现金700，积分300。', '2017-09-30 15:28:31', '4');
+INSERT INTO `mss_jifenyide_log` VALUES ('114', '102', '76,80', 'erji104注册成功，奖励原始会员yuanshi000现金770，积分330,奖励邀请人（yiji103）现金770，积分330，额外奖励邀请人现金70，积分30。', '2017-09-30 15:29:50', '3');
 
 -- ----------------------------
 -- Table structure for mss_links
@@ -4650,71 +4198,85 @@ CREATE TABLE `mss_user` (
   `ustatus` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态1正常;2其它',
   `class` tinyint(1) NOT NULL DEFAULT '-1' COMMENT '会员等级 0：原始会员、1：一级会员、2：二级会员、3：三级会员',
   `classes` tinyint(1) NOT NULL DEFAULT '-1' COMMENT '会员相对等级',
-  `recnum` int(11) NOT NULL DEFAULT '0' COMMENT '直推会员数',
   `bounsday` int(11) NOT NULL DEFAULT '0' COMMENT '补贴天数',
   `paystatus` tinyint(1) NOT NULL DEFAULT '0' COMMENT '支付状态 0：未支付；1：支付失败；2：支付成功',
   `referee` int(11) DEFAULT NULL COMMENT '推荐人',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`) USING BTREE,
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=88 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=103 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_user
 -- ----------------------------
-INSERT INTO `mss_user` VALUES ('13', 'demo', '4297f44b13955235245b2497399d7a93', 'demo@qq.com', 'headpic.gif', '1392204146', '127.0.0.1', '2', '0', '0', '0', '0', '0', null);
-INSERT INTO `mss_user` VALUES ('20', 'qinwei', 'e10adc3949ba59abbe56e057f20f883e', 'qinwei@123.com', 'headpic.gif', '1392346918', '192.168.130.53', '2', '0', '0', '0', '0', '0', null);
-INSERT INTO `mss_user` VALUES ('21', 'gx4852', '955e42c853b4fdabcb954fb5bb5441f8', '137105161@qq.com', '57617a81155620b6f0ecdfaba6e5235.jpg', '1392357570', '192.168.130.213', '1', '0', '0', '0', '0', '0', null);
-INSERT INTO `mss_user` VALUES ('25', 'hupeng11', 'e10adc3949ba59abbe56e057f20f883e', '111@qq.com', 'headpic.gif', '1415771197', '127.0.0.1', '3', '0', '0', '0', '0', '0', null);
-INSERT INTO `mss_user` VALUES ('24', 'hupeng', 'e10adc3949ba59abbe56e057f20f883e', 'guchengwuyue@163.com', 'headpic.gif', '1415771053', '127.0.0.1', '1', '0', '0', '0', '0', '0', null);
-INSERT INTO `mss_user` VALUES ('26', 'hupeng1', 'e10adc3949ba59abbe56e057f20f883e', '610796224@qq.com', 'headpic.gif', '1458129295', '127.0.0.1', '1', '0', '0', '0', '0', '0', null);
-INSERT INTO `mss_user` VALUES ('29', 's371795639', '3498b03102c161de190f19d12b20a322', '371795639@qq.com', 'headpic.gif', '1498662312', '::1', '1', '0', '0', '0', '0', '0', null);
-INSERT INTO `mss_user` VALUES ('37', 'afonso', '', '', 'headpic.gif', '0', '', '1', '0', '0', '0', '0', '0', null);
-INSERT INTO `mss_user` VALUES ('38', 'afonso1', '', '37179563@qq.com', 'headpic.gif', '0', '', '1', '0', '0', '0', '0', '0', null);
-INSERT INTO `mss_user` VALUES ('36', 's3717956399', 'e10adc3949ba59abbe56e057f20f883e', '3717956391@qq.com', 'headpic.gif', '1498747445', '::1', '2', '0', '0', '0', '0', '0', null);
-INSERT INTO `mss_user` VALUES ('39', 'iselly', '2befc4e7961699a90fc94270d44d73c7', 'mine_muyan@qq.com', 'headpic.gif', '1506049745', '127.0.0.1', '1', '0', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('46', 'aaa000', '6829b4940c8c717af0b4e746055a492f', null, 'headpic.gif', '1506311496', '127.0.0.1', '1', '1', '1', '0', '0', '0', '39');
-INSERT INTO `mss_user` VALUES ('47', 'aaa111', 'eabd8ce9404507aa8c22714d3f5eada9', 'aaa111@qq.com', 'headpic.gif', '1506311608', '127.0.0.1', '1', '0', '0', '0', '0', '3', '46');
-INSERT INTO `mss_user` VALUES ('48', 'aaa1111', 'b442f0c3119308bed4451d04b017bdf7', 'aaa1111@qq.com', 'headpic.gif', '1506311873', '127.0.0.1', '1', '0', '0', '0', '0', '3', '46');
-INSERT INTO `mss_user` VALUES ('49', 'aaa11111', '5cda0cd6e6cce148075eb3d460953e7b', 'aaa11111@qq.cpm', 'headpic.gif', '1506321162', '127.0.0.1', '1', '-1', '-1', '0', '0', '3', '47');
-INSERT INTO `mss_user` VALUES ('50', 'aaa223', 'eabd8ce9404507aa8c22714d3f5eada9', 'aaa123@qq.com', 'headpic.gif', '1506321688', '127.0.0.1', '1', '2', '2', '0', '0', '3', '51');
-INSERT INTO `mss_user` VALUES ('51', 'aaa1123', 'a8c551dae6ef8687ff42b11f77cc18b1', 'aaa1123@qq.com', 'headpic.gif', '1506325420', '127.0.0.1', '1', '1', '1', '0', '0', '0', '46');
-INSERT INTO `mss_user` VALUES ('52', 'aaa3123', '807eb6f2ff0d7023219962bd3a073331', 'aaa3123@qq.com', 'headpic.gif', '1506325855', '127.0.0.1', '1', '3', '3', '0', '0', '3', '50');
-INSERT INTO `mss_user` VALUES ('53', 'aaa31233', 'bc85b58fada84540fcfb475abe0c3278', 'aaa31233@qq.com', 'headpic.gif', '1506325981', '127.0.0.1', '1', '3', '3', '0', '0', '3', '50');
-INSERT INTO `mss_user` VALUES ('54', 'aaa3313', '4e81fbce4ba4329a493d1f424122caed', 'aaa3313@qq.com', 'headpic.gif', '1506326481', '127.0.0.1', '1', '3', '3', '0', '0', '3', '50');
-INSERT INTO `mss_user` VALUES ('55', 'aaa3433', '6393d1baadde81d3f072613ec46fa07c', 'aaa3433@qq.com', 'headpic.gif', '1506393451', '127.0.0.1', '1', '3', '3', '0', '0', '3', '54');
-INSERT INTO `mss_user` VALUES ('56', 'aaa3315', '5555d4834e4effbb4e75e7c728fa4d37', 'aaa3315@qq.com', 'headpic.gif', '1506407973', '127.0.0.1', '1', '3', '3', '0', '0', '3', '54');
-INSERT INTO `mss_user` VALUES ('57', 'aaa3316', '96e79218965eb72c92a549dd5a330112', 'aaa3316@qq.com', 'headpic.gif', '1506414665', '127.0.0.1', '1', '3', '3', '0', '0', '3', '56');
-INSERT INTO `mss_user` VALUES ('58', 'aaa3317', '96e79218965eb72c92a549dd5a330112', 'aa3317@qq.com', 'headpic.gif', '1506414900', '127.0.0.1', '1', '3', '3', '0', '0', '3', '57');
-INSERT INTO `mss_user` VALUES ('59', 'aaa3319', '96e79218965eb72c92a549dd5a330112', 'aaa3319@qq.com', 'headpic.gif', '1506414994', '127.0.0.1', '1', '3', '3', '0', '0', '3', '50');
-INSERT INTO `mss_user` VALUES ('60', 'aaa212', '96e79218965eb72c92a549dd5a330112', 'aaa212@qq.com', 'headpic.gif', '1506415067', '127.0.0.1', '1', '2', '2', '0', '0', '3', '46');
-INSERT INTO `mss_user` VALUES ('61', 'aaa010', 'a75cf31e63acd0dae05f394b37472dad', 'aaa010@qq.com', 'headpic.gif', '1506415180', '127.0.0.1', '1', '-1', '0', '0', '0', '3', '39');
-INSERT INTO `mss_user` VALUES ('62', 'new000', '670b14728ad9902aecba32e22fa4f6bd', 'new000@qq.com', 'headpic.gif', '1506415286', '127.0.0.1', '1', '0', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('63', 'aaa011', '62212c5dbd2fd987739a1d353b5197cf', 'aaa011@qq.com', 'headpic.gif', '1506416102', '127.0.0.1', '1', '0', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('64', 'aaa013', 'ef92104cff5a091f0523882f874e4dac', 'aaa013@qq.com', 'headpic.gif', '1506417066', '127.0.0.1', '1', '0', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('65', 'aaa113', '0eb98f4a5970bcb205e9b68903a40926', 'aaa113@qq.com', 'headpic.gif', '1506417134', '127.0.0.1', '1', '1', '1', '0', '0', '3', '64');
-INSERT INTO `mss_user` VALUES ('66', 'aaa2113', 'cd812ce50540b3f39f4d631762413989', 'aaa2113@qq.com', 'headpic.gif', '1506417195', '127.0.0.1', '1', '1', '1', '0', '0', '3', '51');
-INSERT INTO `mss_user` VALUES ('67', 'new100', '96e79218965eb72c92a549dd5a330112', 'new100@qq.com', 'headpic.gif', '1506418754', '127.0.0.1', '1', '-1', '0', '0', '0', '3', '62');
-INSERT INTO `mss_user` VALUES ('68', 'aaa33333', 'eabd8ce9404507aa8c22714d3f5eada9', 'aaa0111@qq.com', 'headpic.gif', '1506419104', '127.0.0.1', '1', '3', '3', '0', '0', '3', '50');
-INSERT INTO `mss_user` VALUES ('69', 'aaa012223', '0349f1177f41be9ae2559dde77da037a', 'aaa012223@qq.com', 'headpic.gif', '1506419363', '127.0.0.1', '1', '1', '1', '0', '0', '3', '64');
-INSERT INTO `mss_user` VALUES ('70', 'aaa0122234', '96e79218965eb72c92a549dd5a330112', 'aaa0122234@qq.com', 'headpic.gif', '1506420095', '127.0.0.1', '1', '1', '1', '0', '0', '3', '64');
-INSERT INTO `mss_user` VALUES ('71', 'aaa10015', '96e79218965eb72c92a549dd5a330112', 'aaa10015@qq.com', 'headpic.gif', '1506420152', '127.0.0.1', '1', '-1', '0', '0', '0', '3', '64');
-INSERT INTO `mss_user` VALUES ('72', 'aaa0133', '86185617e5fc5067bf4b250507bc4bd5', 'aaa0133@qq.com', 'headpic.gif', '1506420239', '127.0.0.1', '1', '1', '1', '0', '0', '3', '64');
-INSERT INTO `mss_user` VALUES ('73', 'aaa5686', '96e79218965eb72c92a549dd5a330112', 'aaa5686@qq.com', 'headpic.gif', '1506499688', '127.0.0.1', '1', '1', '1', '0', '0', '3', '64');
-INSERT INTO `mss_user` VALUES ('74', 'aaa125466', '52dcb87d78d4746f775f0b953bd67411', 'aaa125466@qq.com', 'headpic.gif', '1506500248', '127.0.0.1', '1', '1', '1', '0', '0', '3', '64');
-INSERT INTO `mss_user` VALUES ('75', 'a51de1', 'e0878f1c08ec9e5cb1b8d57c0d9840ca', 'a51de1@qq.com', 'headpic.gif', '1506502205', '127.0.0.1', '1', '2', '2', '0', '0', '3', '51');
-INSERT INTO `mss_user` VALUES ('76', 'yuanshi000', '1f8ac768762f844eeff41c8e0931dd73', 'yuanshi000@qq.com', 'headpic.gif', '1506502328', '127.0.0.1', '1', '0', '0', '0', '0', '0', '0');
-INSERT INTO `mss_user` VALUES ('77', 'yiji100', '83e6618531b9c2321ae6f417243c03fc', 'yiji100@qq.com', 'headpic.gif', '1506502606', '127.0.0.1', '1', '1', '1', '0', '0', '3', '76');
-INSERT INTO `mss_user` VALUES ('78', 'yiji101', '52178fc5c64ff948a8d0c29efb27b1fb', 'yiji101@qq.com', 'headpic.gif', '1506502942', '127.0.0.1', '1', '1', '1', '0', '0', '3', '76');
-INSERT INTO `mss_user` VALUES ('79', 'yiji102', '7b28b12498dd7197aeb69574217a1a8a', 'yiji102@qq.com', 'headpic.gif', '1506503060', '127.0.0.1', '1', '1', '1', '0', '0', '3', '76');
-INSERT INTO `mss_user` VALUES ('80', 'yiji103', 'd80255c54891e2dbb1b3e665cff78c56', 'yiji103@qq.com', 'headpic.gif', '1506503183', '127.0.0.1', '1', '1', '1', '0', '0', '3', '76');
-INSERT INTO `mss_user` VALUES ('81', 'erji100', '286c693cbee076935480992ae7dc94ba', 'erji100@qq.com', 'headpic.gif', '1506503345', '127.0.0.1', '1', '2', '2', '0', '0', '3', '80');
-INSERT INTO `mss_user` VALUES ('82', 'sanji100', '35ef08188a3fef299eb2601fd7ae2177', 'sanji100@qq.com', 'headpic.gif', '1506503423', '127.0.0.1', '1', '3', '3', '0', '0', '3', '81');
-INSERT INTO `mss_user` VALUES ('83', 'sanji200', 'ed3c1137261c1cf3462566b139143568', 'sanji200@qq.com', 'headpic.gif', '1506587462', '127.0.0.1', '1', '3', '3', '0', '0', '3', '82');
-INSERT INTO `mss_user` VALUES ('84', 'sanji101', '8cc4bc948ec37aa25f3a428e28b009e5', 'sanji101@qq.com', 'headpic.gif', '1506587890', '127.0.0.1', '1', '1', '2', '0', '0', '3', '81');
-INSERT INTO `mss_user` VALUES ('85', 'sanji102', '4fb2ad808caa994c943f0309bb327952', 'sanji102@qq.com', 'headpic.gif', '1506588348', '127.0.0.1', '1', '3', '3', '0', '0', '3', '81');
-INSERT INTO `mss_user` VALUES ('86', 'sanji103', '46a3230bb8914f5b810c10635253f553', 'sanji103@qq.com', 'headpic.gif', '1506588720', '127.0.0.1', '1', '3', '3', '0', '0', '3', '81');
-INSERT INTO `mss_user` VALUES ('87', 'sanji300', '785d7e9ca2d7915ab9adb1c477749415', 'sanji300@qq.com', 'headpic.gif', '1506589975', '127.0.0.1', '1', '3', '3', '0', '0', '3', '83');
+INSERT INTO `mss_user` VALUES ('13', 'demo', '4297f44b13955235245b2497399d7a93', 'demo@qq.com', 'headpic.gif', '1392204146', '127.0.0.1', '2', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('20', 'qinwei', 'e10adc3949ba59abbe56e057f20f883e', 'qinwei@123.com', 'headpic.gif', '1392346918', '192.168.130.53', '2', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('21', 'gx4852', '955e42c853b4fdabcb954fb5bb5441f8', '137105161@qq.com', '57617a81155620b6f0ecdfaba6e5235.jpg', '1392357570', '192.168.130.213', '1', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('25', 'hupeng11', 'e10adc3949ba59abbe56e057f20f883e', '111@qq.com', 'headpic.gif', '1415771197', '127.0.0.1', '3', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('24', 'hupeng', 'e10adc3949ba59abbe56e057f20f883e', 'guchengwuyue@163.com', 'headpic.gif', '1415771053', '127.0.0.1', '1', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('26', 'hupeng1', 'e10adc3949ba59abbe56e057f20f883e', '610796224@qq.com', 'headpic.gif', '1458129295', '127.0.0.1', '1', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('29', 's371795639', '3498b03102c161de190f19d12b20a322', '371795639@qq.com', 'headpic.gif', '1498662312', '::1', '1', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('37', 'afonso', '', '', 'headpic.gif', '0', '', '1', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('38', 'afonso1', '', '37179563@qq.com', 'headpic.gif', '0', '', '1', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('36', 's3717956399', 'e10adc3949ba59abbe56e057f20f883e', '3717956391@qq.com', 'headpic.gif', '1498747445', '::1', '2', '0', '0', '0', '0', null);
+INSERT INTO `mss_user` VALUES ('39', 'iselly', '2befc4e7961699a90fc94270d44d73c7', 'mine_muyan@qq.com', 'headpic.gif', '1506049745', '127.0.0.1', '1', '0', '0', '0', '0', '0');
+INSERT INTO `mss_user` VALUES ('46', 'aaa000', '6829b4940c8c717af0b4e746055a492f', null, 'headpic.gif', '1506311496', '127.0.0.1', '1', '1', '1', '0', '0', '39');
+INSERT INTO `mss_user` VALUES ('47', 'aaa111', 'eabd8ce9404507aa8c22714d3f5eada9', 'aaa111@qq.com', 'headpic.gif', '1506311608', '127.0.0.1', '1', '0', '0', '0', '3', '46');
+INSERT INTO `mss_user` VALUES ('48', 'aaa1111', 'b442f0c3119308bed4451d04b017bdf7', 'aaa1111@qq.com', 'headpic.gif', '1506311873', '127.0.0.1', '1', '0', '0', '0', '3', '46');
+INSERT INTO `mss_user` VALUES ('49', 'aaa11111', '5cda0cd6e6cce148075eb3d460953e7b', 'aaa11111@qq.cpm', 'headpic.gif', '1506321162', '127.0.0.1', '1', '-1', '-1', '0', '3', '47');
+INSERT INTO `mss_user` VALUES ('50', 'aaa223', 'eabd8ce9404507aa8c22714d3f5eada9', 'aaa123@qq.com', 'headpic.gif', '1506321688', '127.0.0.1', '1', '2', '2', '0', '3', '51');
+INSERT INTO `mss_user` VALUES ('51', 'aaa1123', 'a8c551dae6ef8687ff42b11f77cc18b1', 'aaa1123@qq.com', 'headpic.gif', '1506325420', '127.0.0.1', '1', '1', '1', '0', '0', '46');
+INSERT INTO `mss_user` VALUES ('52', 'aaa3123', '807eb6f2ff0d7023219962bd3a073331', 'aaa3123@qq.com', 'headpic.gif', '1506325855', '127.0.0.1', '1', '3', '3', '0', '3', '50');
+INSERT INTO `mss_user` VALUES ('53', 'aaa31233', 'bc85b58fada84540fcfb475abe0c3278', 'aaa31233@qq.com', 'headpic.gif', '1506325981', '127.0.0.1', '1', '3', '3', '0', '3', '50');
+INSERT INTO `mss_user` VALUES ('54', 'aaa3313', '4e81fbce4ba4329a493d1f424122caed', 'aaa3313@qq.com', 'headpic.gif', '1506326481', '127.0.0.1', '1', '3', '3', '0', '3', '50');
+INSERT INTO `mss_user` VALUES ('55', 'aaa3433', '6393d1baadde81d3f072613ec46fa07c', 'aaa3433@qq.com', 'headpic.gif', '1506393451', '127.0.0.1', '1', '3', '3', '0', '3', '54');
+INSERT INTO `mss_user` VALUES ('56', 'aaa3315', '5555d4834e4effbb4e75e7c728fa4d37', 'aaa3315@qq.com', 'headpic.gif', '1506407973', '127.0.0.1', '1', '3', '3', '0', '3', '54');
+INSERT INTO `mss_user` VALUES ('57', 'aaa3316', '96e79218965eb72c92a549dd5a330112', 'aaa3316@qq.com', 'headpic.gif', '1506414665', '127.0.0.1', '1', '3', '3', '0', '3', '56');
+INSERT INTO `mss_user` VALUES ('58', 'aaa3317', '96e79218965eb72c92a549dd5a330112', 'aa3317@qq.com', 'headpic.gif', '1506414900', '127.0.0.1', '1', '3', '3', '0', '3', '57');
+INSERT INTO `mss_user` VALUES ('59', 'aaa3319', '96e79218965eb72c92a549dd5a330112', 'aaa3319@qq.com', 'headpic.gif', '1506414994', '127.0.0.1', '1', '3', '3', '0', '3', '50');
+INSERT INTO `mss_user` VALUES ('60', 'aaa212', '96e79218965eb72c92a549dd5a330112', 'aaa212@qq.com', 'headpic.gif', '1506415067', '127.0.0.1', '1', '2', '2', '0', '3', '46');
+INSERT INTO `mss_user` VALUES ('61', 'aaa010', 'a75cf31e63acd0dae05f394b37472dad', 'aaa010@qq.com', 'headpic.gif', '1506415180', '127.0.0.1', '1', '-1', '0', '0', '3', '39');
+INSERT INTO `mss_user` VALUES ('62', 'new000', '670b14728ad9902aecba32e22fa4f6bd', 'new000@qq.com', 'headpic.gif', '1506415286', '127.0.0.1', '1', '0', '0', '0', '0', '0');
+INSERT INTO `mss_user` VALUES ('63', 'aaa011', '62212c5dbd2fd987739a1d353b5197cf', 'aaa011@qq.com', 'headpic.gif', '1506416102', '127.0.0.1', '1', '0', '0', '0', '0', '0');
+INSERT INTO `mss_user` VALUES ('64', 'aaa013', 'ef92104cff5a091f0523882f874e4dac', 'aaa013@qq.com', 'headpic.gif', '1506417066', '127.0.0.1', '1', '0', '0', '0', '0', '0');
+INSERT INTO `mss_user` VALUES ('65', 'aaa113', '0eb98f4a5970bcb205e9b68903a40926', 'aaa113@qq.com', 'headpic.gif', '1506417134', '127.0.0.1', '1', '1', '1', '0', '3', '64');
+INSERT INTO `mss_user` VALUES ('66', 'aaa2113', 'cd812ce50540b3f39f4d631762413989', 'aaa2113@qq.com', 'headpic.gif', '1506417195', '127.0.0.1', '1', '1', '1', '0', '3', '51');
+INSERT INTO `mss_user` VALUES ('67', 'new100', '96e79218965eb72c92a549dd5a330112', 'new100@qq.com', 'headpic.gif', '1506418754', '127.0.0.1', '1', '-1', '0', '0', '3', '62');
+INSERT INTO `mss_user` VALUES ('68', 'aaa33333', 'eabd8ce9404507aa8c22714d3f5eada9', 'aaa0111@qq.com', 'headpic.gif', '1506419104', '127.0.0.1', '1', '3', '3', '0', '3', '50');
+INSERT INTO `mss_user` VALUES ('69', 'aaa012223', '0349f1177f41be9ae2559dde77da037a', 'aaa012223@qq.com', 'headpic.gif', '1506419363', '127.0.0.1', '1', '1', '1', '0', '3', '64');
+INSERT INTO `mss_user` VALUES ('70', 'aaa0122234', '96e79218965eb72c92a549dd5a330112', 'aaa0122234@qq.com', 'headpic.gif', '1506420095', '127.0.0.1', '1', '1', '1', '0', '3', '64');
+INSERT INTO `mss_user` VALUES ('71', 'aaa10015', '96e79218965eb72c92a549dd5a330112', 'aaa10015@qq.com', 'headpic.gif', '1506420152', '127.0.0.1', '1', '-1', '0', '0', '3', '64');
+INSERT INTO `mss_user` VALUES ('72', 'aaa0133', '86185617e5fc5067bf4b250507bc4bd5', 'aaa0133@qq.com', 'headpic.gif', '1506420239', '127.0.0.1', '1', '1', '1', '0', '3', '64');
+INSERT INTO `mss_user` VALUES ('73', 'aaa5686', '96e79218965eb72c92a549dd5a330112', 'aaa5686@qq.com', 'headpic.gif', '1506499688', '127.0.0.1', '1', '1', '1', '0', '3', '64');
+INSERT INTO `mss_user` VALUES ('74', 'aaa125466', '52dcb87d78d4746f775f0b953bd67411', 'aaa125466@qq.com', 'headpic.gif', '1506500248', '127.0.0.1', '1', '1', '1', '0', '3', '64');
+INSERT INTO `mss_user` VALUES ('75', 'a51de1', 'e0878f1c08ec9e5cb1b8d57c0d9840ca', 'a51de1@qq.com', 'headpic.gif', '1506502205', '127.0.0.1', '1', '2', '2', '0', '3', '51');
+INSERT INTO `mss_user` VALUES ('76', 'yuanshi000', '1f8ac768762f844eeff41c8e0931dd73', 'yuanshi000@qq.com', 'headpic.gif', '1506502328', '127.0.0.1', '1', '0', '0', '0', '0', '0');
+INSERT INTO `mss_user` VALUES ('77', 'yiji100', '83e6618531b9c2321ae6f417243c03fc', 'yiji100@qq.com', 'headpic.gif', '1506502606', '127.0.0.1', '1', '1', '1', '0', '3', '76');
+INSERT INTO `mss_user` VALUES ('78', 'yiji101', '52178fc5c64ff948a8d0c29efb27b1fb', 'yiji101@qq.com', 'headpic.gif', '1506502942', '127.0.0.1', '1', '1', '1', '0', '3', '76');
+INSERT INTO `mss_user` VALUES ('79', 'yiji102', '7b28b12498dd7197aeb69574217a1a8a', 'yiji102@qq.com', 'headpic.gif', '1506503060', '127.0.0.1', '1', '1', '1', '0', '3', '76');
+INSERT INTO `mss_user` VALUES ('80', 'yiji103', 'd80255c54891e2dbb1b3e665cff78c56', 'yiji103@qq.com', 'headpic.gif', '1506503183', '127.0.0.1', '1', '1', '1', '0', '3', '76');
+INSERT INTO `mss_user` VALUES ('81', 'erji100', '286c693cbee076935480992ae7dc94ba', 'erji100@qq.com', 'headpic.gif', '1506503345', '127.0.0.1', '1', '2', '2', '0', '3', '80');
+INSERT INTO `mss_user` VALUES ('82', 'sanji100', '35ef08188a3fef299eb2601fd7ae2177', 'sanji100@qq.com', 'headpic.gif', '1506503423', '127.0.0.1', '1', '3', '3', '0', '3', '81');
+INSERT INTO `mss_user` VALUES ('83', 'sanji200', 'ed3c1137261c1cf3462566b139143568', 'sanji200@qq.com', 'headpic.gif', '1506587462', '127.0.0.1', '1', '3', '3', '0', '3', '82');
+INSERT INTO `mss_user` VALUES ('84', 'sanji101', '8cc4bc948ec37aa25f3a428e28b009e5', 'sanji101@qq.com', 'headpic.gif', '1506587890', '127.0.0.1', '1', '1', '2', '0', '3', '81');
+INSERT INTO `mss_user` VALUES ('85', 'sanji102', '4fb2ad808caa994c943f0309bb327952', 'sanji102@qq.com', 'headpic.gif', '1506588348', '127.0.0.1', '1', '3', '3', '0', '3', '81');
+INSERT INTO `mss_user` VALUES ('86', 'sanji103', '46a3230bb8914f5b810c10635253f553', 'sanji103@qq.com', 'headpic.gif', '1506588720', '127.0.0.1', '1', '3', '3', '0', '3', '81');
+INSERT INTO `mss_user` VALUES ('87', 'sanji300', '785d7e9ca2d7915ab9adb1c477749415', 'sanji300@qq.com', 'headpic.gif', '1506589975', '127.0.0.1', '1', '3', '3', '0', '3', '83');
+INSERT INTO `mss_user` VALUES ('88', 'yiji104', 'c6a98708d39c4139264df2371be51fd5', 'yiji104@qq.com', 'headpic.gif', '1506738842', '127.0.0.1', '1', '1', '1', '0', '3', '76');
+INSERT INTO `mss_user` VALUES ('89', 'yiji105', 'ecc0238595139ffffec85093e87bf11e', 'yiji105@qq.com', 'headpic.gif', '1506739076', '127.0.0.1', '1', '1', '1', '0', '3', '76');
+INSERT INTO `mss_user` VALUES ('90', 'yiji106', '81e4826d169b286ef6adcd5c678fbffd', 'yiji106@qq.com', 'headpic.gif', '1506739383', '127.0.0.1', '1', '1', '1', '0', '3', '76');
+INSERT INTO `mss_user` VALUES ('91', 'sanji104', 'd32fc7ed5968b886ae934a5fab97fa31', 'sanji104@qq.com', 'headpic.gif', '1506741008', '127.0.0.1', '1', '3', '3', '0', '3', '81');
+INSERT INTO `mss_user` VALUES ('92', 'sanji105', '26add1879bc047000ecb83586b83f3ca', 'sanji105@qq.com', 'headpic.gif', '1506741103', '127.0.0.1', '1', '3', '3', '0', '3', '81');
+INSERT INTO `mss_user` VALUES ('93', 'sanji400', '8556b59edff5e4088c827910a16765a2', 'sanji400@qq.com', 'headpic.gif', '1506741162', '127.0.0.1', '1', '3', '3', '0', '3', '87');
+INSERT INTO `mss_user` VALUES ('94', 'sanji201', 'c37da34a83c6efffdff573b82f6e4832', 'sanji201@qq.com', 'headpic.gif', '1506741948', '127.0.0.1', '1', '3', '3', '0', '3', '82');
+INSERT INTO `mss_user` VALUES ('95', 'sanji202', '31185a57f7d91dd4f9411aee033d99a3', 'sanji202@qq.com', 'headpic.gif', '1506741993', '127.0.0.1', '1', '3', '3', '0', '3', '82');
+INSERT INTO `mss_user` VALUES ('96', 'sanji203', 'cb118d60fbf50e2ab1e925d9d8698605', 'sanji203@qq.com', 'headpic.gif', '1506742093', '127.0.0.1', '1', '3', '3', '0', '3', '82');
+INSERT INTO `mss_user` VALUES ('97', 'sanji303', '8a9e09ceb86558838fbb9ce1f87a0c5a', 'sanji303@qq.com', 'headpic.gif', '1506742197', '127.0.0.1', '1', '3', '3', '0', '3', '82');
+INSERT INTO `mss_user` VALUES ('98', 'sanji401', '87735f733f85c46ab5965fd6ffeec9d7', 'sanji401@qq.com', 'headpic.gif', '1506754049', '127.0.0.1', '1', '3', '3', '0', '3', '87');
+INSERT INTO `mss_user` VALUES ('99', 'erji101', '66e0bcbf83adb662a697a5cadb962b77', 'erji101@qq.com', 'headpic.gif', '1506756181', '127.0.0.1', '1', '2', '2', '0', '3', '80');
+INSERT INTO `mss_user` VALUES ('100', 'erji103', '7896c34fa3638b43a4e991468c20c9a4', 'erji103@qq.com', 'headpic.gif', '1506756332', '127.0.0.1', '1', '2', '2', '0', '3', '80');
+INSERT INTO `mss_user` VALUES ('101', 'sanji204', '4c44d63b52df4d88ea17d1070014bdf2', 'sanji204@qq.com', 'headpic.gif', '1506756511', '127.0.0.1', '1', '3', '3', '0', '3', '100');
+INSERT INTO `mss_user` VALUES ('102', 'erji104', 'fce80c14b236ec3cfa1d669dd620a1a1', 'erji104@qq.com', 'headpic.gif', '1506756590', '127.0.0.1', '1', '2', '2', '0', '3', '80');
 
 -- ----------------------------
 -- Table structure for mss_userinfo
@@ -4786,7 +4348,7 @@ INSERT INTO `mss_userinfo` VALUES ('72', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('73', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('74', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('75', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('76', '3', '', '', '1506653570', '127.0.0.1', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('76', '1', '1946-2-14', '河南-开封-顺河回族区', '1506736126', '127.0.0.1', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('77', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('78', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('79', '3', '', '', '0', '', '', '', '');
@@ -4798,6 +4360,21 @@ INSERT INTO `mss_userinfo` VALUES ('84', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('85', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('86', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('87', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('88', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('89', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('90', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('91', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('92', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('93', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('94', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('95', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('96', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('97', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('98', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('99', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('100', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('101', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('102', '3', '', '', '0', '', '', '', '');
 
 -- ----------------------------
 -- Table structure for mss_user_admin
@@ -4818,7 +4395,7 @@ CREATE TABLE `mss_user_admin` (
 -- ----------------------------
 -- Records of mss_user_admin
 -- ----------------------------
-INSERT INTO `mss_user_admin` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36', 'ademo@qq.com', '0', '1506567334');
+INSERT INTO `mss_user_admin` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36', 'ademo@qq.com', '0', '1506742315');
 INSERT INTO `mss_user_admin` VALUES ('2', 'r1', 'e10adc3949ba59abbe56e057f20f883e', '5,6,7,8,9,10', 'r1@qq.com', '1389924107', '1498977449');
 INSERT INTO `mss_user_admin` VALUES ('3', 'a2', '202cb962ac59075b964b07152d234b70', '1', 'a2@qq.com', '1390096173', '1498974887');
 INSERT INTO `mss_user_admin` VALUES ('4', 'selly', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36', 'ademo@qq.com', '0', '1506475868');
@@ -4834,7 +4411,7 @@ CREATE TABLE `mss_user_config` (
   `ratio` float(8,2) DEFAULT NULL COMMENT '比率',
   `comment` varchar(255) DEFAULT NULL COMMENT '此配置项的简介',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_user_config
@@ -4847,8 +4424,6 @@ INSERT INTO `mss_user_config` VALUES ('5', '1000', '1.00', '直推分享时推�
 INSERT INTO `mss_user_config` VALUES ('6', '400', '1.00', '直推分享时推荐人的推荐人的推荐人（三级推荐人）可得现金数');
 INSERT INTO `mss_user_config` VALUES ('7', '1000', '1.00', '注册时赠送积分数量');
 INSERT INTO `mss_user_config` VALUES ('8', '10000', '1.00', '注册时赠送易得币数量');
-INSERT INTO `mss_user_config` VALUES ('9', '100', '1.00', '测试');
-
 -- ----------------------------
 -- Table structure for mss_user_jifenyide
 -- ----------------------------
@@ -4860,7 +4435,7 @@ CREATE TABLE `mss_user_jifenyide` (
   `yide` decimal(8,2) DEFAULT '0.00' COMMENT '用户易得币',
   `cash` decimal(8,2) DEFAULT '0.00' COMMENT '现金',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_user_jifenyide
@@ -4902,18 +4477,33 @@ INSERT INTO `mss_user_jifenyide` VALUES ('55', '72', '0.00', '0.00', '0.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('56', '73', '0.00', '0.00', '0.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('57', '74', '0.00', '0.00', '0.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('58', '75', '0.00', '0.00', '0.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('59', '76', '4380.00', '10000.00', '8820.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('59', '76', '8400.00', '10000.00', '18200.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('60', '77', '0.00', '0.00', '0.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('61', '78', '0.00', '0.00', '0.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('62', '79', '0.00', '0.00', '0.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('63', '80', '4620.00', '0.00', '10780.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('64', '81', '4500.00', '0.00', '10500.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('65', '82', '300.00', '0.00', '700.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('63', '80', '630.00', '0.00', '1470.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('64', '81', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('65', '82', '0.00', '0.00', '0.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('66', '83', '0.00', '0.00', '0.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('67', '84', '0.00', '0.00', '0.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('68', '85', '0.00', '0.00', '0.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('69', '86', '0.00', '0.00', '0.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('70', '87', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('71', '88', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('72', '89', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('73', '90', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('74', '91', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('75', '92', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('76', '93', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('77', '94', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('78', '95', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('79', '96', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('80', '97', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('81', '98', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('82', '99', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('83', '100', '300.00', '0.00', '700.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('84', '101', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('85', '102', '0.00', '0.00', '0.00');
 
 -- ----------------------------
 -- Table structure for mss_user_notice
@@ -4926,7 +4516,7 @@ CREATE TABLE `mss_user_notice` (
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '时间',
   `type` tinyint(1) DEFAULT NULL COMMENT '类型 1、注册；2、充值；3、提现',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_user_notice
@@ -4938,6 +4528,21 @@ INSERT INTO `mss_user_notice` VALUES ('4', '85', '恭喜您注册成功，推荐
 INSERT INTO `mss_user_notice` VALUES ('5', '85', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-28 16:56:12', '1');
 INSERT INTO `mss_user_notice` VALUES ('6', '85', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-28 17:06:26', '1');
 INSERT INTO `mss_user_notice` VALUES ('7', '87', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-28 17:12:55', '1');
+INSERT INTO `mss_user_notice` VALUES ('8', '88', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 10:34:02', '1');
+INSERT INTO `mss_user_notice` VALUES ('9', '89', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 10:37:56', '1');
+INSERT INTO `mss_user_notice` VALUES ('10', '90', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 10:43:03', '1');
+INSERT INTO `mss_user_notice` VALUES ('11', '91', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 11:10:08', '1');
+INSERT INTO `mss_user_notice` VALUES ('12', '92', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 11:11:43', '1');
+INSERT INTO `mss_user_notice` VALUES ('13', '93', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 11:12:43', '1');
+INSERT INTO `mss_user_notice` VALUES ('14', '94', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 11:25:48', '1');
+INSERT INTO `mss_user_notice` VALUES ('15', '95', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 11:26:33', '1');
+INSERT INTO `mss_user_notice` VALUES ('16', '96', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 11:28:13', '1');
+INSERT INTO `mss_user_notice` VALUES ('17', '97', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 11:29:57', '1');
+INSERT INTO `mss_user_notice` VALUES ('18', '98', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 14:47:30', '1');
+INSERT INTO `mss_user_notice` VALUES ('19', '99', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 15:23:01', '1');
+INSERT INTO `mss_user_notice` VALUES ('20', '100', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 15:25:32', '1');
+INSERT INTO `mss_user_notice` VALUES ('21', '101', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 15:28:31', '1');
+INSERT INTO `mss_user_notice` VALUES ('22', '102', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-09-30 15:29:50', '1');
 
 -- ----------------------------
 -- Table structure for mss_user_relation
@@ -4949,7 +4554,7 @@ CREATE TABLE `mss_user_relation` (
   `pid` int(11) DEFAULT '0' COMMENT '上级id,0代表顶级会员',
   `relation` varchar(255) DEFAULT '' COMMENT '跟此ID的上三级推荐人ID',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=85 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_user_relation
@@ -4999,6 +4604,21 @@ INSERT INTO `mss_user_relation` VALUES ('66', '84', '81', '76,80,81');
 INSERT INTO `mss_user_relation` VALUES ('67', '85', '81', '76,80,81');
 INSERT INTO `mss_user_relation` VALUES ('68', '86', '81', '76,80,81');
 INSERT INTO `mss_user_relation` VALUES ('69', '87', '83', '80,81,82');
+INSERT INTO `mss_user_relation` VALUES ('70', '88', '76', '76');
+INSERT INTO `mss_user_relation` VALUES ('71', '89', '76', '76');
+INSERT INTO `mss_user_relation` VALUES ('72', '90', '76', '76');
+INSERT INTO `mss_user_relation` VALUES ('73', '91', '81', '76,80,81');
+INSERT INTO `mss_user_relation` VALUES ('74', '92', '81', '76,80,81');
+INSERT INTO `mss_user_relation` VALUES ('75', '93', '87', '81,82,83');
+INSERT INTO `mss_user_relation` VALUES ('76', '94', '82', '76,80,81');
+INSERT INTO `mss_user_relation` VALUES ('77', '95', '82', '76,80,81');
+INSERT INTO `mss_user_relation` VALUES ('78', '96', '82', '76,80,81');
+INSERT INTO `mss_user_relation` VALUES ('79', '97', '82', '76,80,81');
+INSERT INTO `mss_user_relation` VALUES ('80', '98', '87', '81,82,83');
+INSERT INTO `mss_user_relation` VALUES ('81', '99', '80', '76,80');
+INSERT INTO `mss_user_relation` VALUES ('82', '100', '80', '76,80');
+INSERT INTO `mss_user_relation` VALUES ('83', '101', '100', '76,80,100');
+INSERT INTO `mss_user_relation` VALUES ('84', '102', '80', '76,80');
 
 -- ----------------------------
 -- Table structure for mss_user_set
