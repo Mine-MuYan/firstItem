@@ -64,7 +64,19 @@ CREATE TABLE `mss_admin_log` (
 -- ----------------------------
 -- Records of mss_admin_log
 -- ----------------------------
-
+INSERT INTO `mss_admin_log` VALUES ('2347', '1506506142', '76', '管理员admin查看了网站配置', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('2348', '1506506168', '76', '管理员admin查看了网站配置', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('2349', '1506506916', '76', '管理员admin查看了用户列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('2350', '1506507807', '76', '管理员admin查看了用户列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('2351', '1506509216', '76', '管理员admin查看了用户列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('2352', '1506567617', '1', '管理员admin查看了用户列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('2353', '1506567620', '1', '管理员admin查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('2354', '1506567622', '1', '管理员admin查看了商品列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('2355', '1506567625', '1', '管理员admin查看了商品列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('2356', '1506567649', '1', '管理员admin查看了用户列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('2357', '1506567673', '1', '管理员admin查看了友情链接列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('2358', '1506567674', '1', '管理员admin查看了网站配置', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('2359', '1506567694', '1', '管理员admin查看了用户列表', '127.0.0.1');
 -- ----------------------------
 -- Table structure for mss_carts
 -- ----------------------------

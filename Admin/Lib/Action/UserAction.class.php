@@ -392,7 +392,9 @@
 			}
 		}
         
-        
+        /**
+         * 获取用户拨比设置
+         */
         function userConfig(){
 		    $re = M('user_config')-> select();
 		    foreach($re as $k => $v){
@@ -402,6 +404,9 @@
             $this -> display();
         }
         
+        /**
+         * 编辑用户拨比页面
+         */
         function userConfigEdit(){
             $id = $_GET['id'];
             $re = getUserConfig($id,'all');
@@ -409,30 +414,64 @@
             $this -> display();
         }
         
+        /**
+         * 编辑用户拨比功能
+         */
         function userConfigEdits(){
-            $id         = $_POST['id'];
+            $id     = I('id');
+            $value  = I('value');
+            if(!is_numeric($value)){
+                $this -> error('值要是数字哦');
+            }
+            $ratio = I('ratio');
+            if(!is_numeric($ratio)){
+                $this -> error('比率要是数字哦');
+            }
             $data = array(
-                'value'     => $_POST['value'],
-                'ratio'     => $_POST['ratio'],
-                'comment'   => $_POST['comment'],
+                'value'     => $value,
+                'ratio'     => $ratio,
+                'comment'   => I('comment'),
             );
             M('user_config')-> where("id = $id") -> save($data);
             $this -> success('修改成功','__URL__/userConfig');
         }
         
+        /**
+         * 添加编辑用户拨比页面
+         */
         function userConfigAdd(){
             
             $this -> display();
         }
         
-        
+        /**
+         * 添加编辑用户拨比功能
+         */
         function userConfigAdds(){
+            $value = I('value');
+            if(!is_numeric($value)){
+                $this -> error('值要是数字哦');
+            }
+            $ratio = I('ratio');
+            if(!is_numeric($ratio)){
+                $this -> error('比率要是数字哦');
+            }
             $data = array(
-                'value'     => $_POST['value'],
-                'ratio'     => $_POST['ratio'],
-                'comment'   => $_POST['comment'],
+                'value'     => $value,
+                'ratio'     => $ratio,
+                'comment'   => I('comment'),
             );
             M('user_config') -> add($data);
             $this -> success('添加成功','__URL__/userConfig');
+        }
+        
+        /**
+         * 用户补贴
+         */
+        function userGiven(){
+            $dbUser = M('user');
+            $re = $dbUser -> where("class = 0") -> select();
+            $this -> assign('re',$re);
+            $this -> display();
         }
 	}

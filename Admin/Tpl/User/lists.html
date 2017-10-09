@@ -58,21 +58,21 @@
 								<tbody>
 								<foreach name="data" item="v">
 									<tr>
-										<td><input type="checkbox" value="<{$v.id}>" name="check[]"></td>
-										<td><{$v.id}></td>
-										<td><{$v.username}></td>
-										<td><{$v.pusername}></td>
-										<td><{$v.jifen}></td>
-										<td><{$v.yide}></td>
-										<td><{$v.email}></td>
-										<td><{$v.regtime|date='Y-m-d H:i:s',###}></td>
-										<td><{$v.regip}></td>
-										<td>
+										<td style="text-align:center"><input type="checkbox" value="<{$v.id}>" name="check[]"></td>
+										<td style="text-align:center"><{$v.id}></td>
+										<td style="text-align:center"><{$v.username}></td>
+										<td style="text-align:center"><{$v.pusername}></td>
+										<td style="text-align:center"><{$v.jifen}></td>
+										<td style="text-align:center"><{$v.yide}></td>
+										<td style="text-align:center"><{$v.email}></td>
+										<td style="text-align:center"><{$v.regtime|date='Y-m-d H:i:s',###}></td>
+										<td style="text-align:center"><{$v.regip}></td>
+										<td style="text-align:center">
 											<if condition="$v.ustatus eq 1">正常登陆</if>
 											<if condition="$v.ustatus eq 2">尚未激活</if>
 											<if condition="$v.ustatus eq 3">限制登录</if>
 										</td>
-										<td class="taskOptions">
+										<td style="text-align:center" class="taskOptions">
 									    	<a href="__URL__/upda/id/<{$v.id}>" class="tip-top" data-original-title="编辑"><i class="icon-pencil"></i></a>&nbsp;&nbsp;
 									    	<a href="__URL__/del/id/<{$v.id}>" class="tip-top" data-original-title="删除"><i class="icon-remove"></i></a>
 										</td>
