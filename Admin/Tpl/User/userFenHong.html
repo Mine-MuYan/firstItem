@@ -21,7 +21,7 @@
             首页
         </a>
         <a href="__URL__/lists" title="返回用户管理" class="tip-bottom"> 用户管理</a>
-        <a href="#" class="current"> 用户补贴</a>
+        <a href="#" class="current"> 用户分红</a>
     </div>
     <!-- 顶部面包屑导航 结束 -->
     <!-- 主体区域 -->
@@ -32,8 +32,8 @@
                 <div class="widget-box">
                     <!-- 组件标题区域 -->
                     <div class="widget-title">
-                        <h5>用户补贴</h5>
-                        <a href="__URL__/bounsGivenOnce" class="btn btn-default">一键发放补贴</a>
+                        <h5>用户分红</h5>
+                        <a href="__URL__/GiveFenHong" class="btn btn-default">一键发放分红</a>
                     </div>
                     <!-- 组件内容区域 -->
                     <div class="widget-content nopadding">
@@ -43,9 +43,9 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>用户名</th>
-                                    <th>已补贴天数</th>
-                                    <th>已补贴金额</th>
-                                    <th>上次补贴时间</th>
+                                    <th>直推会员数</th>
+                                    <th>团购会员数</th>
+                                    <th>上次发放时间</th>
                                 </tr>
                             </thead>
                             <!-- 表格主体数据区域 -->
@@ -54,8 +54,8 @@
                                     <tr>
                                         <td style="text-align:center"><{$v.id}></td>
                                         <td style="text-align:center"><{$v.username}></td>
-                                        <td style="text-align:center"><{$v.bounsday}></td>
-                                        <td style="text-align:center"><{$v['bounsday']*30}></td>
+                                        <td style="text-align:center"><{$v.refcount}></td>
+                                        <td style="text-align:center"><{$v.refCount}></td>
                                         <td style="text-align:center">
                                             <if condition=" $v.bounstime eq '2017-05-20 05:20:21' ">
                                                 -

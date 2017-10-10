@@ -35,8 +35,33 @@ class RegpayAction extends Action {
 //        $city = array('f','s');
 //        $this -> sss($city);
         
-        pp(getUserReferees(81));
-        pp(getUserReferee(98));
+//        pp(getUserReferees(81));
+//        pp(getUserReferee(98));
+        /*
+        $arr = "array('name'=>'张三','age'=>'16')";
+        $str = [];
+        eval("\$str = ".$arr.'; ');
+        pp($str);
+        pp($str['name']);
+        */
+        
+        
+        //列出所有直推人数大于10 且团购人数大于30的用户
+        
+        $dbUser = M('user');
+        $refCount = getUserConfig('10');
+        $allCount = getUserConfig('11');
+        $map['refcount'] = array('egt',$refCount);
+        $userId = $dbUser -> where($map) -> field('id') -> select();
+        $ids = [];
+        foreach($userId as $k){
+            $allNum = refereeCounts($k['id'],'count');
+            if($allNum >= $allCount){
+                $ids[] = $k['id'];
+            }
+         }
+         pp($userId);
+         pp($ids);
         $this -> display();
     }
     

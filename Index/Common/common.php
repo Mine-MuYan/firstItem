@@ -337,7 +337,7 @@ function regInsertRelation($id){
 
 
 /**
- * 注册时根据推荐人，写入此用户的等级
+ * 注册时根据推荐人，写入此用户的等级，并给邀请人的邀请人数+1
  * @param $id   integer 当前注册用户的ID
  * @return boolean  true: 写入用户等级成功 / false:写入用户等级失败
  */
@@ -356,12 +356,21 @@ function regInsertClass($id){
             'classes'   => $class + 1
         );
     }
-    $re = $tbUser -> where("id = $id") -> save($data);
-    if($re){
-//        pp('写入用户等级成功');
+    $re     = $tbUser -> where("id = $id") -> save($data);
+    $res    = $tbUser -> where("id = $refId") -> setInc('refcount',1);
+    if($re && $res){
+//        pp('写入用户等级成功，且邀请人的邀请人数+1成功');
         return true;
-    }else{
-//        pp('写入用户等级失败');
+    }
+    /** using when debugging
+     elseif(!$re){
+        pp('写入用户等级失败');
+     }elseif(!$res){
+        pp('邀请人的邀请人数+1写入失败');
+     }
+     */
+    else{
+//        pp('写入用户等级失败，且邀请人的邀请人数+1写入失败');
         return false;
     }
 }

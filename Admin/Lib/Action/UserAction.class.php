@@ -470,8 +470,107 @@
          */
         function userGiven(){
             $dbUser = M('user');
-            $re = $dbUser -> where("class = 0") -> select();
+            $map = array(
+                'carcount' => array('gt',0),
+                'ustatus' => 1,
+                'bounsday' => array('lt',101),
+            );
+            $re = $dbUser -> where($map) -> limit('100') -> order('id asc') -> select();
             $this -> assign('re',$re);
             $this -> display();
+        }
+        
+        /**
+         * 给未购车用户一键发放补贴
+         */
+        function bounsGivenOnce(){
+            $dbUser     = M('user');
+            $vipCount   = getUserConfig('14');
+            $map = array(
+                'carcount' => array('gt',0),
+                'ustatus' => 1,
+                'bounsday' => array('elt',100),
+            );
+            $userIds    = $dbUser -> where($map) -> limit($vipCount) -> field('id') -> select();
+            $ydCount    = getUserConfig('13');
+            if(empty($userIds)){
+                $this -> error('暂时没有可发放补贴的用户哦');
+            }else{
+                foreach($userIds as $k){
+                    $uid = $k['id'];
+                    $map = array(
+                        'id'        => $uid,
+                        'bounstime' => array('lt',date('Y-m-d 00:00:00'))
+                    );
+                    $reUserDay[] = $dbUser -> where($map) -> setInc('bounsday',1); //天数+1
+                    if(in_array(0,$reUserDay)){
+                        $this -> error('今天已经发放过补贴，不要重复点击哦');
+                    }else{
+                        $reUserTime[] = $dbUser -> where("id = $uid") -> save(array('bounstime' => date('Y-m-d H:i:s'))); //时间改为当前时间
+                        if(in_array(0,$reUserTime)){
+                            $this -> error('时间修改失败且补贴发放失败');
+                        }else{
+                            $reCoin[] = M('user_jifenyide') -> where("uid = $uid") -> setInc('yide',$ydCount);
+                            $logData = array(
+                                'uid'   => $uid,
+                                'uids'  => $uid,
+                                'info'  => "您的购车补贴$ydCount 易得币已发放。",
+                                'time'  => date('Y-m-d H:i:s'),
+                                'type'  => 5
+                            );
+                            $reLog[] = M('jifenyide_log') -> add($logData);
+                            $noticeData = array(
+                                'uid'   => $uid,
+                                'info'  => "您的购车补贴$ydCount 易得币已发放。",
+                                'time'  => date('Y-m-d H:i:s'),
+                                'type'  => 4
+                            );
+                            $reNotice[] = M('user_notice') -> add($noticeData);
+                        }
+                    }
+                }
+                if(!in_array(0,$reCoin) && !in_array(0,$reLog) && !in_array(0,$reNotice)){
+                    $this -> success('补贴发放成功','__URL__/userGiven');
+                }
+                /******using when debugging
+                elseif(in_array(0,$reCoin)){
+                pp($reCoin,'补贴发放失败');
+                }elseif(in_array(0,$reLog)){
+                pp($reLog,'log写入失败');
+                }elseif(in_array(0,$reNotice)){
+                pp($reNotice,'通知写入失败');
+                }*/
+                else{
+                    $this -> error('补贴发放失败','__URL__/userGiven');
+                }
+            }
+        }
+        
+        public function userFenHong(){
+            $dbUser = M('user');
+            $refCount = getUserConfig('10');
+            $allCount = getUserConfig('11');
+            $map['refcount'] = array('egt',$refCount);
+            $userId = $dbUser -> where($map) -> field('id') -> select();
+            $ids = [];
+            foreach($userId as $k){
+                $allNum = refereeCounts($k['id'],'count');
+                if($allNum >= $allCount){
+                    $ids[] = $k['id'];
+                }
+            }
+            $maps['id'] = array('in',$ids);
+            $res = $dbUser -> where($maps) -> select();
+            foreach($res as $k => $v){
+                $id = $v['id'];
+                $count = refereeCounts($id,'count');
+                $res[$k]['refCount'] = $count;
+            }
+            $this -> assign('re',$res);
+            $this -> display();
+        }
+        
+        public function GiveFenHong(){
+        
         }
 	}
