@@ -548,8 +548,8 @@
         
         public function userFenHong(){
             $dbUser = M('user');
-            $refCount = getUserConfig('10');
-            $allCount = getUserConfig('11');
+            $refCount = getUserConfig('13');
+            $allCount = getUserConfig('14');
             $map['refcount'] = array('egt',$refCount);
             $userId = $dbUser -> where($map) -> field('id') -> select();
             $ids = [];
