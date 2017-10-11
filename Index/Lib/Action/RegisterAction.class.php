@@ -32,7 +32,7 @@ class RegisterAction extends Action{
                             'username'  => $_POST['username'],
                             'userpwd'   => md5($_POST['userpwd']),
                             'ustatus'   => 1,
-                            'paystatus' => 3,
+                            'paystatus' => 2,
                             'regtime'   => time(),
                             'regip'     => $_SERVER['REMOTE_ADDR'],
                             'email'     => $_POST['email'],
@@ -91,7 +91,7 @@ class RegisterAction extends Action{
                 $datas = array(
                     'username'  => $_POST['username'],
                     'userpwd'   => md5($_POST['userpwd']),
-                    'ustatus'   => 1,
+                    'ustatus'   => 3,
                     'paystatus' => 0,
                     'regtime'   => time(),
                     'regip'     => $_SERVER['REMOTE_ADDR'],

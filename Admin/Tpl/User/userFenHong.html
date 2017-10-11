@@ -37,7 +37,7 @@
                     </div>
                     <!-- 组件内容区域 -->
                     <div class="widget-content nopadding">
-                        <table class="table table-bordered data-table">
+                        <table class="table table-bordered table-hover data-table">
                             <!-- 表头字段区域 -->
                             <thead>
                                 <tr>
@@ -55,11 +55,11 @@
                                         <td style="text-align:center"><{$v.id}></td>
                                         <td style="text-align:center"><{$v.username}></td>
                                         <td style="text-align:center"><{$v.refcount}></td>
-                                        <td style="text-align:center"><{$v.refCount}></td>
+                                        <td style="text-align:center"><{$v.allCount}></td>
                                         <td style="text-align:center">
-                                            <if condition=" $v.bounstime eq '2017-05-20 05:20:21' ">
+                                            <if condition=" $v.fenhtime eq '2017-05-20 05:20:21' ">
                                                 -
-                                                <else/> <{$v.bounstime}>
+                                                <else/> <{$v.fenhtime}>
                                             </if>
                                         </td>
                                     </tr>

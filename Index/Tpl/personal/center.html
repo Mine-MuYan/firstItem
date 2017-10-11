@@ -374,7 +374,7 @@
 									<li><a style="cursor: pointer;" id="a-info">个人信息</a></li>
 									<li><a style="cursor: pointer;" id="a-referee">直推和团购</a></li>
 									<li><a style="cursor: pointer;" id="a-notice">消息提醒</a></li>
-									<li><a style="cursor: pointer;" id="a-leveUp">分红说明</a></li>
+									<li><a style="cursor: pointer;" id="a-leveUp">其他福利</a></li>
 									<li><a style="cursor: pointer;" id="a-safe">安全中心</a></li>
 									<li><a style="cursor: pointer;" id="a-address">收货地址</a></li>
 									<li><a style="cursor: pointer;" id="a-goods">已买到的宝贝</a></li>
@@ -706,6 +706,8 @@
                                                                     <if condition="$v.type eq 1">注册
                                                                         <elseif condition="$v.type eq 2" />充值
                                                                         <elseif condition="$v.type eq 3" />提现
+                                                                        <elseif condition="$v.type eq 4" />补贴
+                                                                        <elseif condition="$v.type eq 5" />分红
                                                                         <else /> -
                                                                     </if>
                                                                 </td>
@@ -725,7 +727,7 @@
 									<div class="panel-heading">
 										<h4 class="panel-title">
 											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse2">
-												分红说明
+												福利说明
 											</a>
 										</h4>
 									</div>
@@ -751,6 +753,33 @@
                                                     <td>3</td>
                                                     <td colspan="2">购车前100名团购会员，在完成定车交易之日起，每天补贴30元易得币，累计补贴至3000元为止。</td>
                                                 </tr>
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse2">
+												已获得分红
+											</a>
+										</h4>
+									</div>
+									<div class="panel-collapse">
+										<div class="panel-body">
+											<table class="table table-bordered table-hover text-center text-center">
+												<thead>
+													<tr>
+														<th class="text-center">序号</th>
+														<th class="text-center">现金</th>
+														<th class="text-center">时间</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td></td>
+													</tr>
+												</tbody>
 											</table>
 										</div>
 									</div>

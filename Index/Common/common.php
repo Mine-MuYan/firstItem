@@ -515,7 +515,7 @@ function checkUserBouns($id){
     }elseif($count >= $configVal1 && $count < $configVal2 ){
         $re = $confExtra;
     }elseif($count >= $configVal2 && $total >= $configVal3){
-        $re = $confExtra + 1;
+        $re = $confExtra;   //享受广告费的同时也享受加权分红（每月月底发放）
     }else{
         $re = 0;
     }
@@ -561,10 +561,15 @@ function regNotice($id){
     //通知用户注册成功
     $noticeData = array(
         'uid'   => $id,
-        'info'  => '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。',
         'time'  => date('Y-m-d H:i:s'),
         'type'  => 1
     );
+    $referee    = getUserReferee($id);
+    if($referee == 0){
+        $noticeData['info'] = '恭喜您注册成功，快去邀请小伙伴加入我们吧。';
+    }else{
+        $noticeData['info'] = '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴加入我们吧。';
+    }
     $res  = $tbNotice -> add($noticeData);
     if($res){
         return true;

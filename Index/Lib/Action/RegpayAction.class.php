@@ -8,6 +8,12 @@ class RegpayAction extends Action {
 
     public function payCheck(){
         $id         = $_SESSION['id'];
+        //更新用户状态
+        $userData   = array(
+            'ustatus'   => 1,
+            'paystatus' => 2,
+        );
+        $userStatus = M('user') -> where("id = $id") -> save($userData);
         $userCoin   = M('user_jifenyide');
         $configJf   = getUserConfig(7);
         $configYd   = getUserConfig(8);
@@ -20,10 +26,25 @@ class RegpayAction extends Action {
             'time'  => date('Y-m-d H:i:s'),
             'type'  => 1
         );
-        M('jifenyide_log') -> add($logData);
-        if($reYd && $reJf){
+        $userJfLog  = M('jifenyide_log') -> add($logData);
+        $userNotice = regNotice($id);
+        if($userStatus && $reYd && $reJf && $userNotice && $userJfLog){
             $this -> success('成功','__APP__/Index/index');
-        }else{
+        }
+        /*using when debugging
+        elseif(!$userStatus){
+            pp('用户状态更改失败');
+        }elseif(!$reYd){
+            pp('用户易得币发放失败');
+        }elseif(!$reJf){
+            pp('用户积分发放失败');
+        }elseif(!$userNotice){
+            pp('用户注册消息写入失败');
+        }elseif(!$userJfLog){
+            pp('log写入失败');
+        }
+        */
+        else{
             $this -> error('失败','__APP__/Index/index');
         }
         //注册完成,销毁session
@@ -32,36 +53,10 @@ class RegpayAction extends Action {
     }
     
     public function test(){
-//        $city = array('f','s');
-//        $this -> sss($city);
-        
-//        pp(getUserReferees(81));
-//        pp(getUserReferee(98));
-        /*
-        $arr = "array('name'=>'张三','age'=>'16')";
-        $str = [];
-        eval("\$str = ".$arr.'; ');
-        pp($str);
-        pp($str['name']);
-        */
-        
-        
-        //列出所有直推人数大于10 且团购人数大于30的用户
-        
-        $dbUser = M('user');
-        $refCount = getUserConfig('13');
-        $allCount = getUserConfig('14');
-        $map['refcount'] = array('egt',$refCount);
-        $userId = $dbUser -> where($map) -> field('id') -> select();
-        $ids = [];
-        foreach($userId as $k){
-            $allNum = refereeCounts($k['id'],'count');
-            if($allNum >= $allCount){
-                $ids[] = $k['id'];
-            }
-         }
-         pp($userId);
-         pp($ids);
+        pp('nothing here');
+    
+        $BeginDate=date('Y-m-01 00:00:00', strtotime(date("Y-m-d")));
+        pp($BeginDate);
         $this -> display();
     }
     

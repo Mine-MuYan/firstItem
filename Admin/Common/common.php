@@ -155,3 +155,45 @@ function refereeCount($id,$what){
     }
     return $res;
 }
+
+
+/**
+ * 可获得分红的用户列表
+ * 传值时，只有当第一个参数为1是，第二个参数才有效
+ * @param int       $re     返回部分数据 0：返回所有数据；1：仅返回需要用到的数据
+ * @param string    $field  要返回的字段
+ * @return array|bool   0：展示用户信息；1：返回关键数据，做分红发放
+ */
+function fenHongUser($re = 0,$field = 'id,username,refcount,fenhtime'){
+    $dbUser = M('user');
+    $refCount = getUserConfig('10');
+    $allCount = getUserConfig('11');
+    $map['refcount'] = array('egt',$refCount);
+    if($re == 1){
+        $map['fenhtime'] = array('lt',date('Y-m-01 00:00:00', strtotime(date("Y-m-d"))));
+        $users = $dbUser -> where($map) -> field($field) -> select();
+    }else{
+        $users = $dbUser -> where($map) -> select();
+    }
+    foreach($users as $k => $v){
+        $id = $v['id'];
+        $count = refereeCounts($id,'count');
+        $users[$k]['allCount'] = $count;
+    }
+    $userArr = array();
+    foreach($users as $kk => $vv){
+        if($users[$kk]['allCount'] >= $allCount){
+            $userArr[] = $vv;
+        }
+    }
+    if(empty($userArr)){
+        return false;
+    }else{
+        return $userArr;
+    }
+}
+
+//给用户奖励时，写入积分表、log表、消息表
+function notice(){
+
+}
