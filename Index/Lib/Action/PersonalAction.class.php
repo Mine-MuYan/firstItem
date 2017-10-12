@@ -115,24 +115,6 @@
 			R('Base/header');
 			R('Base/footer');
 			$this->assign('data',$data);
-			
-			//直推
-            $refThis    = refereeCount($_SESSION['uid'],'select');
-            $refCount   = count($refThis);
-            //所有推荐的人
-            $OtherId    = refereeCounts($_SESSION['uid'],'uid');
-            $refOther   = getUserRefCash($OtherId);
-            $otherCount = count($refOther);
-            //注册消息通知
-            $notice     = getJifenNotice($_SESSION['uid']);
-            //其他消息通知
-            $notices    = getNotice($_SESSION['uid']);
-            $this -> assign('notice',$notice);
-            $this -> assign('notices',$notices);
-            $this -> assign('refThis',$refThis);
-            $this -> assign('refOther',$refOther);
-            $this -> assign('refCount',$refCount);
-            $this -> assign('otherCount',$otherCount);
 			$this->display();
 		}
 
@@ -530,4 +512,50 @@
 				return $upload->getUploadFileInfo();
 			}
 		}
+		
+		
+		function userInfo(){
+		    $type = I('type');
+
+		    switch($type){
+                case 'ref':
+                    //直推会员列表
+                    $refThis    = refereeCount($_SESSION['uid'],'select',1,20);
+                    $refCount   = count($refThis);
+                    $this -> assign('refCount',$refCount);
+                    $this -> assign('refThis',$refThis['re']);
+                    $this -> assign('refThisPage',$refThis['page']);
+                    break;
+                case 'refAll':
+                    //团购会员列表
+                    $OtherId    = refereeCounts($_SESSION['uid'],'uid');
+                    $refOther   = getUserRefCash($OtherId,1,20);
+                    $otherCount = count($refOther);
+                    $this -> assign('otherCount',$otherCount);
+                    $this -> assign('refOther',$refOther['re']);
+                    $this -> assign('refOtherPage',$refOther['page']);
+                    break;
+                case 'regNotice':
+                    //注册消息通知
+                    $notice     = getJifenNotice($_SESSION['uid'],1,20);
+                    $this -> assign('notice',$notice['re']);
+                    $this -> assign('notice_page',$notice['page']);
+                    break;
+                case 'otherNotice':
+                    //其他消息通知
+                    $notices    = getNotice($_SESSION['uid'],1,20);
+                    $this -> assign('notices',$notices['re']);
+                    $this -> assign('notices_page',$notices['page']);
+                    break;
+                case 'bounsList':
+                    //分红和补贴通知
+                    $bounsNot   = getBounsNotice($_SESSION['uid'],1,20);
+                    $this -> assign('bouns',$bounsNot['re']);
+                    $this -> assign('bounsPage',$bounsNot['page']);
+                    break;
+                default:
+                    $this -> error('此页面不可直接访问');
+            }
+            $this -> display();
+        }
 	}

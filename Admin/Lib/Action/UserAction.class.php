@@ -481,9 +481,94 @@
         }
         
         /**
-         * 给已购车用户一键发放补贴
+         * 给已购车用户一键发放补贴（in 写法）
          */
         function bounsGivenOnce(){
+            $dbUser     = M('user');
+            $vipCount   = getUserConfig('14');
+            $map = array(
+                'carcount' => array('gt',0),
+                'ustatus' => 1,
+                'bounsday' => array('elt',100),
+            );
+            $userIds    = $dbUser -> where($map) -> limit($vipCount) -> field('id') -> select();
+            $ydCount    = getUserConfig('13');
+            $uids = [];
+            if(empty($userIds)){
+                $this -> error('暂时没有可发放分红的用户哦');
+            }else{
+                foreach($userIds as $k){
+                    $uids[] = $k['id'];
+                }
+                $uids = implode(',',$uids);
+                $mapUserDay = array(
+                    'id'        => array('in',$uids),
+                    'bounstime' => array('lt',date('Y-m-d 00:00:00'))
+                );
+                $reUserDay = $dbUser -> where($mapUserDay) -> setInc('bounsday',1); //天数+1
+                if($reUserDay){
+                    $mapUserTime['id'] = array('in',$uids);
+                    $dataUserTime['bounstime'] = date('Y-m-d H:i:s');
+                    $reUserTime = $dbUser -> where($mapUserTime) -> save($dataUserTime); //时间改为当前时间
+                    if($reUserTime){
+                        $dataCoin['uid'] = array('in',$uids);
+                        $reCoin = M('user_jifenyide') -> where($dataCoin) -> setInc('yide',$ydCount);
+                        if($reCoin){
+                            $logData = array(
+                                'uid'   => 0,
+                                'uids'  => $uids,
+                                'info'  => "您的购车补贴$ydCount 易得币已发放。",
+                                'time'  => date('Y-m-d H:i:s'),
+                                'type'  => 5
+                            );
+                            $reLog = M('jifenyide_log') -> add($logData);
+                            $noticeData = array(
+                                'uid'   => $uids,
+                                'info'  => "您的购车补贴$ydCount 易得币已发放。",
+                                'time'  => date('Y-m-d H:i:s'),
+                                'type'  => 4
+                            );
+                            $reNotice = M('user_notice') -> add($noticeData);
+                            $bounsData = array(
+                                'uid'   => $uids,
+                                'admin' => $_SESSION['username'],
+                                'money' => $ydCount,
+                                'time'  => date('Y-m-d H:i:s'),
+                                'type'  => 1,
+                                'mtype' => 1
+                            );
+                            $reBouns = M('user_bouns') -> add($bounsData);
+                            if($reLog && $reNotice && $reBouns){
+                                $this -> success('发放成功','__URL__/userGiven');
+                            }
+                            /***  using when debugging
+                            elseif(!$reLog){
+                                pp('记录表写入失败');
+                            }elseif(!$reNotice){
+                                pp('通知表写入失败');
+                            }elseif(!$reBouns){
+                                pp('奖励表写入失败');
+                            }
+                             */
+                            else{
+                                $this -> error('发放失败');
+                            }
+                        }else{
+                            $this -> error('易得币发放失败');
+                        }
+                    }
+                }else{
+                    $this -> error('今天已发放过补贴，请勿多次点击','__URL__/userGiven');
+                }
+            }
+            
+        }
+        
+        
+        /**
+         * 给已购车用户一键发放补贴（循环 写法）
+         */
+        function bounsGivenOnces(){
             $dbUser     = M('user');
             $vipCount   = getUserConfig('14');
             $map = array(
@@ -547,19 +632,21 @@
                 }
                 /** using when debugging
                 elseif(in_array(0,$reLog)){
-                    pp($reLog,'log写入失败');
+                pp($reLog,'log写入失败');
                 }elseif(in_array(0,$reNotice)){
-                    pp($reNotice,'通知写入失败');
+                pp($reNotice,'通知写入失败');
                 }elseif(in_array(0,$reBouns)){
-                    pp($reBouns,'分红表写入失败');
+                pp($reBouns,'分红表写入失败');
                 }
-                */
+                 */
                 else{
                     $this -> error('补贴发放失败','__URL__/userGiven');
                 }
             }
         }
         
+        
+    
         /**
          * 可获得分红的用户列表
          */
@@ -570,9 +657,79 @@
         }
         
         /**
-         * 给可获得分红的用户一键发分红
+         * 给可获得分红的用户一键发分红（in 写法）
          */
         public function GiveFenHong(){
+            $users      = fenHongUser(1);
+            $fenHong    = getUserConfig('15');
+            $uids       = [];
+            if(!$users){
+                $this -> error('暂时没有可发放分红的用户或本月分红已经发放过');
+            }else{
+                foreach($users as $k => $v){
+                    $uids[] = $v['id'];
+                }
+                $uids = implode(',',$uids);
+                $fenHongData['fenhtime'] = date('Y-m-d H:i:s');
+                $fenHongMap['id'] = array('in',$uids);
+                $reUsers = M('user') -> where($fenHongMap) -> save($fenHongData);
+                if($reUsers){
+                    $coinMap['uid'] = array('in',$uids);
+                    $reCoin = M('user_jifenyide') -> where($coinMap) -> setInc('cash',$fenHong);
+                    if($reCoin){
+                        $logData = array(
+                            'uid'  => 0,
+                            'uids' => $uids,
+                            'info' => "恭喜您本月获得公司加权分红，现金$fenHong 。",
+                            'time' => date('Y-m-d H:i:s'),
+                            'type' => 6
+                        );
+                        $reLog = M('jifenyide_log') -> add($logData);
+                        $noticeData = array(
+                            'uid'  => $uids,
+                            'info' => "恭喜您本月获得公司加权分红，现金$fenHong 。",
+                            'time' => date('Y-m-d H:i:s'),
+                            'type' => 5
+                        );
+                        $reNotice = M('user_notice') -> add($noticeData);
+                        $bounsData = array(
+                            'uid'   => $uids,
+                            'admin' => $_SESSION['username'],
+                            'money' => $fenHong,
+                            'time'  => date('Y-m-d H:i:s'),
+                            'type'  => 2,
+                            'mtype' => 2
+                        );
+                        $reBouns = M('user_bouns') -> add($bounsData);
+                        if($reLog && $reNotice && $reBouns){
+                            $this -> success('分红发放成功','__URL__/userFenHong');
+                        }
+                        /***  using when debugging
+                        elseif(!$reLog){
+                        pp('记录表写入失败');
+                        }elseif(!$reNotice){
+                        pp('通知表写入失败');
+                        }elseif(!$reBouns){
+                        pp('奖励表写入失败');
+                        }
+                         */
+                        else{
+                            $this -> error('分红发放失败');
+                        }
+                    }else{
+                        $this -> error('分红发放失败');
+                    }
+                }else{
+                    $this -> error('本月已发放过分红，请勿多次点击');
+                }
+            }
+        }
+        
+        
+        /**
+         * 给可获得分红的用户一键发分红（循环 写法）
+         */
+        public function GiveFenHongs(){
             $users      = fenHongUser(1);
             $fenHong    = getUserConfig('15');
             $reNotice   = $reLog = $reBouns = 0;
@@ -621,11 +778,11 @@
                 }
                 /** using when debugging
                 elseif(in_array(0,$reLog)){
-                    pp($reLog,'log写入失败');
+                pp($reLog,'log写入失败');
                 }elseif(in_array(0,$reNotice)){
-                    pp($reNotice,'通知写入失败');
+                pp($reNotice,'通知写入失败');
                 }elseif(in_array(0,$reBouns)){
-                    pp($reBouns,'分红表写入失败');
+                pp($reBouns,'分红表写入失败');
                 }
                  */
                 else{

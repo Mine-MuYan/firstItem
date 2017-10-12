@@ -89,19 +89,41 @@ function getUser($id,$field){
 }
 
 
-//根据ID查找用户的推荐信息、金额
-function getUserRefCash($id){
+/**
+ * 根据ID查找用户的推荐信息、金额
+ * @param $id       integer/array   用户ID
+ * @param $page     integer         是否返回分页，默认否； 0：不返回分页；1：返回分页
+ * @param $pageNum  integer         每页条数（只有当$page=1，才可用） *
+ * @return array
+ */
+function getUserRefCash($id,$page=0,$pageNum=20){
+    $show = [];
     if(count($id) == 1){
         $re = getUser($id,'*');
         $rr = getUserCash($id);
         $re['jifen']    = $rr['jifen'];
         $re['yide']     = $rr['yide'];
         $re['cash']     = $rr['cash'];
-        
     }else{
         $tbUser = M('user');
         $map['id'] = array('in',$id);
-        $re = $tbUser -> where($map) -> order('id desc , regtime desc') -> select();
+        switch($page){
+            case 0:
+                $re = $tbUser -> where($map) -> order('id desc , regtime desc') -> select();
+                break;
+            case 1:
+                import('ORG.Util.Page');
+                $count      = $tbUser->where($map)->count();
+                $Page       = new Page($count,$pageNum);
+                foreach($_POST as $key=>$val) {
+                    $Page->parameter[$key]   =   urlencode($val);
+                }
+                $show       = $Page->show();
+                $re = $tbUser -> where($map) -> order('id desc , regtime desc') -> limit($Page->firstRow.','.$Page->listRows) -> select();
+                break;
+            default:
+                $re = '参数错误';
+        }
         foreach($re as $k => $v){
             $rr = getUserCash($v['id']);
             $re[$k]['jifen']    = $rr['jifen'];
@@ -110,8 +132,18 @@ function getUserRefCash($id){
             $ref = getUser($v['referee'],'username');
             $re[$k]['refName']  = $ref;
         }
+        if($re && $show){
+            $result = array(
+                're'    => $re,
+                'page'  => $show
+            );
+            return $result;
+        }elseif($re){
+            return $re;
+        }else{
+            return array();
+        }
     }
-    return $re;
 }
 
 
@@ -378,13 +410,33 @@ function regInsertClass($id){
 
 /**
  * 获取用户直推数量/列表
- * @param $id   integer 用户ID
- * @param $what string  返回数据的方式 count：数量；select：列表
+ * @param $id       integer     用户ID
+ * @param $what     string      返回数据的方式 count：数量；select：列表
+ * @param $page     integer     是否返回分页，默认否； 0：不返回分页；1：返回分页
+ * @param $pageNum  integer     每页条数（只有当$page=1，才可用）
  * @return int|mixed|string
  */
-function refereeCount($id,$what){
+function refereeCount($id,$what,$page=0,$pageNum=0){
     $tbUser     = M('user');
-    $re = $tbUser -> where("referee = $id") -> order('id desc , regtime desc') -> select();
+    $map['referee'] = $id;
+    $show = [];
+    switch($page){
+        case 0:
+            $re = $tbUser -> where($map) -> order('id desc , regtime desc') -> select();
+            break;
+        case 1:
+            import('ORG.Util.Page');
+            $count      = $tbUser->where($map)->count();
+            $Page       = new Page($count,$pageNum);
+            foreach($_POST as $key=>$val) {
+                $Page->parameter[$key]   =   urlencode($val);
+            }
+            $show       = $Page->show();
+            $re = $tbUser -> where($map) -> order('id desc , regtime desc') -> limit($Page->firstRow.','.$Page->listRows) -> select();
+            break;
+        default:
+            return '参数错误';
+    }
     if($re){
         switch($what){
             case 'count':
@@ -419,7 +471,15 @@ function refereeCount($id,$what){
                 $res = '参数错误';
         }
     }
-    return $res;
+    if($res && $show){
+        $result = array(
+            're'    => $res,
+            'page'  => $show
+        );
+        return $result;
+    }else{
+        return false;
+    }
 }
 
 
@@ -468,32 +528,135 @@ function refereeCounts($id,$what,$field = '*'){
 
 /**
  * 获取注册时的消息
- * @param $id   integer 用户ID
+ * @param $id       integer     用户ID
+ * @param $page     integer     是否返回分页，默认否； 0：不返回分页；1：返回分页
+ * @param $pageNum  integer     每页条数（只有当$page=1，才可用）
  * @return bool|mixed
  */
-function getJifenNotice($id){
-    $tbRealtion = M('jifenyide_log');
-    $re = $tbRealtion -> where("FIND_IN_SET($id, uids)") -> order('time desc')-> select();
-    if($re){
-        return $re;
-    }else{
-        return false;
+function getJifenNotice($id,$page = 0,$pageNum = 20){
+    $tbJiFen = M('jifenyide_log');
+    $map = array(
+        '0'     => array("FIND_IN_SET($id, uids)"),
+        'type'  => array('in','1,2,3,4,5,6')
+    );
+    switch($page){
+        case 0:
+            $re = $tbJiFen -> where($map) -> order('time desc') -> select();
+            if($re){
+                return $re;
+            }else{
+                return false;
+            }
+            break;
+        case 1:
+            import('ORG.Util.Page');
+            $count      = $tbJiFen->where($map)->count();
+            $Page       = new Page($count,$pageNum);
+            foreach($_POST as $key=>$val) {
+                $Page->parameter[$key]   =   urlencode($val);
+            }
+            $show       = $Page->show();
+            $re = $tbJiFen -> where($map) -> order('time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select();
+            if($re && $show){
+                $res = array(
+                    're'    => $re,
+                    'page'  => $show
+                );
+                return $res;
+            }else{
+                return false;
+            }
+            break;
+        default:
+            return '参数错误';
     }
 }
 
 
 /**
  * 获取用户的注册、充值、提现消息
- * @param $id
+ * @param $id       integer     用户ID
+ * @param $page     integer     是否返回分页，默认否； 0：不返回分页；1：返回分页
+ * @param $pageNum  integer     每页条数（只有当$page=1，才可用）
  * @return bool|mixed
  */
-function getNotice($id){
+function getNotice($id,$page = 0,$pageNum = 20){
     $tbNotice = M('user_notice');
-    $re = $tbNotice -> where("uid = $id") -> order('time desc') -> select();
-    if($re){
-        return $re;
-    }else{
-        return false;
+    $map = array("FIND_IN_SET($id, uid)");
+    switch($page){
+        case 0:
+            $re = $tbNotice -> where($map) -> order('time desc') -> select();
+            if($re){
+                return $re;
+            }else{
+                return false;
+            }
+            break;
+        case 1:
+            import('ORG.Util.Page');
+            $count      = $tbNotice->where($map)->count();
+            $Page       = new Page($count,$pageNum);
+            foreach($_POST as $key=>$val) {
+                $Page->parameter[$key]   =   urlencode($val);
+            }
+            $show       = $Page->show();
+            $re = $tbNotice -> where($map) -> order('time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select();
+            if($re && $show){
+                $res = array(
+                    're'    => $re,
+                    'page'  => $show
+                );
+                return $res;
+            }else{
+                return false;
+            }
+            break;
+        default:
+            return '参数错误';
+    }
+}
+
+
+/**
+ * 获取用户的注册、充值、提现消息
+ * @param $id       integer     用户ID
+ * @param $page     integer     是否返回分页，默认否； 0：不返回分页；1：返回分页
+ * @param $pageNum  integer     每页条数（只有当$page=1，才可用）
+ * @return bool|mixed
+ */
+function getBounsNotice($id,$page = 0,$pageNum = 20){
+    $tbNotice = M('user_bouns');
+    $map = array("FIND_IN_SET($id, uid)");
+    switch($page){
+        case 0:
+            $re = $tbNotice -> where($map) -> order('time desc') -> select();
+            if($re){
+                return $re;
+            }else{
+                return false;
+            }
+            break;
+        case 1:
+            import('ORG.Util.Page');
+            $count      = $tbNotice->where($map)->count();
+            $Page       = new Page($count,$pageNum);
+            foreach($_POST as $key=>$val) {
+                $Page->parameter[$key]   =   urlencode($val);
+            }
+            $show       = $Page->show();
+            $re = $tbNotice -> where($map) -> limit($Page->firstRow.','.$Page->listRows)-> order('time desc') -> select();
+            if($re && $show){
+                $res = array(
+                    're'    => $re,
+                    'page'  => $show
+                );
+                return $res;
+            }else{
+                return false;
+            }
+            break;
+        default:
+            return '参数错误';
     }
 }
 

@@ -192,8 +192,3 @@ function fenHongUser($re = 0,$field = 'id,username,refcount,fenhtime'){
         return $userArr;
     }
 }
-
-//给用户奖励时，写入积分表、log表、消息表
-function notice(){
-
-}

@@ -53,10 +53,8 @@ class RegpayAction extends Action {
     }
     
     public function test(){
-        pp('nothing here');
+        pp('-----------------------');
     
-        $BeginDate=date('Y-m-01 00:00:00', strtotime(date("Y-m-d")));
-        pp($BeginDate);
         $this -> display();
     }
     

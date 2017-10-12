@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<!--[if IE 7 ]><html class="ie ie7 lte9 lte8 lte7" lang="en-US"><![endif]-->
+<!--[if IE 8]><html class="ie ie8 lte9 lte8" lang="en-US">	<![endif]-->
+<!--[if IE 9]><html class="ie ie9 lte9" lang="en-US"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="noIE" lang="en-US"><!--<![endif]-->
+<head>
+	<title>更多数据</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!-- Bootstrap不支持IE的兼容模式，此处使IE浏览器运行最新的渲染模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 响应式布局开启视窗控制 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- 页面信息 -->
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+
+	<!-- bootstrap css 文件引入 -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/bootstrap.css">
+	<link rel="stylesheet" href="__PUBLIC__/index/css/bootstrap-theme.css">
+	<!-- // bootstrap css 文件引入 -->
+
+	<!-- 一般 css 文件引入 -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/minified.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/uploadify/uploadify.css">
+	<!-- // 一般 css 文件引入 -->
+
+	<!--[if IE 8]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/selectivizr-min.js"></script>
+	<![endif]-->
+	<!--
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	-->
+	<!-- 挂载 jquery.min.js (上线采用)到对象 window 下，若不成功直接加载 -->
+	<script>window.jQuery || document.write('<script src="__PUBLIC__/index/js/jquery.min.js"><\/script>');</script>
+	<!-- // 挂载 jquery.min.js (上线采用)到对象 window 下，若不成功直接加载 -->
+
+	<script src="__PUBLIC__/index/js/modernizr.min.js"></script>
+
+	<!-- 挂载bootstrap js 文件 -->
+	<script src="__PUBLIC__/index/js/bootstrap.js"></script>
+	<!-- // 挂载 bootstrap js 文件 -->
+
+	<!-- PARTICULAR PAGES CSS FILES 特定页面css文件 -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/innerpage.css">
+	<!-- // PARTICULAR PAGES CSS FILES 特定页面css文件 -->
+
+	<!-- 响应式 css 文件 -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/responsive.css">
+	<!-- // 响应式 css 文件 -->
+
+    <style type="text/css">
+		.info{
+			display: none;
+		}
+		h3,body{
+			color: #000;
+		}
+
+    </style>
+    <script type="text/javascript" src="__PUBLIC__/uploadify/jquery.uploadify-3.1.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+            function getUrlVars(){
+                var vars = [], hash;
+                var hashes = window.location.href.slice(window.location.href.indexOf('?')+1).split('&');
+                for(var i = 0; i < hashes.length; i++) {
+                    hash = hashes[i].split('=');
+                    vars.push(hash[0]);
+                    vars[hash[0]] = hash[1];
+                }
+                return vars;
+            }
+            var broswerUrl = location.href;
+			var re = broswerUrl.indexOf("?");
+            console.log(broswerUrl);
+            console.log(typeof(broswerUrl));
+			if(re == -1){	//-1：未查询到
+			    console.log("无");
+				//todo: 截取出type的值
+
+			}else{
+                var params  = getUrlVars();
+                var type  = params[params[0]];
+			}
+            console.log(type);
+//			$("#"+type).show();
+
+        });
+	</script>
+</head>
+<body>
+	<div id="page-wrapper">
+		<include file="./Index/Tpl/index/header.html" />
+		<main id="main-content" role="main">
+			<div class="container">
+				<div class="row">
+					<div class="m-t-b clearfix">
+						<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-md-9 user">
+							<div id="ref" class="info">
+								<h3>直推会员列表</h3>
+								<table class="table table-bordered table-hover text-center">
+									<thead>
+									<tr>
+										<th class="text-center">用户名</th>
+										<th class="text-center">积分</th>
+										<th class="text-center">易得币</th>
+										<th class="text-center">现金</th>
+										<th class="text-center">注册时间</th>
+									</tr>
+									</thead>
+									<notempty name="refThis">
+										<volist name="refThis" id="v">
+											<tbody>
+											<tr>
+												<td><{$v.username}></td>
+												<td><{$v.jifen}></td>
+												<td><{$v.yide}></td>
+												<td><{$v.cash}></td>
+												<td><{$v.regtime|date="Y-m-d H:i",###}></td>
+											</tr>
+											</tbody>
+										</volist>
+										<else />
+										<td colspan="5" class="text-center">暂无数据</td>
+									</notempty>
+								</table>
+								<div class="pager"><{$refThisPage}></div>
+							</div>
+							<div id="refAll" class="info">
+								<h3>团购会员列表</h3>
+								<table class="table table-bordered table-hover text-center">
+									<thead>
+									<tr>
+										<th class="text-center">用户名</th>
+										<th class="text-center">积分</th>
+										<th class="text-center">易得币</th>
+										<th class="text-center">现金</th>
+										<th class="text-center">推荐人</th>
+										<th class="text-center">注册时间</th>
+									</tr>
+									</thead>
+									<notempty name="refOther">
+										<volist name="refOther" id="v">
+											<tbody>
+											<tr>
+												<td><{$v.username}></td>
+												<td><{$v.jifen}></td>
+												<td><{$v.yide}></td>
+												<td><{$v.cash}></td>
+												<td><{$v.refName}></td>
+												<td><{$v.regtime|date="Y-m-d H:i",###}></td>
+											</tr>
+											</tbody>
+										</volist>
+										<else />
+										<td colspan="6" class="text-center">暂无数据</td>
+									</notempty>
+								</table>
+								<div class="pager"><{$refOtherPage}></div>
+							</div>
+							<div id="regNotice" class="info">
+								<h3>注册消息通知</h3>
+								<table class="table table-bordered table-hover text-center">
+									<thead>
+									<tr>
+										<th class="text-center">时间</th>
+										<th class="text-center">内容</th>
+									</tr>
+									</thead>
+									<tbody>
+									<notempty name="notice">
+										<volist name="notice" id="v">
+											<tr>
+												<td><{$v.time}></td>
+												<td><{$v.info}></td>
+											</tr>
+										</volist>
+										<else />
+										<td colspan="2" class="text-center">暂无数据</td>
+									</notempty>
+									</tbody>
+								</table>
+								<div class="pager"><{$notice_page}></div>
+							</div>
+							<div id="otherNotice" class="info">
+								<h3>其他消息通知</h3>
+								<table class="table table-bordered table-hover text-center">
+									<thead>
+										<tr>
+											<th class="text-center">时间</th>
+											<th class="text-center">内容</th>
+											<th class="text-center">类型</th>
+										</tr>
+									</thead>
+									<notempty name="notices">
+										<volist name="notices" id="v">
+											<tbody>
+												<tr>
+													<td><{$v.time}></td>
+													<td><{$v.info}></td>
+													<td>
+														<if condition="$v.type eq 1">注册
+															<elseif condition="$v.type eq 2" />充值
+															<elseif condition="$v.type eq 3" />提现
+															<elseif condition="$v.type eq 4" />补贴
+															<elseif condition="$v.type eq 5" />分红
+															<else /> -
+														</if>
+													</td>
+												</tr>
+											</tbody>
+										</volist>
+										<else />
+										<td colspan="3" class="text-center">暂无数据</td>
+									</notempty>
+								</table>
+								<div class="pager"><{$notices_page}></div>
+							</div>
+							<div id="bounsList" class="info">
+								<h3>领取福利记录</h3>
+								<table class="table table-bordered table-hover text-center">
+									<thead>
+									<tr>
+										<th class="text-center">现金</th>
+										<th class="text-center">币种</th>
+										<th class="text-center">类型</th>
+										<th class="text-center">时间</th>
+									</tr>
+									</thead>
+									<tbody>
+										<notempty name="bouns">
+											<volist name="bouns" id="v">
+												<tr>
+													<td><{$v.money}></td>
+													<td>
+														<if condition="$v.mtype eq 1">
+															易得币
+															<elseif condition="$v.mtype eq 2" /> 现金
+															<else /> -
+														</if>
+													</td>
+													<td>
+														<if condition="$v.type eq 1">
+															购车补贴
+															<elseif condition="$v.mtype eq 2" /> 分红
+															<else /> -
+														</if>
+													</td>
+													<td><{$v.time}></td>
+												</tr>
+											</volist>
+											<else/>
+											<td colspan="4">暂无数据</td>
+										</notempty>
+									</tbody>
+								</table>
+								<div class="pager"><{$bounsPage}></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<include file="./Index/Tpl/index/footer.html" />
+	</div>
+<!-- // PAGE WRAPPER 页面封装 -->
+
+<!-- Essential Javascripts 基本的 js 文件 -->
+<script src="__PUBLIC__/index/js/minified.js"></script>
+<!-- // Essential Javascripts 基本的 js 文件 -->
+
+<!-- Particular Page Javascripts 特定页面的 javascripts -->
+<script src="__PUBLIC__/index/js/owl.carousel.js"></script>
+<script src="__PUBLIC__/index/js/jquery.flexslider-min.js"></script>
+<!-- // Particular Page Javascripts 特定页面的 javascripts -->
+</body>
+</html>
