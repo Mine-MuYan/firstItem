@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 100125
 File Encoding         : 65001
 
-Date: 2017-10-11 17:48:01
+Date: 2017-10-13 10:16:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -422,53 +422,14 @@ CREATE TABLE `mss_jifenyide_log` (
   `time` datetime DEFAULT NULL COMMENT '创建时间',
   `type` int(11) DEFAULT NULL COMMENT '1、原始会员注册； 2、一级会员注册；3、二级会员注册;4、三级会员注册；5、补贴；6、分红',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=121 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_jifenyide_log
 -- ----------------------------
-INSERT INTO `mss_jifenyide_log` VALUES ('1', '1', null, '原始会员yuanshi000注册成功，奖励1000积分，并赠送10000易得币。', '2017-10-11 10:24:50', '1');
-INSERT INTO `mss_jifenyide_log` VALUES ('2', '2', null, '原始会员yuanshi001注册成功，奖励1000积分，并赠送10000易得币。', '2017-10-11 10:31:33', '1');
-INSERT INTO `mss_jifenyide_log` VALUES ('3', '3', null, '原始会员yuanshi002注册成功，奖励1000积分，并赠送10000易得币。', '2017-10-11 10:39:17', '1');
-INSERT INTO `mss_jifenyide_log` VALUES ('4', '4', null, '原始会员yuanshi003注册成功，奖励1000积分，并赠送10000易得币。', '2017-10-11 10:42:24', '1');
-INSERT INTO `mss_jifenyide_log` VALUES ('5', '5', '4', 'yiji100注册成功，奖励邀请人（yuanshi003）现金700，积分300。', '2017-10-11 10:46:38', '2');
-INSERT INTO `mss_jifenyide_log` VALUES ('6', '6', '4', 'yiji101注册成功，奖励邀请人（yuanshi003）现金700，积分300。', '2017-10-11 10:48:10', '2');
-INSERT INTO `mss_jifenyide_log` VALUES ('7', '7', '4,5', 'erji1001注册成功，奖励原始会员yuanshi003现金700，积分300,奖励邀请人（yiji100）现金700，积分300。', '2017-10-11 10:49:51', '3');
-INSERT INTO `mss_jifenyide_log` VALUES ('8', '8', '4,5', 'erji1002注册成功，奖励原始会员yuanshi003现金700，积分300,奖励邀请人（yiji100）现金700，积分300。', '2017-10-11 10:50:28', '3');
-INSERT INTO `mss_jifenyide_log` VALUES ('9', '9', '4,5,7', 'sanji10011注册成功，奖励一级会员yuanshi003现金280，积分120,奖励二级会员yiji100现金700，积分300,奖励邀请人（erji1001）现金700，积分300。', '2017-10-11 10:51:53', '4');
-INSERT INTO `mss_jifenyide_log` VALUES ('10', '10', '4,5,7', 'sanji10012注册成功，奖励一级会员yuanshi003现金280，积分120,奖励二级会员yiji100现金700，积分300,奖励邀请人（erji1001）现金700，积分300。', '2017-10-11 10:53:33', '4');
-INSERT INTO `mss_jifenyide_log` VALUES ('11', '11', '5,7,9', 'sanji100112注册成功，奖励一级会员yiji100现金280，积分120,奖励二级会员erji1001现金700，积分300,奖励邀请人（sanji10011）现金700，积分300。', '2017-10-11 10:54:20', '4');
-INSERT INTO `mss_jifenyide_log` VALUES ('12', '12', '5,7,9', 'sanji100113注册成功，奖励一级会员yiji100现金280，积分120,奖励二级会员erji1001现金700，积分300,奖励邀请人（sanji10011）现金700，积分300。', '2017-10-11 10:55:39', '4');
-INSERT INTO `mss_jifenyide_log` VALUES ('13', '4', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:22:25', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('14', '5', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:22:25', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('15', '7', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:22:25', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('16', '4', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:23:32', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('17', '5', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:23:32', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('18', '7', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:23:32', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('19', '4', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:24:35', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('20', '5', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:24:35', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('21', '7', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:24:35', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('22', '4', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:24:45', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('23', '5', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:24:45', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('24', '7', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:24:45', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('25', '4', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:57:34', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('26', '5', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:57:34', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('27', '7', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:57:34', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('28', '4', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:58:54', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('29', '5', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:58:54', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('30', '7', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:58:54', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('31', '4', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:59:14', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('32', '5', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:59:14', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('33', '7', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:59:14', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('34', '4', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:59:41', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('35', '5', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:59:41', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('36', '7', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:59:41', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('37', '4', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 16:00:05', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('38', '5', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 16:00:05', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('39', '7', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 16:00:05', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('40', '4', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 16:17:01', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('41', '5', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 16:17:01', '6');
-INSERT INTO `mss_jifenyide_log` VALUES ('42', '7', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 16:17:01', '6');
+INSERT INTO `mss_jifenyide_log` VALUES ('120', '0', '4,5,7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-12 11:42:05', '6');
+INSERT INTO `mss_jifenyide_log` VALUES ('119', '0', '4,5,7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-12 11:40:15', '6');
+INSERT INTO `mss_jifenyide_log` VALUES ('118', '0', '1,2,3,4,5,6,7,8,9,10,11,12', '您的购车补贴30 易得币已发放。', '2017-10-12 11:00:41', '5');
 
 -- ----------------------------
 -- Table structure for mss_links
@@ -4230,7 +4191,7 @@ CREATE TABLE `mss_user` (
   `refcount` int(11) NOT NULL DEFAULT '0' COMMENT '直推人数',
   `carcount` int(11) DEFAULT '0' COMMENT '购车数量',
   `bounstime` datetime DEFAULT '2017-05-20 05:20:21' COMMENT '上次补贴发放时间',
-  `fenhtime` datetime DEFAULT '2017-05-20 05:20:21' ON UPDATE CURRENT_TIMESTAMP COMMENT '上次发分红时间',
+  `fenhtime` datetime DEFAULT '2017-05-20 05:20:21' COMMENT '上次发分红时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`) USING BTREE,
   UNIQUE KEY `email` (`email`)
@@ -4239,18 +4200,18 @@ CREATE TABLE `mss_user` (
 -- ----------------------------
 -- Records of mss_user
 -- ----------------------------
-INSERT INTO `mss_user` VALUES ('1', 'yuanshi000', '1f8ac768762f844eeff41c8e0931dd73', 'yuanshi000@qq.com', 'headpic.gif', '1507688683', '127.0.0.1', '1', '0', '0', '0', '2', '0', '0', '0', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
-INSERT INTO `mss_user` VALUES ('2', 'yuanshi001', 'dab67c57e5eeb4667a407ce1021130d5', 'yuanshi001@qq.com', 'headpic.gif', '1507689088', '127.0.0.1', '1', '0', '0', '0', '2', '0', '0', '0', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
-INSERT INTO `mss_user` VALUES ('3', 'yuanshi002', '6b9228ce270767aafdcafedf727c4c34', 'yuanshi002@qq.com', 'headpic.gif', '1507689551', '127.0.0.1', '1', '0', '0', '0', '2', '0', '0', '0', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
-INSERT INTO `mss_user` VALUES ('4', 'yuanshi003', '04ee804545c64495fa7140229c6a77f8', 'yuanshi003@qq.com', 'headpic.gif', '1507689738', '127.0.0.1', '1', '0', '0', '0', '2', '0', '2', '0', '2017-05-20 05:20:21', '2017-10-11 16:17:01');
-INSERT INTO `mss_user` VALUES ('5', 'yiji100', '83e6618531b9c2321ae6f417243c03fc', 'yiji100@qq.com', 'headpic.gif', '1507689998', '127.0.0.1', '1', '1', '1', '0', '2', '4', '2', '0', '2017-05-20 05:20:21', '2017-10-11 16:17:01');
-INSERT INTO `mss_user` VALUES ('6', 'yiji101', '52178fc5c64ff948a8d0c29efb27b1fb', 'yiji101@qq.com', 'headpic.gif', '1507690090', '127.0.0.1', '1', '1', '1', '0', '2', '4', '0', '0', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
-INSERT INTO `mss_user` VALUES ('7', 'erji1001', '41881131130e978f2e94993278d7f1db', 'erji1001@qq.com', 'headpic.gif', '1507690191', '127.0.0.1', '1', '2', '2', '0', '2', '5', '2', '0', '2017-05-20 05:20:21', '2017-10-11 16:17:01');
-INSERT INTO `mss_user` VALUES ('8', 'erji1002', 'eb23b7b7dd9c465d03a6a9987194791a', 'erji1002@qq.com', 'headpic.gif', '1507690228', '127.0.0.1', '1', '2', '2', '0', '2', '5', '0', '0', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
-INSERT INTO `mss_user` VALUES ('9', 'sanji10011', '04e96e4ed39bc083956152c030736bef', 'sanji10011@qq.com', 'headpic.gif', '1507690313', '127.0.0.1', '1', '3', '3', '0', '2', '7', '2', '0', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
-INSERT INTO `mss_user` VALUES ('10', 'sanji10012', '405229e19fbb6a632db159ca730a7b13', 'sanji10012@qq.com', 'headpic.gif', '1507690413', '127.0.0.1', '1', '3', '3', '0', '2', '7', '0', '0', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
-INSERT INTO `mss_user` VALUES ('11', 'sanji100112', 'fa590cb2eac646d5259e78d430f48374', 'sanji100112@qq.com', 'headpic.gif', '1507690460', '127.0.0.1', '1', '3', '3', '0', '2', '9', '0', '0', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
-INSERT INTO `mss_user` VALUES ('12', 'sanji100113', 'a3145e415bfa82621fefe70540cb8a71', 'sanji100113@qq.com', 'headpic.gif', '1507690539', '127.0.0.1', '1', '3', '3', '0', '2', '9', '0', '0', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
+INSERT INTO `mss_user` VALUES ('1', 'yuanshi000', '1f8ac768762f844eeff41c8e0931dd73', 'yuanshi000@qq.com', 'headpic.gif', '1507688683', '127.0.0.1', '1', '0', '0', '1', '2', '0', '0', '12', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
+INSERT INTO `mss_user` VALUES ('2', 'yuanshi001', 'dab67c57e5eeb4667a407ce1021130d5', 'yuanshi001@qq.com', 'headpic.gif', '1507689088', '127.0.0.1', '1', '0', '0', '1', '2', '0', '0', '12', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
+INSERT INTO `mss_user` VALUES ('3', 'yuanshi002', '6b9228ce270767aafdcafedf727c4c34', 'yuanshi002@qq.com', 'headpic.gif', '1507689551', '127.0.0.1', '1', '0', '0', '1', '2', '0', '0', '12', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
+INSERT INTO `mss_user` VALUES ('4', 'yuanshi003', '04ee804545c64495fa7140229c6a77f8', 'yuanshi003@qq.com', 'headpic.gif', '1507689738', '127.0.0.1', '1', '0', '0', '1', '2', '0', '2', '12', '2017-05-20 05:20:21', '2017-10-12 11:42:05');
+INSERT INTO `mss_user` VALUES ('5', 'yiji100', '83e6618531b9c2321ae6f417243c03fc', 'yiji100@qq.com', 'headpic.gif', '1507689998', '127.0.0.1', '1', '1', '1', '1', '2', '4', '2', '12', '2017-05-20 05:20:21', '2017-10-12 11:42:05');
+INSERT INTO `mss_user` VALUES ('6', 'yiji101', '52178fc5c64ff948a8d0c29efb27b1fb', 'yiji101@qq.com', 'headpic.gif', '1507690090', '127.0.0.1', '1', '1', '1', '1', '2', '4', '0', '12', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
+INSERT INTO `mss_user` VALUES ('7', 'erji1001', '41881131130e978f2e94993278d7f1db', 'erji1001@qq.com', 'headpic.gif', '1507690191', '127.0.0.1', '1', '2', '2', '1', '2', '5', '2', '12', '2017-05-20 05:20:21', '2017-10-12 11:42:05');
+INSERT INTO `mss_user` VALUES ('8', 'erji1002', 'eb23b7b7dd9c465d03a6a9987194791a', 'erji1002@qq.com', 'headpic.gif', '1507690228', '127.0.0.1', '1', '2', '2', '1', '2', '5', '0', '12', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
+INSERT INTO `mss_user` VALUES ('9', 'sanji10011', '04e96e4ed39bc083956152c030736bef', 'sanji10011@qq.com', 'headpic.gif', '1507690313', '127.0.0.1', '1', '3', '3', '1', '2', '7', '2', '12', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
+INSERT INTO `mss_user` VALUES ('10', 'sanji10012', '405229e19fbb6a632db159ca730a7b13', 'sanji10012@qq.com', 'headpic.gif', '1507690413', '127.0.0.1', '1', '3', '3', '1', '2', '7', '0', '12', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
+INSERT INTO `mss_user` VALUES ('11', 'sanji100112', 'fa590cb2eac646d5259e78d430f48374', 'sanji100112@qq.com', 'headpic.gif', '1507690460', '127.0.0.1', '1', '3', '3', '1', '2', '9', '0', '12', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
+INSERT INTO `mss_user` VALUES ('12', 'sanji100113', 'a3145e415bfa82621fefe70540cb8a71', 'sanji100113@qq.com', 'headpic.gif', '1507690539', '127.0.0.1', '1', '3', '3', '1', '2', '9', '0', '12', '2017-05-20 05:20:21', '2017-05-20 05:20:21');
 
 -- ----------------------------
 -- Table structure for mss_userinfo
@@ -4275,7 +4236,7 @@ CREATE TABLE `mss_userinfo` (
 INSERT INTO `mss_userinfo` VALUES ('1', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('2', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('3', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('4', '3', '', '', '1507714132', '127.0.0.1', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('4', '3', '', '', '1507858199', '127.0.0.1', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('5', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('6', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('7', '3', '', '', '0', '', '', '', '');
@@ -4304,7 +4265,7 @@ CREATE TABLE `mss_user_admin` (
 -- ----------------------------
 -- Records of mss_user_admin
 -- ----------------------------
-INSERT INTO `mss_user_admin` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36', 'ademo@qq.com', '0', '1507711956');
+INSERT INTO `mss_user_admin` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36', 'ademo@qq.com', '0', '1507771780');
 INSERT INTO `mss_user_admin` VALUES ('2', 'r1', 'e10adc3949ba59abbe56e057f20f883e', '5,6,7,8,9,10', 'r1@qq.com', '1389924107', '1498977449');
 INSERT INTO `mss_user_admin` VALUES ('3', 'a2', '202cb962ac59075b964b07152d234b70', '1', 'a2@qq.com', '1390096173', '1498974887');
 INSERT INTO `mss_user_admin` VALUES ('4', 'selly', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36', 'ademo@qq.com', '0', '1506475868');
@@ -4315,19 +4276,38 @@ INSERT INTO `mss_user_admin` VALUES ('5', 'isellys', 'e10adc3949ba59abbe56e057f2
 -- ----------------------------
 DROP TABLE IF EXISTS `mss_user_bouns`;
 CREATE TABLE `mss_user_bouns` (
-  `id` int(11) NOT NULL,
-  `uid` int(11) DEFAULT NULL COMMENT '用户ID',
-  `aid` int(11) DEFAULT NULL COMMENT '管理员ID',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` varchar(255) DEFAULT '' COMMENT '用户ID（字符串）',
+  `admin` varchar(100) DEFAULT NULL COMMENT '管理员昵称',
   `money` decimal(8,2) DEFAULT NULL COMMENT '金额',
-  `time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '发放时间',
+  `time` datetime DEFAULT NULL COMMENT '发放时间',
   `type` tinyint(1) DEFAULT NULL COMMENT '类型 1、补贴；2：分红',
   `mtype` tinyint(1) DEFAULT NULL COMMENT '补贴金额类型 1、易得币；2、现金',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_user_bouns
 -- ----------------------------
+INSERT INTO `mss_user_bouns` VALUES ('1', '1', null, '30.00', null, '1', '1');
+INSERT INTO `mss_user_bouns` VALUES ('2', '1', 'admin', '30.00', '2017-10-12 09:40:39', '1', '1');
+INSERT INTO `mss_user_bouns` VALUES ('3', '2', 'admin', '30.00', '2017-10-12 09:40:39', '1', '1');
+INSERT INTO `mss_user_bouns` VALUES ('4', '3', 'admin', '30.00', '2017-10-12 09:40:39', '1', '1');
+INSERT INTO `mss_user_bouns` VALUES ('5', '4', 'admin', '30.00', '2017-10-12 09:40:39', '1', '1');
+INSERT INTO `mss_user_bouns` VALUES ('6', '5', 'admin', '30.00', '2017-10-12 09:40:39', '1', '1');
+INSERT INTO `mss_user_bouns` VALUES ('7', '6', 'admin', '30.00', '2017-10-12 09:40:39', '1', '1');
+INSERT INTO `mss_user_bouns` VALUES ('8', '7', 'admin', '30.00', '2017-10-12 09:40:39', '1', '1');
+INSERT INTO `mss_user_bouns` VALUES ('9', '8', 'admin', '30.00', '2017-10-12 09:40:39', '1', '1');
+INSERT INTO `mss_user_bouns` VALUES ('10', '9', 'admin', '30.00', '2017-10-12 09:40:39', '1', '1');
+INSERT INTO `mss_user_bouns` VALUES ('11', '10', 'admin', '30.00', '2017-10-12 09:40:39', '1', '1');
+INSERT INTO `mss_user_bouns` VALUES ('12', '11', 'admin', '30.00', '2017-10-12 09:40:39', '1', '1');
+INSERT INTO `mss_user_bouns` VALUES ('13', '12', 'admin', '30.00', '2017-10-12 09:40:39', '1', '1');
+INSERT INTO `mss_user_bouns` VALUES ('14', '4', 'admin', '100.00', '2017-10-12 10:28:34', '2', '2');
+INSERT INTO `mss_user_bouns` VALUES ('15', '5', 'admin', '100.00', '2017-10-12 10:28:34', '2', '2');
+INSERT INTO `mss_user_bouns` VALUES ('16', '7', 'admin', '100.00', '2017-10-12 10:28:34', '2', '2');
+INSERT INTO `mss_user_bouns` VALUES ('17', '1,2,3,4,5,6,7,8,9,10,11,12', 'admin', '30.00', '2017-10-12 11:00:41', '1', '1');
+INSERT INTO `mss_user_bouns` VALUES ('18', '4,5,7', 'admin', '100.00', '2017-10-12 11:40:15', '2', '2');
+INSERT INTO `mss_user_bouns` VALUES ('19', '4,5,7', 'admin', '100.00', '2017-10-12 11:42:05', '2', '2');
 
 -- ----------------------------
 -- Table structure for mss_user_config
@@ -4376,18 +4356,18 @@ CREATE TABLE `mss_user_jifenyide` (
 -- ----------------------------
 -- Records of mss_user_jifenyide
 -- ----------------------------
-INSERT INTO `mss_user_jifenyide` VALUES ('1', '1', '1000.00', '10000.00', '0.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('2', '2', '1000.00', '10000.00', '0.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('3', '3', '1000.00', '10000.00', '0.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('4', '4', '3040.00', '10200.00', '5560.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('5', '5', '1440.00', '200.00', '4160.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('6', '6', '0.00', '0.00', '0.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('7', '7', '1200.00', '200.00', '3600.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('8', '8', '0.00', '0.00', '0.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('9', '9', '600.00', '0.00', '1400.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('10', '10', '0.00', '0.00', '0.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('11', '11', '0.00', '0.00', '0.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('12', '12', '0.00', '0.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('1', '1', '1000.00', '10210.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('2', '2', '1000.00', '10210.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('3', '3', '1000.00', '10210.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('4', '4', '3040.00', '10410.00', '5860.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('5', '5', '1440.00', '410.00', '4460.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('6', '6', '0.00', '210.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('7', '7', '1200.00', '410.00', '3900.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('8', '8', '0.00', '210.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('9', '9', '600.00', '210.00', '1400.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('10', '10', '0.00', '210.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('11', '11', '0.00', '210.00', '0.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('12', '12', '0.00', '210.00', '0.00');
 
 -- ----------------------------
 -- Table structure for mss_user_notice
@@ -4395,56 +4375,20 @@ INSERT INTO `mss_user_jifenyide` VALUES ('12', '12', '0.00', '0.00', '0.00');
 DROP TABLE IF EXISTS `mss_user_notice`;
 CREATE TABLE `mss_user_notice` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `uid` int(11) DEFAULT NULL COMMENT '用户ID',
+  `uid` varchar(255) DEFAULT '' COMMENT '用户ID（字符串）',
   `info` varchar(255) DEFAULT NULL COMMENT '内容',
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '时间',
   `type` tinyint(1) DEFAULT NULL COMMENT '类型 1、注册；2、充值；3、提现；4、补贴；5、分红',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COMMENT='用户消息表';
+) ENGINE=MyISAM AUTO_INCREMENT=121 DEFAULT CHARSET=utf8 COMMENT='用户消息表';
 
 -- ----------------------------
 -- Records of mss_user_notice
 -- ----------------------------
-INSERT INTO `mss_user_notice` VALUES ('1', '3', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴注册吧。', '2017-10-11 10:39:17', '1');
-INSERT INTO `mss_user_notice` VALUES ('2', '4', '恭喜您注册成功，快去邀请小伙伴加入我们吧。', '2017-10-11 10:42:24', '1');
-INSERT INTO `mss_user_notice` VALUES ('3', '5', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴加入我们吧。', '2017-10-11 10:46:38', '1');
-INSERT INTO `mss_user_notice` VALUES ('4', '6', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴加入我们吧。', '2017-10-11 10:48:10', '1');
-INSERT INTO `mss_user_notice` VALUES ('5', '7', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴加入我们吧。', '2017-10-11 10:49:51', '1');
-INSERT INTO `mss_user_notice` VALUES ('6', '8', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴加入我们吧。', '2017-10-11 10:50:28', '1');
-INSERT INTO `mss_user_notice` VALUES ('7', '9', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴加入我们吧。', '2017-10-11 10:51:53', '1');
-INSERT INTO `mss_user_notice` VALUES ('8', '10', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴加入我们吧。', '2017-10-11 10:53:33', '1');
-INSERT INTO `mss_user_notice` VALUES ('9', '11', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴加入我们吧。', '2017-10-11 10:54:20', '1');
-INSERT INTO `mss_user_notice` VALUES ('10', '12', '恭喜您注册成功，推荐人奖励已发，快去邀请小伙伴加入我们吧。', '2017-10-11 10:55:39', '1');
-INSERT INTO `mss_user_notice` VALUES ('11', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:22:25', '5');
-INSERT INTO `mss_user_notice` VALUES ('12', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:22:25', '5');
-INSERT INTO `mss_user_notice` VALUES ('13', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:22:25', '5');
-INSERT INTO `mss_user_notice` VALUES ('14', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:23:32', '5');
-INSERT INTO `mss_user_notice` VALUES ('15', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:23:32', '5');
-INSERT INTO `mss_user_notice` VALUES ('16', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:23:32', '5');
-INSERT INTO `mss_user_notice` VALUES ('17', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:24:35', '5');
-INSERT INTO `mss_user_notice` VALUES ('18', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:24:35', '5');
-INSERT INTO `mss_user_notice` VALUES ('19', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:24:35', '5');
-INSERT INTO `mss_user_notice` VALUES ('20', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:24:45', '5');
-INSERT INTO `mss_user_notice` VALUES ('21', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:24:45', '5');
-INSERT INTO `mss_user_notice` VALUES ('22', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:24:45', '5');
-INSERT INTO `mss_user_notice` VALUES ('23', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:57:34', '5');
-INSERT INTO `mss_user_notice` VALUES ('24', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:57:34', '5');
-INSERT INTO `mss_user_notice` VALUES ('25', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:57:34', '5');
-INSERT INTO `mss_user_notice` VALUES ('26', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:58:54', '5');
-INSERT INTO `mss_user_notice` VALUES ('27', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:58:54', '5');
-INSERT INTO `mss_user_notice` VALUES ('28', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:58:54', '5');
-INSERT INTO `mss_user_notice` VALUES ('29', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:59:14', '5');
-INSERT INTO `mss_user_notice` VALUES ('30', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:59:14', '5');
-INSERT INTO `mss_user_notice` VALUES ('31', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:59:14', '5');
-INSERT INTO `mss_user_notice` VALUES ('32', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:59:41', '5');
-INSERT INTO `mss_user_notice` VALUES ('33', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:59:41', '5');
-INSERT INTO `mss_user_notice` VALUES ('34', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 15:59:41', '5');
-INSERT INTO `mss_user_notice` VALUES ('35', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 16:00:05', '5');
-INSERT INTO `mss_user_notice` VALUES ('36', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 16:00:05', '5');
-INSERT INTO `mss_user_notice` VALUES ('37', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 16:00:05', '5');
-INSERT INTO `mss_user_notice` VALUES ('38', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 16:17:01', '5');
-INSERT INTO `mss_user_notice` VALUES ('39', '5', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 16:17:01', '5');
-INSERT INTO `mss_user_notice` VALUES ('40', '7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-11 16:17:01', '5');
+INSERT INTO `mss_user_notice` VALUES ('117', '1,2,3,4,5,6,7,8,9,10,11,12', '您的购车补贴30 易得币已发放。', '2017-10-12 11:00:41', '4');
+INSERT INTO `mss_user_notice` VALUES ('118', '4,5,7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-12 11:40:15', '5');
+INSERT INTO `mss_user_notice` VALUES ('119', '4,5,7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-12 11:42:05', '5');
+INSERT INTO `mss_user_notice` VALUES ('120', '4', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-12 11:57:14', '5');
 
 -- ----------------------------
 -- Table structure for mss_user_relation

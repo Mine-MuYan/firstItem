@@ -529,7 +529,7 @@
                 case 'refAll':
                     //团购会员列表
                     $OtherId    = refereeCounts($_SESSION['uid'],'uid');
-                    $refOther   = getUserRefCash($OtherId,1,20);
+                    $refOther   = getUserRefCash($OtherId,1,2);
                     $otherCount = count($refOther);
                     $this -> assign('otherCount',$otherCount);
                     $this -> assign('refOther',$refOther['re']);
@@ -554,7 +554,7 @@
                     $this -> assign('bounsPage',$bounsNot['page']);
                     break;
                 default:
-                    $this -> error('此页面不可直接访问');
+                    $this -> error('看，灰机...');
             }
             $this -> display();
         }
