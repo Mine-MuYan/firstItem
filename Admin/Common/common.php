@@ -51,6 +51,74 @@ function ps($model){
 
 
 /**
+ * 获取用户的某项信息
+ * @param $id       integer 用户ID
+ * @param $field    string  字段名
+ * @return int  推荐人ID
+ */
+function getUser($id,$field = '*'){
+    $tbUser = M('user');
+    $re = $tbUser -> where("id = $id") -> find();
+    if($re){
+        if($field == '*'){
+            $res = $re;
+        }else{
+            $res = $re[$field];
+        }
+    }else{
+        $res = '获取数据失败';
+    }
+    return $res;
+}
+
+
+/**
+ * 根据消息种类获取用户消息，支持查询多个种类
+ * @param $type string  消息类型
+ * @return mixed
+ */
+function getUserNotice($type){
+    $dbUserNotice = M('user_notice');
+    $types  = explode(',',$type);
+    $count  = count($types);
+    if($count == 1){
+        $map['type'] = (string)$type;
+    }else{
+        $map['type'] = array('in',$types);
+    }
+    $re = $dbUserNotice -> where($map) -> order('time desc') -> select();
+    if(empty($re)){
+        return false;
+    }else{
+        return $re;
+    }
+}
+
+
+/**
+ * 根据消息种类获取用户消息，支持查询多个种类
+ * @param $type string  消息类型
+ * @return mixed
+ */
+function getUserBouns($type){
+    $dbUserBouns = M('user_bouns');
+    $types  = explode(',',$type);
+    $count  = count($types);
+    if($count == 1){
+        $map['type'] = (string)$type;
+    }else{
+        $map['type'] = array('in',$types);
+    }
+    $re = $dbUserBouns -> where($map) -> order('time desc') -> select();
+    if(empty($re)){
+        return false;
+    }else{
+        return $re;
+    }
+}
+
+
+/**
  * 获取后台配置比率等信息
  * @param   integer $id     配置项的ID
  * @param   string  $what   返回数据方式 value：返回值；config：返回具体配置项

@@ -64,6 +64,7 @@
                 if($jifenyideData){
                     $user[$row]['jifen'] = $jifenyideData['jifen'];
                     $user[$row]['yide'] = $jifenyideData['yide'];
+                    $user[$row]['cash'] = $jifenyideData['cash'];
                 }
 
             }
@@ -493,7 +494,7 @@
             );
             $userIds    = $dbUser -> where($map) -> limit($vipCount) -> field('id') -> select();
             $ydCount    = getUserConfig('13');
-            $uids = [];
+            $uids       = $name = [];
             if(empty($userIds)){
                 $this -> error('暂时没有可发放分红的用户哦');
             }else{
@@ -514,6 +515,12 @@
                         $dataCoin['uid'] = array('in',$uids);
                         $reCoin = M('user_jifenyide') -> where($dataCoin) -> setInc('yide',$ydCount);
                         if($reCoin){
+                            $uids   = explode(',',$uids);
+                            foreach($uids as $kk => $vv){
+                                $name[] = getUser($vv,'username');
+                            }
+                            $names  = implode(',',$name);
+                            $uids   = implode(',',$uids);
                             $logData = array(
                                 'uid'   => 0,
                                 'uids'  => $uids,
@@ -531,6 +538,7 @@
                             $reNotice = M('user_notice') -> add($noticeData);
                             $bounsData = array(
                                 'uid'   => $uids,
+                                'names' => $names,
                                 'admin' => $_SESSION['username'],
                                 'money' => $ydCount,
                                 'time'  => date('Y-m-d H:i:s'),
@@ -564,89 +572,6 @@
             
         }
         
-        
-        /**
-         * 给已购车用户一键发放补贴（循环 写法）
-         */
-        function bounsGivenOnces(){
-            $dbUser     = M('user');
-            $vipCount   = getUserConfig('14');
-            $map = array(
-                'carcount' => array('gt',0),
-                'ustatus' => 1,
-                'bounsday' => array('elt',100),
-            );
-            $userIds    = $dbUser -> where($map) -> limit($vipCount) -> field('id') -> select();
-            $ydCount    = getUserConfig('13');
-            $reNotice   = $reLog = $reBouns = [];
-            if(empty($userIds)){
-                $this -> error('暂时没有可发放补贴的用户哦');
-            }else{
-                foreach($userIds as $k){
-                    $uid = $k['id'];
-                    $map = array(
-                        'id'        => $uid,
-                        'bounstime' => array('lt',date('Y-m-d 00:00:00'))
-                    );
-                    $reUserDay = $dbUser -> where($map) -> setInc('bounsday',1); //天数+1
-                    if(!$reUserDay){
-                        $this -> error('今天已经发放过补贴，不要重复点击哦');
-                    }else{
-                        $reUserTime = $dbUser -> where("id = $uid") -> save(array('bounstime' => date('Y-m-d H:i:s'))); //时间改为当前时间
-                        if(!$reUserTime){
-                            $this -> error('时间修改失败且补贴发放失败');
-                        }else{
-                            $reCoin = M('user_jifenyide') -> where("uid = $uid") -> setInc('yide',$ydCount);
-                            if(!$reCoin){
-                                $this -> error('补贴写入失败');
-                            }else{
-                                $logData = array(
-                                    'uid'   => $uid,
-                                    'uids'  => $uid,
-                                    'info'  => "您的购车补贴$ydCount 易得币已发放。",
-                                    'time'  => date('Y-m-d H:i:s'),
-                                    'type'  => 5
-                                );
-                                $reLog[] = M('jifenyide_log') -> add($logData);
-                                $noticeData = array(
-                                    'uid'   => $uid,
-                                    'info'  => "您的购车补贴$ydCount 易得币已发放。",
-                                    'time'  => date('Y-m-d H:i:s'),
-                                    'type'  => 4
-                                );
-                                $reNotice[] = M('user_notice') -> add($noticeData);
-                                $bounsData = array(
-                                    'uid'   => $uid,
-                                    'aid'   => $_SESSION['uid'],
-                                    'money' => $ydCount,
-                                    'type'  => 1,
-                                    'mtype' => 1
-                                );
-                                $reBouns[] = M('mss_user_bouns') -> add($bounsData);
-                            }
-                        }
-                    }
-                }
-                if(!in_array(0,$reLog) && !in_array(0,$reNotice) && !in_array(0,$reBouns)){
-                    $this -> success('补贴发放成功','__URL__/userGiven');
-                }
-                /** using when debugging
-                elseif(in_array(0,$reLog)){
-                pp($reLog,'log写入失败');
-                }elseif(in_array(0,$reNotice)){
-                pp($reNotice,'通知写入失败');
-                }elseif(in_array(0,$reBouns)){
-                pp($reBouns,'分红表写入失败');
-                }
-                 */
-                else{
-                    $this -> error('补贴发放失败','__URL__/userGiven');
-                }
-            }
-        }
-        
-        
-    
         /**
          * 可获得分红的用户列表
          */
@@ -662,7 +587,7 @@
         public function GiveFenHong(){
             $users      = fenHongUser(1);
             $fenHong    = getUserConfig('15');
-            $uids       = [];
+            $uids       = $name =[];
             if(!$users){
                 $this -> error('暂时没有可发放分红的用户或本月分红已经发放过');
             }else{
@@ -677,6 +602,12 @@
                     $coinMap['uid'] = array('in',$uids);
                     $reCoin = M('user_jifenyide') -> where($coinMap) -> setInc('cash',$fenHong);
                     if($reCoin){
+                        $uids   = explode(',',$uids);
+                        foreach($uids as $kk => $vv){
+                            $name[] = getUser($vv,'username');
+                        }
+                        $names  = implode(',',$name);
+                        $uids   = implode(',',$uids);
                         $logData = array(
                             'uid'  => 0,
                             'uids' => $uids,
@@ -694,6 +625,7 @@
                         $reNotice = M('user_notice') -> add($noticeData);
                         $bounsData = array(
                             'uid'   => $uids,
+                            'names' => $names,
                             'admin' => $_SESSION['username'],
                             'money' => $fenHong,
                             'time'  => date('Y-m-d H:i:s'),
@@ -725,69 +657,53 @@
             }
         }
         
-        
+      
         /**
-         * 给可获得分红的用户一键发分红（循环 写法）
+         * 会员关系列表
          */
-        public function GiveFenHongs(){
-            $users      = fenHongUser(1);
-            $fenHong    = getUserConfig('15');
-            $reNotice   = $reLog = $reBouns = 0;
-            if(!$users){
-                $this -> error('暂时没有可发放分红的用户或本月分红已经发放过');
-            }else{
-                foreach($users as $k => $v){
-                    $uid = $v['id'];
-                    $fenHongData['fenhtime'] = date('Y-m-d H:i:s');
-                    $reUsers = M('user') -> where("id = $uid") -> save($fenHongData);
-                    if(!$reUsers){
-                        $this -> error('时间更改失败');
-                    }else{
-                        $reCoin = M('user_jifenyide') -> where("uid = $uid") -> setInc('cash',$fenHong);
-                        if(!$reCoin){
-                            $this -> error('分红写入失败');
-                        }else{
-                            $logData = array(
-                                'uid'  => $uid,
-                                'uids' => $uid,
-                                'info' => "恭喜您本月获得公司加权分红，现金$fenHong 。",
-                                'time' => date('Y-m-d H:i:s'),
-                                'type' => 6
-                            );
-                            $reLog[] = M('jifenyide_log') -> add($logData);
-                            $noticeData = array(
-                                'uid'  => $uid,
-                                'info' => "恭喜您本月获得公司加权分红，现金$fenHong 。",
-                                'time' => date('Y-m-d H:i:s'),
-                                'type' => 5
-                            );
-                            $reNotice[] = M('user_notice') -> add($noticeData);
-                            $bounsData = array(
-                                'uid'   => $uid,
-                                'aid'   => $_SESSION['uid'],
-                                'money' => $fenHong,
-                                'type'  => 2,
-                                'mtype' => 2
-                            );
-                            $reBouns[] = M('mss_user_bouns') -> add($bounsData);
-                        }
+        public function relation(){
+            $dbRelation = M('user_relation');
+            $reRelation = $dbRelation -> select();
+            foreach($reRelation as $k => $v){
+                $username = getUser($v['id']);
+                $reRelation[$k]['usernames']    = $username['username'];
+                $reRelation[$k]['regtimes']     = $username['regtime'];
+                $reRelation[$k]['classs']       = $username['class'];
+                if($v['pid'] == 0){
+                    $reRelation[$k]['oneRef']   = '';
+                    $reRelation[$k]['twoRef']   = '';
+                    $reRelation[$k]['threeRef'] = '';
+                }else{
+                    $reRelation[$k]['relations'] = explode(',',$v['relation']);
+                    $countRelation = count($reRelation[$k]['relations']);
+                    $reRelation[$k]['oneRef']   = $v['pid'];
+                    if($countRelation == 2){
+                        $reRelation[$k]['twoRef']   = $reRelation[$k]['relations'][0];
+                    }elseif($countRelation == 3){
+                        $reRelation[$k]['twoRef']   = $reRelation[$k]['relations'][1];
+                        $reRelation[$k]['threeRef'] = $reRelation[$k]['relations'][0];
+                        $reRelation[$k]['threeName']    = getUser($reRelation[$k]['threeRef'],'username');
                     }
-                }
-                if(!in_array(0,$reLog) && !in_array(0,$reNotice) && !in_array(0,$reBouns)){
-                    $this -> success('分红发放成功','__URL__/userFenHong');
-                }
-                /** using when debugging
-                elseif(in_array(0,$reLog)){
-                pp($reLog,'log写入失败');
-                }elseif(in_array(0,$reNotice)){
-                pp($reNotice,'通知写入失败');
-                }elseif(in_array(0,$reBouns)){
-                pp($reBouns,'分红表写入失败');
-                }
-                 */
-                else{
-                    $this -> error('分红发放失败','__URL__/userGiven');
+                    $reRelation[$k]['oneName']      = getUser($v['pid'],'username');
+                    $reRelation[$k]['twoName']      = getUser($reRelation[$k]['twoRef'],'username');
                 }
             }
+            $this -> assign('ralation',$reRelation);
+            $this -> display();
         }
+        
+        
+        public function money(){
+            $dbJiFen = M('user_jifenyide');
+            $reJiFen = $dbJiFen -> select();
+            foreach($reJiFen as $k => $v){
+                $name = getUser($v['uid'],'username');
+                $reJiFen[$k]['name'] = $name;
+            }
+            $this -> assign('reJiFen',$reJiFen);
+            $this -> display();
+        }
+        
+        
+        
 	}

@@ -529,7 +529,7 @@
                 case 'refAll':
                     //团购会员列表
                     $OtherId    = refereeCounts($_SESSION['uid'],'uid');
-                    $refOther   = getUserRefCash($OtherId,1,2);
+                    $refOther   = getUserRefCash($OtherId,1,20);
                     $otherCount = count($refOther);
                     $this -> assign('otherCount',$otherCount);
                     $this -> assign('refOther',$refOther['re']);

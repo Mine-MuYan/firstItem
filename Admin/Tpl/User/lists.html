@@ -41,14 +41,17 @@
 								<thead>
 									<tr>
 										<th width="50"><input type="checkbox">全选</th>
-										<th>编号</th>
-										<th>用户名</th>
+										<th>ID</th>
+										<th>会员名</th>
+										<th>会员等级</th>
 										<th>推荐人</th>
 										<th>积分</th>
 										<th>易得币</th>
+										<th>现金</th>
 										<th>邮箱</th>
+										<th>直推会员数</th>
+										<th>购车数量</th>
 										<th>注册时间</th>
-										<th>注册IP</th>
 										<th>当前状态</th>
 										<th>操作</th>
 
@@ -61,16 +64,38 @@
 										<td style="text-align:center"><input type="checkbox" value="<{$v.id}>" name="check[]"></td>
 										<td style="text-align:center"><{$v.id}></td>
 										<td style="text-align:center"><{$v.username}></td>
-										<td style="text-align:center"><{$v.pusername}></td>
+										<td style="text-align:center">
+											<if condition="$v.class eq 0">
+												原始会员
+												<elseif condition="$v.class eq 1" />一级
+												<elseif condition="$v.class eq 2" />二级
+												<elseif condition="$v.class eq 3" />三级
+												<else />-
+											</if>
+										</td>
+										<td style="text-align:center">
+											<if condition="$v.pusername eq null">
+												-
+												<else /><{$v.pusername}>
+											</if>
+										</td>
 										<td style="text-align:center"><{$v.jifen}></td>
 										<td style="text-align:center"><{$v.yide}></td>
+										<td style="text-align:center"><{$v.cash}></td>
 										<td style="text-align:center"><{$v.email}></td>
+										<td style="text-align:center"><{$v.refcount}></td>
+										<td style="text-align:center"><{$v.carcount}></td>
 										<td style="text-align:center"><{$v.regtime|date='Y-m-d H:i:s',###}></td>
-										<td style="text-align:center"><{$v.regip}></td>
 										<td style="text-align:center">
 											<if condition="$v.ustatus eq 1">正常登陆</if>
 											<if condition="$v.ustatus eq 2">尚未激活</if>
-											<if condition="$v.ustatus eq 3">限制登录</if>
+											<if condition="$v.ustatus eq 3">
+												<if condition="$v.paystatus eq 0">
+													未支付
+													<elseif condition="$v.paystatus eq 1" /> 支付失败
+													<else/> 限制登录
+												</if>
+											</if>
 										</td>
 										<td style="text-align:center" class="taskOptions">
 									    	<a href="__URL__/upda/id/<{$v.id}>" class="tip-top" data-original-title="编辑"><i class="icon-pencil"></i></a>&nbsp;&nbsp;
@@ -87,7 +112,7 @@
 					<!-- 组件盒子 结束 -->
 				</div>
 			</div>
-
+		</div>
 
 
 <!-- 包含底部 -->

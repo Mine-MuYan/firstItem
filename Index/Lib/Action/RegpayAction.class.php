@@ -22,6 +22,7 @@ class RegpayAction extends Action {
         $username   = getUser($id,'username');
         $logData    = array(
             'uid'   => $id,
+            'uids'  => $id,
             'info'  => '原始会员'.$username.'注册成功，奖励'.$configJf.'积分，并赠送'.$configYd.'易得币。',
             'time'  => date('Y-m-d H:i:s'),
             'type'  => 1
