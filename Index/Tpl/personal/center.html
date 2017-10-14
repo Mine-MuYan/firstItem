@@ -153,6 +153,31 @@
         .a-handle:link, .a-handle-visited, a-handle:hover, .a-handle:active, .a-handle {
             color: #00F;
         }
+		#person-notice{
+			display: none;
+		}
+		.lists{
+			width: 20%;
+			/*height: 125px;*/
+			text-align: center;
+			color: #FA6F57;
+			background-color: #f2f2f2;
+			border: 1px solid #DDDDDD;
+			margin-top: 5px;
+			display: block;
+			float: left;
+		}
+		.listss{
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+		.pic{
+			width: 35%;
+			margin-bottom: 6px;
+		}
+		.listName{
+			font-size: 14px;
+		}
     </style>
     <script type="text/javascript" src="__PUBLIC__/uploadify/jquery.uploadify-3.1.min.js"></script>
     <script type="text/javascript">
@@ -313,7 +338,6 @@
     </script>
     <script>
         $(function(){
-            $("#person-notice").hide();
             $("#a-info").click(function(){
                 $("#person-info").css("display","block");
                 $("#person-notice,#person-safe, #person-address, #person-goods, #person-footprint, #person-collect").css("display","none");
@@ -553,51 +577,57 @@
 								</div>
 							</div>
 							<div class="panel-group checkout person-info" id="person-notice">
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a href="__URL__/userInfo?type=ref">
+								<div class="lists">
+									<div class="listss">
+										<a href="__URL__/userInfo?type=ref">
+											<img src="__PUBLIC__/images/list1.png" alt="" class="pic">
+											<div class="listName">
 												直推会员列表
-											</a>
-										</h4>
+											</div>
+										</a>
 									</div>
 								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a href="__URL__/userInfo?type=refAll">
+								<div class="lists">
+									<div class="listss">
+										<a href="__URL__/userInfo?type=refAll">
+											<img src="__PUBLIC__/images/list2.png" alt="" class="pic">
+											<div class="listName">
 												团购会员列表
-											</a>
-										</h4>
+											</div>
+										</a>
 									</div>
 								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a href="__URL__/userInfo?type=regNotice">
+								<div class="lists">
+									<div class="listss">
+										<a href="__URL__/userInfo?type=regNotice">
+											<img src="__PUBLIC__/images/list3.png" alt="" class="pic">
+											<div class="listName">
 												注册消息通知
-											</a>
-										</h4>
+											</div>
+										</a>
 									</div>
 								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a href="__URL__/userInfo?type=otherNotice">
+								<div class="lists">
+									<div class="listss">
+										<a href="__URL__/userInfo?type=otherNotice">
+											<img src="__PUBLIC__/images/list4.png" alt="" class="pic">
+											<div class="listName">
 												其他消息通知
-											</a>
-										</h4>
+											</div>
+										</a>
 									</div>
 								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a href="__URL__/userInfo?type=bounsList">
-												领取福利记录
-											</a>
-										</h4>
+								<div class="lists">
+									<div class="listss">
+										<a href="__URL__/userInfo?type=bounsList">
+											<img src="__PUBLIC__/images/list5.png" alt="" class="pic">
+											<div class="listName">
+												福利领取记录
+											</div>
+										</a>
 									</div>
 								</div>
+								<div style="clear: both;margin-bottom: 5px;"></div>
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h4 class="panel-title">
@@ -612,7 +642,7 @@
 												<tr>
 													<th class="text-center">序号</th>
 													<th class="text-center">条件</th>
-													<th class="text-center">福利</th>
+													<th class="text-center">说明</th>
 												</tr>
 												<tr>
 													<td>1</td>

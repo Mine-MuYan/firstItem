@@ -397,6 +397,9 @@
          * 获取用户拨比设置
          */
         function userConfig(){
+            
+            R('Level/viewUserConfig'); // 验证权限
+            
 		    $re = M('user_config')-> select();
 		    foreach($re as $k => $v){
                 $re[$k]['values'] = $re[$k]['value'] * $re[$k]['ratio'];
@@ -419,6 +422,8 @@
          * 编辑用户拨比功能
          */
         function userConfigEdits(){
+            R('Level/editUserConfig'); // 验证权限
+            
             $id     = I('id');
             $value  = I('value');
             if(!is_numeric($value)){
@@ -449,6 +454,8 @@
          * 添加编辑用户拨比功能
          */
         function userConfigAdds(){
+            R('Level/addUserConfig');
+            
             $value = I('value');
             if(!is_numeric($value)){
                 $this -> error('值要是数字哦');
@@ -692,7 +699,9 @@
             $this -> display();
         }
         
-        
+        /**
+         * 用户资金列表
+         */
         public function money(){
             $dbJiFen = M('user_jifenyide');
             $reJiFen = $dbJiFen -> select();

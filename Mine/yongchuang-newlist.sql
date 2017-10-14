@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 100125
 File Encoding         : 65001
 
-Date: 2017-10-13 17:54:33
+Date: 2017-10-14 18:35:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -59,7 +59,7 @@ CREATE TABLE `mss_admin_log` (
   `loginfo` varchar(255) NOT NULL,
   `userip` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_admin_log
@@ -103,6 +103,20 @@ INSERT INTO `mss_admin_log` VALUES ('36', '1507884328', '14', '管理员admin查
 INSERT INTO `mss_admin_log` VALUES ('37', '1507884337', '14', '管理员admin查看了用户列表', '127.0.0.1');
 INSERT INTO `mss_admin_log` VALUES ('38', '1507884377', '14', '管理员admin查看了用户列表', '127.0.0.1');
 INSERT INTO `mss_admin_log` VALUES ('39', '1507884640', '14', '管理员admin查看了用户列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('40', '1507948705', '1', '管理员admin查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('41', '1507948718', '1', '管理员admin删除管理员admin', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('42', '1507948726', '1', '管理员admin删除管理员r1', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('43', '1507948728', '1', '管理员admin查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('44', '1507948920', '1', '管理员admin查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('45', '1507949021', '1', '管理员admin查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('46', '1507949082', '1', '管理员admin查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('47', '1507949122', '1', '管理员admin查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('48', '1507949152', '1', '管理员admin查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('49', '1507949182', '1', '管理员admin查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('50', '1507949187', '1', '管理员admin查看了商品列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('51', '1507949830', '1', '管理员admin查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('52', '1507974485', '1', '管理员admin查看了用户配置', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('53', '1507974543', '1', '管理员admin查看了用户配置', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for mss_carts
@@ -224,7 +238,7 @@ INSERT INTO `mss_goods` VALUES ('27', 'scz_27', '12', '153', '0', '2014春装新
 INSERT INTO `mss_goods` VALUES ('24', 'scz_26', '16', '231', '0', '2014春装新款女装时尚纽扣中腰短裤HG3010', '24.jpg', '<p>整体的结构设计时尚而百搭，简约而又不简单，彰显您不凡的品味；风格时尚优雅，韵味十足，腰间配上一条质感细腰带，将腰线提升，让腿部线条拉长再拉长。采用拼接设计，更加时尚！</p><p><br/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922639798260.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922639798260.jpg\" style=\"\" height=\"121\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922639847533.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922639847533.jpg\" style=\"\" height=\"147\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922639886858.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922639886858.jpg\" style=\"\" height=\"131\" width=\"120\"/></p><p><br/></p>', '', '329.00', '231.00', '0', '0', '2', '2', '3', '2', '1', '1390095236', '0', '绿色|蓝色', 'S|M|L|XL|XXL');
 INSERT INTO `mss_goods` VALUES ('23', 'scz_25', '16', '322', '0', '2014春装新款女装修身显瘦口袋中腰直筒短裤YQ2085', '23.jpg', '<p>该短裤有异于其它短裤的两个前片装饰，让原本单调的裤型变得更有设计感。双色弧形拼接，让短裤不单调。一字口袋装饰，简约时尚。</p><p><br/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922633103294.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922633103294.jpg\" style=\"\" height=\"92\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922633126505.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922633126505.jpg\" style=\"\" height=\"88\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922633213966.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922633213966.jpg\" style=\"\" height=\"241\" width=\"120\"/></p><p><br/></p>', '', '230.00', '161.00', '0', '161', '1', '2', '3', '2', '1', '0', '1498987472', '', '');
 INSERT INTO `mss_goods` VALUES ('22', 'scz_24', '16', '29', '0', '2014春装新款女装修身中腰金属装饰牛仔短裤MM2353', '22.jpg', '<p>牛仔短裤是每个季节必须必备的时尚单品，这款短裤，面料柔软透气，舒适得体，板型设计非常独到，裤腿毛边穿也非常漂亮，运用时尚流行元素，经典口袋设计，让你的季节不平凡，更好的展现你的完美身姿。</p><p><br/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922632574059.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922632574059.jpg\" style=\"\" height=\"89\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/1392263258802.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/1392263258802.jpg\" style=\"\" height=\"83\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922632629434.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922632629434.jpg\" style=\"\" height=\"94\" width=\"120\"/></p><p><br/></p>', '', '170.00', '119.00', '0', '0', '2', '2', '3', '2', '1', '0', '0', '绿色|蓝色', 'XS|S|M|L');
-INSERT INTO `mss_goods` VALUES ('1', 'scz_1', '12', '35', '0', '2014春装新款女V领长袖麻花修身中长款毛衣GJ2173', '5958a4e506884.png', '<p>针织毛衣在春秋冬三季都是是个宠儿，穿着舒适，透气性好，零距离接近美丽。纯色和V领也是这款衣服的最大特点，简单舒适大方是它展现出的美丽。</p><p><br/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/1392257566433.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/1392257566433.jpg\" style=\"\" height=\"91\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922575689620.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922575689620.jpg\" style=\"\" height=\"79\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922575693381.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922575693381.jpg\" style=\"\" height=\"79\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922575758831.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922575758831.jpg\" style=\"\" height=\"76\" width=\"120\"/></p><p><img style=\"width:100%\" src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316699531.jpg\" _src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316699531.jpg\"/><img src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316699876.jpg\" _src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316699876.jpg\"/><img src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316692210.jpg\" _src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316692210.jpg\"/><img src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316699307.jpg\" _src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316699307.jpg\"/><img src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316691383.jpg\" _src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316691383.jpg\"/></p>', '25', '195.00', '120.00', '0', '120', '2', '2', '3', '2', '1', '23232323', '1498987334', '', 'L');
+INSERT INTO `mss_goods` VALUES ('1', 'scz_1', '12', '35', '0', '2014春装新款女V领长袖麻花修身中长款毛衣GJ2173', '5958a4e506884.png', '<p>针织毛衣在春秋冬三季都是是个宠儿，穿着舒适，透气性好，零距离接近美丽。纯色和V领也是这款衣服的最大特点，简单舒适大方是它展现出的美丽。</p><p><br/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/1392257566433.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/1392257566433.jpg\" style=\"\" height=\"91\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922575689620.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922575689620.jpg\" style=\"\" height=\"79\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922575693381.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922575693381.jpg\" style=\"\" height=\"79\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922575758831.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922575758831.jpg\" style=\"\" height=\"76\" width=\"120\"/></p><p><img style=\"width:100%\" src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316699531.jpg\" _src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316699531.jpg\"/><img src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316699876.jpg\" _src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316699876.jpg\"/><img src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316692210.jpg\" _src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316692210.jpg\"/><img src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316699307.jpg\" _src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316699307.jpg\"/><img src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316691383.jpg\" _src=\"/project/mss/Public/ueditor/php/../../Uploads/goods_detail/20140210/13920316691383.jpg\"/></p>', '25', '195.00', '120.00', '0', '120', '1', '2', '3', '2', '1', '23232323', '1498987334', '', 'L');
 INSERT INTO `mss_goods` VALUES ('3', 'scz_3', '12', '5', '30', '2014春装新款女装大码宽松混织保暖开衫毛衣LC2378', '3.jpg', '<p>经典圆领设计，完美展现颈部白皙线条；时尚的纽扣给人眼前一亮的感觉，自然随性；宽松的版型，对身材零限制；面料穿着舒适，富有轻微弹力，无刺激感，快来选购吧~<br/></p><p><br/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140123/13904408357270.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140123/13904408357270.jpg\" style=\"\" height=\"72\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140123/13904408369245.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140123/13904408369245.jpg\" style=\"\" height=\"89\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140123/13904408389408.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140123/13904408389408.jpg\" style=\"\" height=\"102\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140123/13904408445106.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140123/13904408445106.jpg\" style=\"\" height=\"144\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140123/13904408464842.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140123/13904408464842.jpg\" style=\"\" height=\"98\" width=\"120\"/></p><p><br/></p>', '', '598.00', '419.00', '0', '0', '2', '2', '3', '2', '1', '0', '0', '绿色', 'XS|S|M|L|XL');
 INSERT INTO `mss_goods` VALUES ('16', 'scz_18', '15', '19', '0', '2014春装新款中腰修身小脚牛仔裤MU2220', '16.jpg', '<p>这款牛仔裤无论是质量和做工都非常棒，优质面料非常舒适，简洁大方的板型设计，还非常好搭配哦~非常修身，必备单品 是MM潮流混搭比较得心应手的一件美单品哦~绝对不容错过哦~温馨提示：因受拍摄场景光线等影响，图片颜色会有稍许差异，请以细节颜色为主。</p><p><br/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922628935169.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922628935169.jpg\" style=\"\" height=\"91\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922628957007.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922628957007.jpg\" style=\"\" height=\"128\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922629017759.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922629017759.jpg\" style=\"\" height=\"148\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/1392262903849.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/1392262903849.jpg\" style=\"\" height=\"120\" width=\"120\"/></p><p><br/></p>', '', '0.00', '250.00', '0', '0', '1', '2', '1', '2', '1', '0', '0', '红色', 'XS|S|XXL');
 INSERT INTO `mss_goods` VALUES ('17', 'scz_19', '15', '63', '0', '2014春装新女修身水洗磨白小脚牛仔裤TK2171', '17.jpg', '<p>牛仔裤是百搭款，不在乎多，一定要有型、质量要好，本款牛仔裤板型简约时尚，经过严格的水洗、磨白等过程，质量层层把关，面料柔软舒适，小脚设计非常修身，起到很好的显瘦提臀的作用，秋装时尚百搭新款！</p><p><br/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922629537714.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922629537714.jpg\" style=\"\" height=\"40\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922629607924.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922629607924.jpg\" style=\"\" height=\"71\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922629629437.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922629629437.jpg\" style=\"\" height=\"82\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922629631046.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922629631046.jpg\" style=\"\" height=\"93\" width=\"120\"/></p><p><img src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922629648791.jpg\" _src=\"http://localhost/mss/Public/Uploads/goods_detail/20140213/13922629648791.jpg\" style=\"\" height=\"126\" width=\"120\"/></p><p><br/></p>', '', '0.00', '300.00', '0', '0', '1', '2', '1', '2', '1', '0', '0', '绿色|蓝色|银白色', 'XS|S|M|L|XL|XXL');
@@ -4262,7 +4276,7 @@ CREATE TABLE `mss_userinfo` (
 INSERT INTO `mss_userinfo` VALUES ('1', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('2', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('3', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('4', '3', '', '', '1507858199', '127.0.0.1', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('4', '3', '', '', '1507944896', '127.0.0.1', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('5', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('6', '3', '', '', '0', '', '', '', '');
 INSERT INTO `mss_userinfo` VALUES ('7', '3', '', '', '0', '', '', '', '');
@@ -4286,7 +4300,7 @@ CREATE TABLE `mss_user_admin` (
   `userpwd` char(32) NOT NULL COMMENT '管理员密码',
   `level` varchar(100) NOT NULL COMMENT '用户权限组',
   `email` varchar(60) NOT NULL DEFAULT '' COMMENT '管理员邮箱',
-  `addtime` int(11) NOT NULL DEFAULT '0' COMMENT '添加时间',
+  `addtime` int(11) NOT NULL DEFAULT '1495228821' COMMENT '添加时间',
   `logintime` int(11) NOT NULL DEFAULT '0' COMMENT '登录时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
@@ -4295,10 +4309,9 @@ CREATE TABLE `mss_user_admin` (
 -- ----------------------------
 -- Records of mss_user_admin
 -- ----------------------------
-INSERT INTO `mss_user_admin` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36', 'ademo@qq.com', '0', '1507861358');
-INSERT INTO `mss_user_admin` VALUES ('2', 'r1', 'e10adc3949ba59abbe56e057f20f883e', '5,6,7,8,9,10', 'r1@qq.com', '1389924107', '1498977449');
+INSERT INTO `mss_user_admin` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36', 'ademo@qq.com', '1495228821', '1507948513');
 INSERT INTO `mss_user_admin` VALUES ('3', 'a2', '202cb962ac59075b964b07152d234b70', '1', 'a2@qq.com', '1390096173', '1498974887');
-INSERT INTO `mss_user_admin` VALUES ('4', 'selly', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36', 'ademo@qq.com', '0', '1506475868');
+INSERT INTO `mss_user_admin` VALUES ('4', 'selly', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36', 'ademo@qq.com', '1495228821', '1506475868');
 INSERT INTO `mss_user_admin` VALUES ('5', 'isellys', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4', 'isellys@qq.com', '1506476679', '1506476759');
 
 -- ----------------------------
@@ -4331,6 +4344,7 @@ CREATE TABLE `mss_user_config` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `value` int(11) DEFAULT NULL COMMENT '比例',
   `ratio` float(8,2) DEFAULT '1.00' COMMENT '比率',
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '添加时间',
   `comment` varchar(255) DEFAULT NULL COMMENT '此配置项的简介',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
@@ -4338,21 +4352,21 @@ CREATE TABLE `mss_user_config` (
 -- ----------------------------
 -- Records of mss_user_config
 -- ----------------------------
-INSERT INTO `mss_user_config` VALUES ('1', '1', '1.00', '计算规则：值*比率（比率最多两位小数）');
-INSERT INTO `mss_user_config` VALUES ('2', '70', '0.01', '分享时现金拨比');
-INSERT INTO `mss_user_config` VALUES ('3', '30', '0.01', '分享时积分拨比');
-INSERT INTO `mss_user_config` VALUES ('4', '1000', '1.00', '直推分享时推荐人可得现金数');
-INSERT INTO `mss_user_config` VALUES ('5', '1000', '1.00', '直推分享时推荐人的推荐人（二级推荐人）可得现金数');
-INSERT INTO `mss_user_config` VALUES ('6', '400', '1.00', '直推分享时推荐人的推荐人的推荐人（三级推荐人）可得现金数');
-INSERT INTO `mss_user_config` VALUES ('7', '1000', '1.00', '注册时赠送积分数量');
-INSERT INTO `mss_user_config` VALUES ('8', '10000', '1.00', '注册时赠送易得币数量');
-INSERT INTO `mss_user_config` VALUES ('9', '5', '1.00', '享受广告补贴时的直推人数');
-INSERT INTO `mss_user_config` VALUES ('10', '2', '1.00', '享受加权分红时的直推人数10');
-INSERT INTO `mss_user_config` VALUES ('11', '3', '1.00', '享受加权分红时的团购人数30');
-INSERT INTO `mss_user_config` VALUES ('12', '100', '1.00', '享受广告补贴现金数');
-INSERT INTO `mss_user_config` VALUES ('13', '30', '1.00', '团购用户购车前每天发放易得币数量');
-INSERT INTO `mss_user_config` VALUES ('14', '100', '1.00', '购车前，给团购会员补贴易得币的会员数');
-INSERT INTO `mss_user_config` VALUES ('15', '100', '1.00', '公司分红');
+INSERT INTO `mss_user_config` VALUES ('1', '1', '1.00', '2017-05-20 05:20:21', '计算规则：值*比率（比率最多两位小数）');
+INSERT INTO `mss_user_config` VALUES ('2', '70', '0.01', '2017-05-20 05:20:21', '分享时现金拨比');
+INSERT INTO `mss_user_config` VALUES ('3', '30', '0.01', '2017-05-20 05:20:21', '分享时积分拨比');
+INSERT INTO `mss_user_config` VALUES ('4', '1000', '1.00', '2017-05-20 05:20:21', '直推分享时推荐人可得现金数');
+INSERT INTO `mss_user_config` VALUES ('5', '1000', '1.00', '2017-05-20 05:20:21', '直推分享时推荐人的推荐人（二级推荐人）可得现金数');
+INSERT INTO `mss_user_config` VALUES ('6', '400', '1.00', '2017-05-20 05:20:21', '直推分享时推荐人的推荐人的推荐人（三级推荐人）可得现金数');
+INSERT INTO `mss_user_config` VALUES ('7', '1000', '1.00', '2017-05-20 05:20:21', '注册时赠送积分数量');
+INSERT INTO `mss_user_config` VALUES ('8', '10000', '1.00', '2017-05-20 05:20:21', '注册时赠送易得币数量');
+INSERT INTO `mss_user_config` VALUES ('9', '5', '1.00', '2017-05-20 05:20:21', '享受广告补贴时的直推人数');
+INSERT INTO `mss_user_config` VALUES ('10', '2', '1.00', '2017-05-20 05:20:21', '享受加权分红时的直推人数10');
+INSERT INTO `mss_user_config` VALUES ('11', '3', '1.00', '2017-05-20 05:20:21', '享受加权分红时的团购人数30');
+INSERT INTO `mss_user_config` VALUES ('12', '100', '1.00', '2017-05-20 05:20:21', '享受广告补贴现金数');
+INSERT INTO `mss_user_config` VALUES ('13', '30', '1.00', '2017-05-20 05:20:21', '团购用户购车前每天发放易得币数量');
+INSERT INTO `mss_user_config` VALUES ('14', '100', '1.00', '2017-05-20 05:20:21', '购车前，给团购会员补贴易得币的会员数');
+INSERT INTO `mss_user_config` VALUES ('15', '100', '1.00', '2017-05-20 05:20:21', '公司分红');
 
 -- ----------------------------
 -- Table structure for mss_user_jifenyide
@@ -4477,7 +4491,7 @@ CREATE TABLE `mss_user_status` (
   `status` smallint(3) unsigned NOT NULL,
   `description` varchar(90) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_user_status
@@ -4518,6 +4532,13 @@ INSERT INTO `mss_user_status` VALUES ('33', '33', '增加邮件模板');
 INSERT INTO `mss_user_status` VALUES ('34', '34', '批量发送邮件');
 INSERT INTO `mss_user_status` VALUES ('35', '35', '分销设置');
 INSERT INTO `mss_user_status` VALUES ('36', '36', '查看分成日志');
+INSERT INTO `mss_user_status` VALUES ('37', '37', '查看用户配置');
+INSERT INTO `mss_user_status` VALUES ('38', '38', '添加用户配置');
+INSERT INTO `mss_user_status` VALUES ('39', '39', '编辑用户配置');
+INSERT INTO `mss_user_status` VALUES ('40', '40', '查看补贴列表');
+INSERT INTO `mss_user_status` VALUES ('41', '41', '一键发放补贴');
+INSERT INTO `mss_user_status` VALUES ('42', '42', '查看分红列表');
+INSERT INTO `mss_user_status` VALUES ('43', '43', '一键发分红');
 
 -- ----------------------------
 -- Table structure for mss_webconfig

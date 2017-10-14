@@ -521,7 +521,7 @@
                 case 'ref':
                     //直推会员列表
                     $refThis    = refereeCount($_SESSION['uid'],'select',1,20);
-                    $refCount   = count($refThis);
+                    $refCount   = count($refThis['re']);
                     $this -> assign('refCount',$refCount);
                     $this -> assign('refThis',$refThis['re']);
                     $this -> assign('refThisPage',$refThis['page']);
@@ -530,7 +530,7 @@
                     //团购会员列表
                     $OtherId    = refereeCounts($_SESSION['uid'],'uid');
                     $refOther   = getUserRefCash($OtherId,1,20);
-                    $otherCount = count($refOther);
+                    $otherCount = count($refOther['re']);
                     $this -> assign('otherCount',$otherCount);
                     $this -> assign('refOther',$refOther['re']);
                     $this -> assign('refOtherPage',$refOther['page']);

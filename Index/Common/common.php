@@ -537,7 +537,7 @@ function getJifenNotice($id,$page = 0,$pageNum = 20){
     $tbJiFen = M('jifenyide_log');
     $map = array(
         '0'     => array("FIND_IN_SET($id, uids)"),
-        'type'  => array('in','1,2,3,4,5,6')
+        'type'  => array('in','1,2,3,4')
     );
     switch($page){
         case 0:

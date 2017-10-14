@@ -40,6 +40,7 @@
 								<!-- 表头字段区域 -->
 								<thead>
 									<tr>
+										<th>管理员ID</th>
 										<th>用户名</th>
 										<th>Email地址</th>
 										<th>添加时间</th>
@@ -51,11 +52,12 @@
 								<tbody>
 								<foreach name="data" item="v">
 									<tr>
-										<td><{$v.username}></td>
-										<td><{$v.email}></td>
-										<td><{$v.addtime|date='Y-m-d H:i:s',###}></td>
-										<td><if condition="$v.logintime eq 0">还未登录过<else/><{$v.logintime|date='Y-m-d H:i:s',###}></if></td>
-										<td class="taskOptions">
+										<td style="text-align:center;"><{$v.id}></td>
+										<td style="text-align:center;"><{$v.username}></td>
+										<td style="text-align:center;"><{$v.email}></td>
+										<td style="text-align:center;"><{$v.addtime|date='Y-m-d H:i:s',###}></td>
+										<td style="text-align:center;"><if condition="$v.logintime eq 0">还未登录过<else/><{$v.logintime|date='Y-m-d H:i:s',###}></if></td>
+										<td style="text-align:center;" class="taskOptions">
 											<a href="__APP__/Alog/lists/id/<{$v.id}>" class="tip-top" data-original-title="查看日志"><i class="icon-search"></i></a>&nbsp;&nbsp;
 								    		<a href="__URL__/upda/id/<{$v.id}>" class="tip-top" data-original-title="编辑"><i class="icon-pencil"></i></a>&nbsp;&nbsp;
 								    		<a href="__URL__/del/id/<{$v.id}>" class="tip-top" data-original-title="删除"><i class="icon-remove"></i></a>
@@ -69,7 +71,8 @@
 					<!-- 组件盒子 结束 -->
 				</div>
 			</div>
-
+		</div>
+</div>
 
 
 <!-- 包含底部 -->

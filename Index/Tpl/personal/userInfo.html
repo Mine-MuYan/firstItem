@@ -57,7 +57,10 @@
 		h3,body{
 			color: #000;
 		}
-
+		.num{
+			color: red;
+			font-size: 36px;
+		}
     </style>
     <script type="text/javascript" src="__PUBLIC__/uploadify/jquery.uploadify-3.1.min.js"></script>
 
@@ -96,7 +99,7 @@
 					<div class="m-t-b clearfix">
 						<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
 							<div id="ref" class="info">
-								<h3>直推会员列表</h3>
+								<h3>直推会员列表  <span>共<span class="num"><{$refCount}></span>人</span> </h3>
 								<table class="table table-bordered table-hover text-center">
 									<thead>
 									<tr>
@@ -126,7 +129,7 @@
 								<div class="pager"><{$refThisPage}></div>
 							</div>
 							<div id="refAll" class="info">
-								<h3>团购会员列表</h3>
+								<h3>团购会员列表  <span>共<span class="num"><{$otherCount}></span>人</span> </h3>
 								<table class="table table-bordered table-hover text-center">
 									<thead>
 									<tr>
@@ -220,7 +223,7 @@
 								<table class="table table-bordered table-hover text-center">
 									<thead>
 									<tr>
-										<th class="text-center">现金</th>
+										<th class="text-center">金额</th>
 										<th class="text-center">币种</th>
 										<th class="text-center">类型</th>
 										<th class="text-center">时间</th>

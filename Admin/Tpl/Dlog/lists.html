@@ -27,51 +27,43 @@
 					<!-- 组件盒子 开始 -->
 					<div class="widget-box">
 						<form action="__URL__/del" method="post">
-						<!-- 组件标题区域 -->
-						<div class="widget-title"><h5>分成日志</h5><input style="margin-top:5px;" type="submit" value="清空日志"></div>
-						<!-- 组件内容区域 -->
-						<div class="widget-content nopadding">
-
-							<table class="table table-bordered data-table">
-								<!-- 表头字段区域 -->
-								<thead>
-									<tr>
-										<th width="50"><input type="checkbox">全选</th>
-										<th>编号</th>
-										<th>来源者</th>
-										<th>分成说明</th>
-										<th>分成类型</th>
-										<th>分成时间</th>
-									</tr>
-								</thead>
-								<!-- 表格主体数据区域 -->
-								<tbody>
-						<empty name="data">
-								<tr>
-									<th colspan="6"><h4>目前没有分成日志</h4></th>
-								</tr>
-						<else/>
-								<foreach name="data" item="v">
-									<tr>
-										<td><input type="checkbox" value="<{$v.id}>" name="check[]"></td>
-										<td><{$v.id}></td>
-										<td><{$v.uid.username}></td>
-										<td><{$v.info}></td>
-										<td>
-											<switch name="v.type">
-												<case value="1">积分分成</case>
-												<case value="2">易得币分成</case>
-											</switch>
-										</td>
-										<td><{$v.time}></td>  <!--|date='Y-m-d H:i:s',###}!-->
-									</tr>
-								</foreach>
-						</empty>
-								</tbody>
-							</table>
-						</div>
-					</div>
-							</form>
+							<!-- 组件标题区域 -->
+							<div class="widget-title"><h5>分成日志</h5><input style="margin-top:5px;" type="submit" value="清空日志"></div>
+							<!-- 组件内容区域 -->
+							<div class="widget-content nopadding">
+								<table class="table table-bordered data-table">
+									<!-- 表头字段区域 -->
+									<thead>
+										<tr>
+											<th width="50"><input type="checkbox">全选</th>
+											<th>编号</th>
+											<th>来源者</th>
+											<th>分成说明</th>
+											<th>分成类型</th>
+											<th>分成时间</th>
+										</tr>
+									</thead>
+									<!-- 表格主体数据区域 -->
+									<tbody>
+										<foreach name="data" item="v">
+											<tr>
+												<td><input type="checkbox" value="<{$v.id}>" name="check[]"></td>
+												<td><{$v.id}></td>
+												<td><{$v.uid.username}></td>
+												<td><{$v.info}></td>
+												<td>
+													<switch name="v.type">
+														<case value="1">积分分成</case>
+														<case value="2">易得币分成</case>
+													</switch>
+												</td>
+												<td><{$v.time}></td>  <!--|date='Y-m-d H:i:s',###}!-->
+											</tr>
+										</foreach>
+									</tbody>
+								</table>
+							</div>
+						</form>
 					<!-- 组件盒子 结束 -->
 				</div>
 			</div>

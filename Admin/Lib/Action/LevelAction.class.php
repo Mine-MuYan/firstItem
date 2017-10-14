@@ -724,4 +724,86 @@
                 $log->add($data);
             }
         }
+        
+        /**
+         * 管理员查看用户配置
+         */
+        function viewUserConfig(){
+            $this->status();
+            
+            if(in_array('37',$_SESSION['level'])){
+                $this->error('权限不足');exit;
+            }else{
+                $log = M('admin_log');
+                $data['userid'] = $_SESSION['id'];
+                $data['time'] = time();
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'查看了用户配置';
+                $data['userip'] = $_SERVER['REMOTE_ADDR'];
+                $log->add($data);
+            }
+        }
+        
+        /**
+         * 管理员增加用户配置
+         */
+        function addUserConfig(){
+            $this->status();
+    
+            if(in_array('38',$_SESSION['level'])){
+                $this->error('权限不足');exit;
+            }else{
+                $log = M('admin_log'); // 如果有该权限将其操做写入数据库
+                $dbUserConfig = M('user_config');
+                $configId = $dbUserConfig -> order('id desc') -> field('id') ->find();
+                $data['userid'] = $_SESSION['id'];
+                $data['time'] = time();
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'增加了配置，配置项ID为'.$configId;
+                $data['userip'] = $_SERVER['REMOTE_ADDR'];
+                $log->add($data);
+            }
+        }
+        
+        
+        /**
+         * 管理员编辑用户配置
+         */
+        function editUserConfig(){
+            $this->status();
+            
+            if(in_array('39',$_SESSION['level'])){
+                $this->error('权限不足');exit;
+            }else{
+                $log = M('admin_log'); // 如果有该权限将其操做写入数据库
+                $dbUserConfig = M('user_config');
+                $configId = $dbUserConfig -> order('id desc') -> field('id') ->find();
+                $data['userid'] = $_SESSION['id'];
+                $data['time'] = time();
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'增加了配置，配置项ID为'.$configId;
+                $data['userip'] = $_SERVER['REMOTE_ADDR'];
+                $log->add($data);
+            }
+        }
+        
+        
+        /**
+         * 查看分红列表
+         */
+        function viewUserGiven(){
+            $this->status();
+    
+            if(in_array('40',$_SESSION['level'])){
+                $this->error('权限不足');exit;
+            }else{
+                $log = M('admin_log'); // 如果有该权限将其操做写入数据库
+                $dbUserConfig = M('user_config');
+                $configId = $dbUserConfig -> order('id desc') -> field('id') ->find();
+                $data['userid'] = $_SESSION['id'];
+                $data['time'] = time();
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'增加了配置，配置项ID为'.$configId;
+                $data['userip'] = $_SERVER['REMOTE_ADDR'];
+                $log->add($data);
+            }
+        }
+        
+        //todo： 用户配置的表中添加时间字段，权限这块待写，权限分配页面优化。
 	}

@@ -27,46 +27,39 @@
 					<!-- 组件盒子 开始 -->
 					<div class="widget-box">
 						<form action="__URL__/del" method="post">
-						<!-- 组件标题区域 -->
-						<div class="widget-title"><h5>管理员日志</h5><input style="margin-top:5px;" type="submit" value="清空日志"></div>
-						<!-- 组件内容区域 -->
-						<div class="widget-content nopadding">
+							<!-- 组件标题区域 -->
+							<div class="widget-title"><h5>管理员日志</h5><input style="margin-top:5px;" type="submit" value="清空日志"></div>
+							<!-- 组件内容区域 -->
+							<div class="widget-content nopadding">
 
-							<table class="table table-bordered data-table">
-								<!-- 表头字段区域 -->
-								<thead>
-									<tr>
-										<th width="50"><input type="checkbox">全选</th>
-										<th>编号</th>
-										<th>操作者</th>
-										<th>操作说明</th>
-										<th>IP地址</th>
-										<th>操作时间</th>
-									</tr>
-								</thead>
-								<!-- 表格主体数据区域 -->
-								<tbody>
-						<empty name="data">
-								<tr>
-									<th colspan="6"><h4>该用户没有操作日志</h4></th>
-								</tr>
-						<else/>
-								<foreach name="data" item="v">
-									<tr>
-										<td><input type="checkbox" value="<{$v.id}>" name="check[]"></td>
-										<td><{$v.id}></td>
-										<td><{$v.userid.username}></td>
-										<td><{$v.loginfo}></td>
-										<td><{$v.userip}></td>
-										<td><{$v.time|date='Y-m-d H:i:s',###}></td>
-									</tr>
-								</foreach>
-						</empty>
-								</tbody>
-							</table>
-						</div>
-					</div>
-							</form>
+								<table class="table table-bordered data-table">
+									<!-- 表头字段区域 -->
+									<thead>
+										<tr>
+											<th width="50"><input type="checkbox">全选</th>
+											<th>编号</th>
+											<th>操作者</th>
+											<th>操作说明</th>
+											<th>IP地址</th>
+											<th>操作时间</th>
+										</tr>
+									</thead>
+									<!-- 表格主体数据区域 -->
+									<tbody>
+										<foreach name="data" item="v">
+											<tr>
+												<td><input type="checkbox" value="<{$v.id}>" name="check[]"></td>
+												<td><{$v.id}></td>
+												<td><{$v.userid.username}></td>
+												<td><{$v.loginfo}></td>
+												<td><{$v.userip}></td>
+												<td><{$v.time|date='Y-m-d H:i:s',###}></td>
+											</tr>
+										</foreach>
+									</tbody>
+								</table>
+							</div>
+						</form>
 					<!-- 组件盒子 结束 -->
 				</div>
 			</div>
