@@ -743,8 +743,29 @@
             }
         }
         
+        
         /**
-         * 管理员增加用户配置
+         * 管理员增加用户配置-页面
+         */
+        function viewAddUserConfig(){
+            $this->status();
+            
+            if(in_array('44',$_SESSION['level'])){
+                $this->error('权限不足');exit;
+            }else{
+                $log = M('admin_log'); // 如果有该权限将其操做写入数据库
+                $dbUserConfig = M('user_config');
+                $data['userid'] = $_SESSION['id'];
+                $data['time'] = time();
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'查看了添加用户配置页面';
+                $data['userip'] = $_SERVER['REMOTE_ADDR'];
+                $log->add($data);
+            }
+        }
+        
+        
+        /**
+         * 管理员增加用户配置-功能
          */
         function addUserConfig(){
             $this->status();
@@ -765,7 +786,26 @@
         
         
         /**
-         * 管理员编辑用户配置
+         * 管理员编辑用户配置-页面
+         */
+        function viewEditUserConfig(){
+            $this->status();
+            
+            if(in_array('45',$_SESSION['level'])){
+                $this->error('权限不足');exit;
+            }else{
+                $log = M('admin_log'); // 如果有该权限将其操做写入数据库
+                $data['userid'] = $_SESSION['id'];
+                $data['time'] = time();
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'查看了编辑用户配置页面';
+                $data['userip'] = $_SERVER['REMOTE_ADDR'];
+                $log->add($data);
+            }
+        }
+        
+        
+        /**
+         * 管理员编辑用户配置-功能
          */
         function editUserConfig(){
             $this->status();
@@ -775,10 +815,10 @@
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
                 $dbUserConfig = M('user_config');
-                $configId = $dbUserConfig -> order('id desc') -> field('id') ->find();
+                $configId = $dbUserConfig -> order('time desc') -> field('id') ->find();
                 $data['userid'] = $_SESSION['id'];
                 $data['time'] = time();
-                $data['loginfo'] = '管理员'.$_SESSION['username'].'增加了配置，配置项ID为'.$configId;
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'修改了配置，配置项ID为'.$configId;
                 $data['userip'] = $_SERVER['REMOTE_ADDR'];
                 $log->add($data);
             }
@@ -786,7 +826,7 @@
         
         
         /**
-         * 查看分红列表
+         * 查看补贴列表
          */
         function viewUserGiven(){
             $this->status();
@@ -795,15 +835,110 @@
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
-                $dbUserConfig = M('user_config');
-                $configId = $dbUserConfig -> order('id desc') -> field('id') ->find();
                 $data['userid'] = $_SESSION['id'];
                 $data['time'] = time();
-                $data['loginfo'] = '管理员'.$_SESSION['username'].'增加了配置，配置项ID为'.$configId;
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'查看了补贴列表';
                 $data['userip'] = $_SERVER['REMOTE_ADDR'];
                 $log->add($data);
             }
         }
         
-        //todo： 用户配置的表中添加时间字段，权限这块待写，权限分配页面优化。
-	}
+        
+        /**
+         * 一键发补贴
+         */
+        function doUserGiven(){
+            $this->status();
+    
+            if(in_array('41',$_SESSION['level'])){
+                $this->error('权限不足');exit;
+            }else{
+                $log = M('admin_log'); // 如果有该权限将其操做写入数据库
+                $data['userid'] = $_SESSION['id'];
+                $data['time'] = time();
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'一键发放了今天的补贴';
+                $data['userip'] = $_SERVER['REMOTE_ADDR'];
+                $log->add($data);
+            }
+        }
+        
+        
+        
+         /**
+         * 查看分红列表
+         */
+        function viewUserFenHong(){
+            $this->status();
+    
+            if(in_array('42',$_SESSION['level'])){
+                $this->error('权限不足');exit;
+            }else{
+                $log = M('admin_log'); // 如果有该权限将其操做写入数据库
+                $data['userid'] = $_SESSION['id'];
+                $data['time'] = time();
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'查看了分红列表';
+                $data['userip'] = $_SERVER['REMOTE_ADDR'];
+                $log->add($data);
+            }
+        }
+        
+        
+        /**
+         * 一键发分红
+         */
+        function doUserFenHong(){
+            $this->status();
+            
+            if(in_array('43',$_SESSION['level'])){
+                $this->error('权限不足');exit;
+            }else{
+                $log = M('admin_log'); // 如果有该权限将其操做写入数据库
+                $data['userid'] = $_SESSION['id'];
+                $data['time'] = time();
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'一键发放了本月对的分红';
+                $data['userip'] = $_SERVER['REMOTE_ADDR'];
+                $log->add($data);
+            }
+        }
+        
+        
+        
+        /**
+         * 查看会员关系表
+         */
+        function viewUserRelation(){
+            $this->status();
+            
+            if(in_array('46',$_SESSION['level'])){
+                $this->error('权限不足');exit;
+            }else{
+                $log = M('admin_log'); // 如果有该权限将其操做写入数据库
+                $data['userid'] = $_SESSION['id'];
+                $data['time'] = time();
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'查看了会员关系表';
+                $data['userip'] = $_SERVER['REMOTE_ADDR'];
+                $log->add($data);
+            }
+        }
+        
+        
+        /**
+         * 查看会员资金表
+         */
+        function viewUserMoney(){
+            $this->status();
+            
+            if(in_array('47',$_SESSION['level'])){
+                $this->error('权限不足');exit;
+            }else{
+                $log = M('admin_log'); // 如果有该权限将其操做写入数据库
+                $data['userid'] = $_SESSION['id'];
+                $data['time'] = time();
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'查看了会员资金表';
+                $data['userip'] = $_SERVER['REMOTE_ADDR'];
+                $log->add($data);
+            }
+        }
+        
+        
+    }

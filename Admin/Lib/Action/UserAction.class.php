@@ -409,9 +409,10 @@
         }
         
         /**
-         * 编辑用户拨比页面
+         * 编辑用户拨比-页面
          */
         function userConfigEdit(){
+            R('Level/viewEditUserConfig');
             $id = $_GET['id'];
             $re = getUserConfig($id,'all');
             $this -> assign('re',$re);
@@ -419,11 +420,9 @@
         }
         
         /**
-         * 编辑用户拨比功能
+         * 编辑用户拨比-功能
          */
         function userConfigEdits(){
-            R('Level/editUserConfig'); // 验证权限
-            
             $id     = I('id');
             $value  = I('value');
             if(!is_numeric($value)){
@@ -439,23 +438,22 @@
                 'comment'   => I('comment'),
             );
             M('user_config')-> where("id = $id") -> save($data);
+            R('Level/editUserConfig');
             $this -> success('修改成功','__URL__/userConfig');
         }
         
         /**
-         * 添加编辑用户拨比页面
+         * 添加用户拨比-页面
          */
         function userConfigAdd(){
-            
+            R('Level/viewAddUserConfig');
             $this -> display();
         }
         
         /**
-         * 添加编辑用户拨比功能
+         * 添加用户拨比-功能
          */
         function userConfigAdds(){
-            R('Level/addUserConfig');
-            
             $value = I('value');
             if(!is_numeric($value)){
                 $this -> error('值要是数字哦');
@@ -470,6 +468,7 @@
                 'comment'   => I('comment'),
             );
             M('user_config') -> add($data);
+            R('Level/addUserConfig');
             $this -> success('添加成功','__URL__/userConfig');
         }
         
@@ -477,6 +476,7 @@
          * 可获得补贴的用户列表
          */
         function userGiven(){
+            R('Level/viewUserGiven');
             $dbUser = M('user');
             $map = array(
                 'carcount' => array('gt',0),
@@ -554,6 +554,7 @@
                             );
                             $reBouns = M('user_bouns') -> add($bounsData);
                             if($reLog && $reNotice && $reBouns){
+                                R('Level/doUserGiven');
                                 $this -> success('发放成功','__URL__/userGiven');
                             }
                             /***  using when debugging
@@ -583,6 +584,7 @@
          * 可获得分红的用户列表
          */
         public function userFenHong(){
+            R('Level/viewUserFenHong');
             $res = fenHongUser();
             $this -> assign('re',$res);
             $this -> display();
@@ -641,6 +643,7 @@
                         );
                         $reBouns = M('user_bouns') -> add($bounsData);
                         if($reLog && $reNotice && $reBouns){
+                            R('Level/doUserFenHong');
                             $this -> success('分红发放成功','__URL__/userFenHong');
                         }
                         /***  using when debugging
@@ -669,6 +672,7 @@
          * 会员关系列表
          */
         public function relation(){
+            R('Level/viewUserRelation');
             $dbRelation = M('user_relation');
             $reRelation = $dbRelation -> select();
             foreach($reRelation as $k => $v){
@@ -703,6 +707,7 @@
          * 用户资金列表
          */
         public function money(){
+            R('Level/viewUserMoney');
             $dbJiFen = M('user_jifenyide');
             $reJiFen = $dbJiFen -> select();
             foreach($reJiFen as $k => $v){

@@ -68,34 +68,8 @@
 	    }
 	    
 	    public function test(){
-	        /*
-            $dbUserBouns = M('user_bouns');
-            $map['type'] = array('in','2');
-            $reUserBouns = $dbUserBouns -> where($map) -> order('time desc') -> select();
-            foreach($reUserBouns as $k => $v){
-                $id = explode(',',$v['uid']);
-                $idCount = count($id);
-                if($idCount == 1){
-                    $username = getUser($id[0],'username');
-                    $reUserBouns[$k]['username'] = $username;
-                }else{
-                    foreach($id as $kk => $vv){
-                        $usernames[] = getUser($vv,'username');
-                        $reUserBouns[$k]['username'] = $usernames;
-                    }
-                }
-            }
-            
-//	        pp($reUserBouns);
+
 	        
-	        */
-            $id = '1,2,3,4,5,6';
-            $id = explode(',',$id);
-            foreach($id as $k => $v){
-                $name[] = getUser($v,'username');
-            }
-            $names = implode(',',$name);
-            pp($names);
 	        
 	        
 	        $this -> display();
