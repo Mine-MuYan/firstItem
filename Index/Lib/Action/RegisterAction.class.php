@@ -176,6 +176,7 @@ class RegisterAction extends Action{
         $username = trim($_GET['username']);
         $email = trim($_GET['email']);
         $vcode = trim($_GET['vcode']);
+        $phone = trim($_GET['phone']);
         $user = M('user');
         
         // 用户名验证
@@ -203,6 +204,18 @@ class RegisterAction extends Action{
                 $this -> ajaxReturn("EmailFalse");
             }else{
                 $this -> ajaxReturn("EmailTrue");
+            }
+            unset($condition);
+            
+        }elseif( !empty($phone)){
+            
+            // 手机号验证
+            $condition['phone'] = $phone;
+            $result = $user -> where($condition) -> find();
+            if(count($result)){
+                $this -> ajaxReturn("PhoneFalse");
+            }else{
+                $this -> ajaxReturn("PhoneTrue");
             }
             unset($condition);
             
