@@ -558,4 +558,12 @@
             }
             $this -> display();
         }
+        
+        /**
+         * 抽奖
+         */
+        public function lottery(){
+		    
+            $this -> display();
+        }
 	}

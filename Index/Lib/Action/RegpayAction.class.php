@@ -56,20 +56,73 @@ class RegpayAction extends Action {
     public function test(){
         pp('-----------------------');
     
+        pp($this -> numOfChoice(3,2));
+        pp($this -> triangle(3,4,5));
+        
+        
+    
         $this -> display();
     }
     
-    public function sss($city){
-        $user   = M('user');
-        if(count($city) == 1){
-            $map['username'] = array('like',"%$city%");
-            $reUser = $user -> where($map) -> select();
+    
+    //三角形
+    public function triangle($a,$b,$c)
+    {
+        if(($a+$b>$c) && ($a+$c>$b) && ($b+$c>$a) && (abs($a-$b)<$c)  && (abs($a-$c)<$b)  && (abs($b-$c)<$a)){
+            return "yes";
         }else{
-            foreach($city as $k => $v){
-                $map['username'] = array('like',"%$city[$k]%");
-                $reUser[] = $user -> where($map) -> select();
-            }
+            return "no";
         }
-        return $reUser;
     }
+    
+    //从m个数中取出n个，有多少种可能
+    public function numOfChoice($m,$n){
+        $fenzi = 1; $zi = $m;
+        $fenmu = 1; $mu = $n;
+        //循环n次
+        for($i=1;$i<=$n;$i++){
+            //累乘
+            $fenzi = $zi*$fenzi;
+            //自减
+            $zi--;
+        }
+        
+        //循环m次
+        for($j=1;$j<=$n;$j++){
+            //累乘
+            $fenmu = $mu*$fenmu;
+            //自减
+            $mu--
+            ;
+        }
+        //求商
+        $result = $fenzi/$fenmu;
+        return $result;
+    }
+    
+    
+    public function one($num){
+        $arr = [];
+        $k=0;
+        if($num < 1 || $num >50){
+            return '请输入1~50之间的正整数';
+        }else{
+            for($i=1;$i<500;$i++){
+                $count=0;
+                for($j=1;$j<$i;$j++){
+                    if($i%$j==0){
+                        $count++;
+                    }
+                }
+                if($count==1){
+                    $arr[]=$i;
+                    if(count($arr) <= $num){
+                        $k+=$i;
+                    }
+                }
+            }
+            return $k;
+        }
+    }
+    
 }
