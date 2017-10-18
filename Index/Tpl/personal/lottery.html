@@ -105,8 +105,7 @@
 			width: 30px;
 			height: 30px;
 			position: absolute;
-			right: -10px;
-			top: -10px;
+			right: -10px;			top: -10px;
 			background: #c7c7c7;
 			border-radius: 50%;
 			cursor: pointer;
@@ -154,6 +153,27 @@
                     $(".windows").fadeIn();
                     $(".opacity").fadeIn();
                 },2000);
+                $.ajax({
+                    type: "POST",
+                    url: "__URL__/lotterying",
+					dataType:"JSON",
+                    success: function(msg){
+                        var msgType = typeof(msg);
+                        console.log(msg);
+                        console.log(msgType);
+                        if(msgType == 'string'){
+							if(msg == 1){
+                                console.log('已经抽奖');
+							}else if(msg == 2){
+                                console.log('抽奖失败');
+							}else{
+                                console.log(msg);
+							}
+						}else{
+                            console.log(msg);
+						}
+                    }
+                });
             });
             $(".close").click(function(){
                 $(this).parent().fadeOut();

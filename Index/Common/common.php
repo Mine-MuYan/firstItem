@@ -742,6 +742,60 @@ function regNotice($id){
 }
 
 
+/**
+ * 随机从表中取出奖品
+ * @param $type string  返回数据的类型
+ * @return array|string data:原始数组、json:json数据类型
+ */
+function lottery($type){
+    $arr = [];
+    $lotteryArr = M('user_lottery') -> where("status = 1") -> select();
+   
+    foreach ($lotteryArr as $k=>$v) {
+        $arr[$v['id']] = $v['probability'];
+    }
+    
+    $lotteryId = getRand($arr); //根据概率获取奖项id
+    $res    = $lotteryArr[$lotteryId - 1]; //中奖项
+    
+    $data = array(
+        'lotteryId'     => $lotteryId,
+        'lotteryCount'  => $res['count'],
+        'lotteryType'   => $res['type'],
+        'lotteryProb'   => $res['probability'],
+    );
+    
+    if($type == 'data'){
+        return $data;
+    }elseif($type == 'json'){
+        return json_encode($data);
+    }else{
+        return '参数错误';
+    }
+}
+
+
+/**
+ * 根据概率取出数组
+ * @param $proArr   array   数组
+ * @return int|string   数组中的键名
+ */
+function getRand($proArr) {
+    $data = '';
+    $proSum = array_sum($proArr);           //概率数组的总概率精度
+    foreach ($proArr as $k => $v) {         //概率数组循环
+        $randNum = mt_rand(1, $proSum);     //mt_rand(min,max),从min~max中取出一个值
+        if ($randNum <= $v) {
+            $data = $k;
+            break;
+        }else{
+            $proSum -= $v;
+        }
+    }
+    unset($proArr);
+    
+    return $data;
+}
 
 
 

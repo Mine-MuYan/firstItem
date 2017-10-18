@@ -10,28 +10,10 @@ Target Server Type    : MYSQL
 Target Server Version : 100125
 File Encoding         : 65001
 
-Date: 2017-10-16 17:33:51
+Date: 2017-10-18 17:37:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for 1111111111
--- ----------------------------
-DROP TABLE IF EXISTS `1111111111`;
-CREATE TABLE `1111111111` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
-  `phone` char(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`) USING BTREE,
-  UNIQUE KEY `username` (`username`) USING BTREE,
-  UNIQUE KEY `phone` (`phone`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of 1111111111
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for mss_address
@@ -483,13 +465,27 @@ CREATE TABLE `mss_jifenyide_log` (
   `uids` varchar(255) DEFAULT NULL COMMENT '推荐人IDs',
   `info` text,
   `time` datetime DEFAULT NULL COMMENT '创建时间',
-  `type` int(11) DEFAULT NULL COMMENT '1、原始会员注册； 2、一级会员注册；3、二级会员注册;4、三级会员注册；5、补贴；6、分红',
+  `type` int(11) DEFAULT NULL COMMENT '1、原始会员注册； 2、一级会员注册；3、二级会员注册;4、三级会员注册；5、补贴；6、分红；7、签到抽奖',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=130 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=144 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_jifenyide_log
 -- ----------------------------
+INSERT INTO `mss_jifenyide_log` VALUES ('143', '4', '4', '抽得的奖品为10易得币', '2017-10-18 17:23:40', '7');
+INSERT INTO `mss_jifenyide_log` VALUES ('142', '4', '4', '抽得的奖品为100易得币', '2017-10-18 17:22:52', '7');
+INSERT INTO `mss_jifenyide_log` VALUES ('141', '4', '4', '抽得的奖品为100积分', '2017-10-18 16:51:43', '7');
+INSERT INTO `mss_jifenyide_log` VALUES ('140', '4', '4', '抽得的奖品为1易得币', '2017-10-18 16:51:05', '7');
+INSERT INTO `mss_jifenyide_log` VALUES ('139', '4', '4', '抽得的奖品为10易得币', '2017-10-18 16:50:26', '7');
+INSERT INTO `mss_jifenyide_log` VALUES ('138', '4', '4', '抽得的奖品为1000易得币', '2017-10-18 16:50:23', '7');
+INSERT INTO `mss_jifenyide_log` VALUES ('137', '4', '4', '抽得的奖品为1积分', '2017-10-18 16:50:20', '7');
+INSERT INTO `mss_jifenyide_log` VALUES ('136', '4', '4', '抽得的奖品为100易得币', '2017-10-18 16:49:51', '7');
+INSERT INTO `mss_jifenyide_log` VALUES ('135', '4', '4', '抽得的奖品为10积分', '2017-10-18 16:49:46', '7');
+INSERT INTO `mss_jifenyide_log` VALUES ('134', '4', '4', '抽得的奖品为10易得币', '2017-10-18 16:48:10', '7');
+INSERT INTO `mss_jifenyide_log` VALUES ('133', '4', '4', '抽得的奖品为100易得币', '2017-10-18 16:47:58', '7');
+INSERT INTO `mss_jifenyide_log` VALUES ('132', '4', '4', '抽得的奖品为100积分', '2017-10-18 16:47:36', '7');
+INSERT INTO `mss_jifenyide_log` VALUES ('131', '4', '4', '抽得的奖品为1000积分', '2017-10-18 16:46:04', '7');
+INSERT INTO `mss_jifenyide_log` VALUES ('130', '4', '4', '抽得的奖品为1积分', '2017-10-18 16:44:45', '7');
 INSERT INTO `mss_jifenyide_log` VALUES ('129', '0', '1,2,3,4,5,6,7,8,9,10,11,12', '您的购车补贴30 易得币已发放。', '2017-10-16 11:08:31', '5');
 INSERT INTO `mss_jifenyide_log` VALUES ('128', '0', '4,5,7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-13 15:49:42', '6');
 INSERT INTO `mss_jifenyide_log` VALUES ('127', '0', '1,2,3,4,5,6,7,8,9,10,11,12', '您的购车补贴30 易得币已发放。', '2017-10-13 15:49:19', '5');
@@ -4304,28 +4300,29 @@ CREATE TABLE `mss_userinfo` (
   `realname` varchar(20) NOT NULL DEFAULT '' COMMENT '真实姓名',
   `idcard` varchar(20) NOT NULL DEFAULT '' COMMENT '身份证',
   `cellphone` char(11) NOT NULL DEFAULT '' COMMENT '绑定的手机号',
+  `signtime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '上次签到时间',
   UNIQUE KEY `uid` (`uid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_userinfo
 -- ----------------------------
-INSERT INTO `mss_userinfo` VALUES ('1', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('2', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('3', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('4', '3', '', '', '1507944896', '127.0.0.1', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('5', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('6', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('7', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('8', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('9', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('10', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('11', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('12', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('13', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('14', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('15', '3', '', '', '0', '', '', '', '');
-INSERT INTO `mss_userinfo` VALUES ('16', '3', '', '', '0', '', '', '', '');
+INSERT INTO `mss_userinfo` VALUES ('1', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('2', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('3', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('4', '3', '', '', '1508292425', '127.0.0.1', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('5', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('6', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('7', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('8', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('9', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('10', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('11', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('12', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('13', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('14', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('15', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
+INSERT INTO `mss_userinfo` VALUES ('16', '3', '', '', '0', '', '', '', '', '2017-05-20 05:20:21');
 
 -- ----------------------------
 -- Table structure for mss_user_admin
@@ -4428,7 +4425,7 @@ CREATE TABLE `mss_user_jifenyide` (
 INSERT INTO `mss_user_jifenyide` VALUES ('1', '1', '1000.00', '10330.00', '0.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('2', '2', '1000.00', '10330.00', '0.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('3', '3', '1000.00', '10330.00', '0.00');
-INSERT INTO `mss_user_jifenyide` VALUES ('4', '4', '3940.00', '10530.00', '8060.00');
+INSERT INTO `mss_user_jifenyide` VALUES ('4', '4', '4151.00', '12862.00', '8060.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('5', '5', '1440.00', '530.00', '4560.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('6', '6', '300.00', '330.00', '700.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('7', '7', '1200.00', '530.00', '4000.00');
@@ -4443,6 +4440,32 @@ INSERT INTO `mss_user_jifenyide` VALUES ('15', '15', '0.00', '0.00', '0.00');
 INSERT INTO `mss_user_jifenyide` VALUES ('16', '16', '0.00', '0.00', '0.00');
 
 -- ----------------------------
+-- Table structure for mss_user_lottery
+-- ----------------------------
+DROP TABLE IF EXISTS `mss_user_lottery`;
+CREATE TABLE `mss_user_lottery` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '奖品类型 1、易得币；2、积分；3：现金',
+  `count` int(5) NOT NULL DEFAULT '1' COMMENT '数量',
+  `probability` smallint(5) NOT NULL DEFAULT '1' COMMENT '概率',
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '添加时间',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否可用',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='抽奖表';
+
+-- ----------------------------
+-- Records of mss_user_lottery
+-- ----------------------------
+INSERT INTO `mss_user_lottery` VALUES ('1', '1', '1000', '5', '2017-10-18 11:59:04', '1');
+INSERT INTO `mss_user_lottery` VALUES ('2', '1', '100', '10', '2017-10-18 11:59:06', '1');
+INSERT INTO `mss_user_lottery` VALUES ('3', '1', '10', '15', '2017-10-18 11:59:09', '1');
+INSERT INTO `mss_user_lottery` VALUES ('4', '1', '1', '20', '2017-10-18 11:59:10', '1');
+INSERT INTO `mss_user_lottery` VALUES ('5', '2', '1000', '5', '2017-10-18 11:59:14', '1');
+INSERT INTO `mss_user_lottery` VALUES ('6', '2', '100', '10', '2017-10-18 11:59:14', '1');
+INSERT INTO `mss_user_lottery` VALUES ('7', '2', '10', '15', '2017-10-18 11:59:14', '1');
+INSERT INTO `mss_user_lottery` VALUES ('8', '2', '1', '20', '2017-10-18 11:59:14', '1');
+
+-- ----------------------------
 -- Table structure for mss_user_notice
 -- ----------------------------
 DROP TABLE IF EXISTS `mss_user_notice`;
@@ -4451,9 +4474,9 @@ CREATE TABLE `mss_user_notice` (
   `uid` varchar(255) DEFAULT '' COMMENT '用户ID（字符串）',
   `info` varchar(255) DEFAULT NULL COMMENT '内容',
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '时间',
-  `type` tinyint(1) DEFAULT NULL COMMENT '类型 1、注册；2、充值；3、提现；4、补贴；5、分红',
+  `type` tinyint(1) DEFAULT NULL COMMENT '类型 1、注册；2、充值；3、提现；4、补贴；5、分红；6、签到抽奖',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=130 DEFAULT CHARSET=utf8 COMMENT='用户消息表';
+) ENGINE=MyISAM AUTO_INCREMENT=144 DEFAULT CHARSET=utf8 COMMENT='用户消息表';
 
 -- ----------------------------
 -- Records of mss_user_notice
@@ -4471,6 +4494,20 @@ INSERT INTO `mss_user_notice` VALUES ('126', '1,2,3,4,5,6,7,8,9,10,11,12', '您�
 INSERT INTO `mss_user_notice` VALUES ('127', '1,2,3,4,5,6,7,8,9,10,11,12', '您的购车补贴30 易得币已发放。', '2017-10-13 15:49:19', '4');
 INSERT INTO `mss_user_notice` VALUES ('128', '4,5,7', '恭喜您本月获得公司加权分红，现金100 。', '2017-10-13 15:49:42', '5');
 INSERT INTO `mss_user_notice` VALUES ('129', '1,2,3,4,5,6,7,8,9,10,11,12', '您的购车补贴30 易得币已发放。', '2017-10-16 11:08:31', '4');
+INSERT INTO `mss_user_notice` VALUES ('130', '4', '抽得的奖品为1积分', '2017-10-18 16:46:18', '6');
+INSERT INTO `mss_user_notice` VALUES ('131', '4', '抽得的奖品为1000积分', '2017-10-18 16:46:04', '6');
+INSERT INTO `mss_user_notice` VALUES ('132', '4', '抽得的奖品为100积分', '2017-10-18 16:47:36', '6');
+INSERT INTO `mss_user_notice` VALUES ('133', '4', '抽得的奖品为100易得币', '2017-10-18 16:47:58', '6');
+INSERT INTO `mss_user_notice` VALUES ('134', '4', '抽得的奖品为10易得币', '2017-10-18 16:48:10', '6');
+INSERT INTO `mss_user_notice` VALUES ('135', '4', '抽得的奖品为10积分', '2017-10-18 16:49:46', '6');
+INSERT INTO `mss_user_notice` VALUES ('136', '4', '抽得的奖品为100易得币', '2017-10-18 16:49:51', '6');
+INSERT INTO `mss_user_notice` VALUES ('137', '4', '抽得的奖品为1积分', '2017-10-18 16:50:20', '6');
+INSERT INTO `mss_user_notice` VALUES ('138', '4', '抽得的奖品为1000易得币', '2017-10-18 16:50:23', '6');
+INSERT INTO `mss_user_notice` VALUES ('139', '4', '抽得的奖品为10易得币', '2017-10-18 16:50:26', '6');
+INSERT INTO `mss_user_notice` VALUES ('140', '4', '抽得的奖品为1易得币', '2017-10-18 16:51:05', '6');
+INSERT INTO `mss_user_notice` VALUES ('141', '4', '抽得的奖品为100积分', '2017-10-18 16:51:43', '6');
+INSERT INTO `mss_user_notice` VALUES ('142', '4', '抽得的奖品为100易得币', '2017-10-18 17:22:52', '6');
+INSERT INTO `mss_user_notice` VALUES ('143', '4', '抽得的奖品为10易得币', '2017-10-18 17:23:40', '6');
 
 -- ----------------------------
 -- Table structure for mss_user_relation

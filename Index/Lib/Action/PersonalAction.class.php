@@ -560,10 +560,100 @@
         }
         
         /**
-         * 抽奖
+         * 抽奖页面
          */
         public function lottery(){
-		    
+            
             $this -> display();
+        }
+        
+        /**
+         * 抽奖功能
+         */
+        public function lotterying(){
+            $id = $_SESSION['uid'];
+            $dbUserInfo = M('userinfo');
+            $signsTime  = $dbUserInfo -> where("uid = $id") -> field('signtime') -> find();
+            $signsTime  = $signsTime['signtime'];
+            $startTime  =  date('Y-m-d 00:00:00');
+            $endssTime  =  date('Y-m-d 23:59:59');
+    
+            if($startTime < $signsTime && $signsTime < $endssTime){
+//                pp('已抽奖');
+                $this -> ajaxReturn(1);
+            }else{
+                $lotData = lottery('data');
+                $this -> ajaxReturn($lotData);
+                
+                //todo: 确保ajxa获得的是数组
+                
+                
+                die;
+                
+                if(empty($lotData)){
+                    pp('抽奖失败');
+                    $this -> ajaxReturn(2);
+                }else{
+                    $dbCash         = M('user_jifenyide');
+                    $reUserCash     = $awardCount = $awardName ='';
+                    $lotteryType    = (integer)$lotData['lotteryType'];
+                    $awardCount     = $lotData['lotteryCount'];
+                    switch($lotteryType){
+                        case 1:
+                            $awardName  = '易得币';
+                            $reUserCash = $dbCash -> where("uid = $id") -> setInc('yide',$awardCount);
+                            break;
+                        case 2:
+                            $awardName  = '积分';
+                            $reUserCash = $dbCash -> where("uid = $id") -> setInc('jifen',$awardCount);
+                            break;
+                        case 3:
+                            $awardName  = '现金';
+                            $reUserCash = $dbCash -> where("uid = $id") -> setInc('cash',$awardCount);
+                            break;
+                        default:
+                            pp('获取奖品数据失败');
+                            $this -> ajaxReturn('获取奖品数据失败');
+                    }
+                    if($reUserCash){
+                        $dataLog = array(
+                            'uid'   => $id,
+                            'uids'  => $id,
+                            'info'  => '抽得的奖品为'.$awardCount.$awardName,
+                            'time'  => date('Y-m-d H:i:s'),
+                            'type'  => 7,
+                        );
+                        $reUserLog  = M('jifenyide_log') -> add($dataLog);
+                
+                        $dataNotice = array(
+                            'uid'  => $id,
+                            'info'  => '抽得的奖品为'.$awardCount.$awardName,
+                            'time'  => date('Y-m-d H:i:s'),
+                            'type'  => 6,
+                        );
+                        $reUserNotice = M('user_notice') -> add($dataNotice);
+                
+                        if($reUserLog && $reUserNotice){
+                    
+                            $signsData['signtime'] = date('Y-m-d H:i:s');
+//                            $reUserTime = $dbUserInfo -> where("uid = $id") -> save($signsData);
+                            $reUserTime = 1;
+                            if($reUserTime){
+//                                pp('抽奖成功');
+                                $this -> ajaxReturn($lotData);
+                            }else{
+                                pp('奖励发放成功，但时间修改失败（用户可以再抽奖）');
+                                $this -> ajaxReturn('奖励发放成功，但时间修改失败（用户可以再抽奖）');
+                            }
+                        }else{
+                            pp('奖品发放成功，但消息、log表写入失败');
+                            $this -> ajaxReturn('奖品发放成功，但消息、log表写入失败');
+                        }
+                    }else{
+                        pp('奖品发放失败');
+                        $this -> ajaxReturn('奖品发放失败');
+                    }
+                }
+            }
         }
 	}
