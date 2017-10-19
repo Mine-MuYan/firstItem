@@ -53,17 +53,26 @@ class RegpayAction extends Action {
         unset($_SESSION['Username']);
     }
     
+    //test页面
     public function test(){
-        pp('-----------------------');
-    
-        pp($this -> numOfChoice(3,2));
-        pp($this -> triangle(3,4,5));
-        
-        
-    
+//        pp('-----------------------');
+//
+//        pp($this -> numOfChoice(3,2));
+//        pp($this -> triangle(3,4,5));
+        pp($_SESSION['Username']);
         $this -> display();
     }
     
+    //test功能
+    public function tests(){
+        $arr = array(
+            'name'  => 'zhangsan',
+            'ages'  => '18',
+            'type'  => '111',
+        );
+        
+        $this -> ajaxReturn($arr,'success','1','json');
+    }
     
     //三角形
     public function triangle($a,$b,$c)

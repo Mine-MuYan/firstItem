@@ -17,8 +17,10 @@
         }
         
         //流水记录
-        public function flow(){
-        
+        public function lottery(){
+            $userNotice = getUserBouns('3');
+            $this -> assign('userNotice',$userNotice);
+            $this -> display();
         }
 	    
     }

@@ -719,5 +719,98 @@
         }
         
         
+        /**
+         * 签到抽奖：奖品列表页
+         */
+        public function userLottery(){
+            R('Level/viewUserLottery');
+            $dbUserLottery = M('user_lottery');
+            $re = $dbUserLottery -> select();
+            $this -> assign('re',$re);
+            $this -> display();
+            
+        }
         
+        /**
+         * 签到抽奖：编辑奖品页
+         */
+        public function userLotteryEdit(){
+            R('Level/viewEditUserLottery');
+            $id = I('id');
+            $re = M('user_lottery') -> where("id = $id") -> find();
+            $this -> assign('re',$re);
+            $this -> display();
+        }
+        
+        /**
+         * 签到抽奖：编辑奖品功能
+         */
+        public function userLotteryEdits(){
+            $id = I('id');
+            $data = array(
+                'count'         => I('money'),
+                'type'          => I('mtype'),
+                'probability'   => I('probability'),
+                'time'          => date('Y-m-d H:i:s'),
+                'status'        => I('status'),
+            );
+            M('user_lottery') -> where("id = $id") -> save($data);
+            $level = A('Level');
+            $level -> doUserLottery('edit',$id);
+            $this -> success('修改成功','__URL__/userLottery');
+        }
+        
+        /**
+         * 签到抽奖：添加奖品页
+         */
+        public function userLotteryAdd(){
+            R('Level/viewAddUserLottery');
+            $re = M('user_lottery') -> where("status = 1") -> sum('probability');
+            $this -> assign('re',$re);
+            $this -> display();
+        }
+        
+        /**
+         * 签到抽奖：添加奖品功能
+         */
+        public function userLotteryAdds(){
+            $data = array(
+                'count'         => I('money'),
+                'type'          => I('mtype'),
+                'probability'   => I('probability'),
+                'time'          => date('Y-m-d H:i:s'),
+                'status'        => I('status'),
+            );
+            $re = M('user_lottery') -> add($data);
+            if($re){
+                $level = A('Level');
+                $level -> doUserLottery('add',$re);
+                $this -> success('添加成功','__URL__/userLottery');
+            }else{
+                $this -> error('添加失败');
+            }
+        }
+        
+        /**
+         * 签到抽奖：一键修改状态
+         */
+        public function userLotteryForbid(){
+            $id = I('id');
+            $lottery = M('user_lottery');
+            $status = $lottery -> where("id = $id") -> field('status') -> find();
+            $statu = $status['status'];
+            if($statu == 1){
+                $map['status'] = 0;
+            }elseif($statu == 0){
+                $map['status'] = 1;
+            }
+            $re = $lottery -> where("id = $id") -> save($map);
+            if($re){
+                $level = A('Level');
+                $level -> doUserLottery('add',$re);
+                $this -> success('操作成功','__URL__/userLottery');
+            }else{
+                $this -> error('操作失败');
+            }
+        }
 	}

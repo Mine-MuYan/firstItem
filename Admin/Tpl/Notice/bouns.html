@@ -54,9 +54,10 @@
                                         <td style="text-align:center"><{$v.names}></td>
                                         <td style="text-align:center"><{$v.money}></td>
                                         <td style="text-align:center">
-                                            <if condition="$v.mtype eq 1">
-                                                易得币
-                                                <else /> 现金
+                                            <if condition="$v.mtype eq 1">易得币
+                                                <elseif condition="$v.mtype eq 2" />积分
+                                                <elseif condition="$v.mtype eq 3" />现金
+                                                <else /> -
                                             </if>
                                         </td>
                                         <td style="text-align:center"><{$v.admin}></td>

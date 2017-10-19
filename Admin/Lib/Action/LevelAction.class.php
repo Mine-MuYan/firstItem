@@ -940,5 +940,84 @@
             }
         }
         
+        //查看签到抽奖：奖品列表页
+        function viewUserLottery(){
+            $this->status();
+    
+            if(in_array('48',$_SESSION['level'])){
+                $this->error('权限不足');exit;
+            }else{
+                $log = M('admin_log'); // 如果有该权限将其操做写入数据库
+                $data['userid'] = $_SESSION['id'];
+                $data['time'] = time();
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'查看了签到抽奖：奖品列表页';
+                $data['userip'] = $_SERVER['REMOTE_ADDR'];
+                $log->add($data);
+            }
+        }
         
+        //查看签到抽奖：添加奖品页面
+        function viewAddUserLottery(){
+            $this->status();
+            
+            if(in_array('49',$_SESSION['level'])){
+                $this->error('权限不足');exit;
+            }else{
+                $log = M('admin_log'); // 如果有该权限将其操做写入数据库
+                $data['userid'] = $_SESSION['id'];
+                $data['time'] = time();
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'查看了签到抽奖：添加奖品页面';
+                $data['userip'] = $_SERVER['REMOTE_ADDR'];
+                $log->add($data);
+            }
+        }
+        
+        //查看了签到抽奖：编辑奖品页面
+        function viewEditUserLottery(){
+            $this->status();
+            
+            if(in_array('50',$_SESSION['level'])){
+                $this->error('权限不足');exit;
+            }else{
+                $log = M('admin_log'); // 如果有该权限将其操做写入数据库
+                $data['userid'] = $_SESSION['id'];
+                $data['time'] = time();
+                $data['loginfo'] = '管理员'.$_SESSION['username'].'查看了签到抽奖：编辑奖品页面';
+                $data['userip'] = $_SERVER['REMOTE_ADDR'];
+                $log->add($data);
+            }
+        }
+        
+        function doUserLottery($type,$id){
+            $this->status();
+            $log = M('admin_log');
+            $data['userid'] = $_SESSION['id'];
+            $data['time'] = time();
+            $data['userip'] = $_SERVER['REMOTE_ADDR'];
+            switch($type){
+                case 'add':
+                    if(in_array('51',$_SESSION['level'])){
+                        $this->error('权限不足');exit;
+                    }else{
+                        $data['loginfo'] = '管理员'.$_SESSION['username'].'添加了ID为'.$id.'的奖品项。';
+                    }
+                    break;
+                case 'edit':
+                    if(in_array('52',$_SESSION['level'])){
+                        $this->error('权限不足');exit;
+                    }else{
+                        $data['loginfo'] = '管理员'.$_SESSION['username'].'修改了ID为'.$id.'的奖品项。';
+                    }
+                    break;
+                case 'forbid':
+                    if(in_array('52',$_SESSION['level'])){
+                        $this->error('权限不足');exit;
+                    }else{
+                        $data['loginfo'] = '管理员'.$_SESSION['username'].'修改了ID为'.$id.'的奖品项状态。';
+                    }
+                    break;
+                    
+            }
+            $log->add($data);
+        }
     }

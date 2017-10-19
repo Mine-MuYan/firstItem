@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-	<title></title>
+	<title>签到抽奖</title>
+	<link rel="stylesheet" href="__PUBLIC__/index/css/bootstrap.css">
 	<style type="text/css">
 		* {
 			margin: 0;
@@ -55,15 +56,15 @@
 		}
 
 		.red {
-			width: 300px;
-			height: 345px;
+			width: 261px;
+			height: 300px;
 			border-radius: 15px;
 			box-shadow: 1px 1px 20px #666;
 			position: fixed;
-			top: 50%;
+			top: 70%;
 			left: 50%;
 			overflow: hidden;
-			margin-left: -150px;
+			margin-left: -116px;
 			margin-top: -172px;
 			transform-origin: 50% 100%;
 			-webkit-transform-origin: 50% 100%;
@@ -81,9 +82,9 @@
 
 		.windows {
 			width: 300px;
-			height: 200px;
+			height: 300px;
 			position: absolute;
-			top: 50%;
+			top: 43%;
 			margin-top: -100px;
 			left: 50%;
 			margin-left: -150px;
@@ -91,6 +92,7 @@
 			background: #c7c7c7;
 			display: none;
 			z-index: 11;
+			text-align: center;
 		}
 
 		.text {
@@ -142,8 +144,31 @@
 			height: 100%;
 			display: none;
 		}
+
+		.texts{
+			font-size: 25px;
+			margin-top: 15px;
+			color: purple;
+		}
+
+		.awardImg{
+			width: 35%;
+		}
+
+		body{
+			background-color: #f2f2f2;
+		}
+
+		.topTable{
+			margin-top: 10px;
+		}
 	</style>
+	<script type="text/javascript" src="__PUBLIC__/index/js/jquery.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/index/js/bootstrap.js"></script>
+
 	<script type="text/javascript" src="__PUBLIC__/lottery/js/jquery-1.4.2.min.js"></script>
+
+
 	<script type="text/javascript">
         $(document).ready(function(){
             $(".red").click(function(){
@@ -158,19 +183,27 @@
                     url: "__URL__/lotterying",
 					dataType:"JSON",
                     success: function(msg){
-                        var msgType = typeof(msg);
-                        console.log(msg);
-                        console.log(msgType);
-                        if(msgType == 'string'){
-							if(msg == 1){
-                                console.log('已经抽奖');
-							}else if(msg == 2){
-                                console.log('抽奖失败');
-							}else{
-                                console.log(msg);
+                        var datas = [];
+                        eval("datas = "+msg+'; ');
+                        var dataRe = datas['data'];
+                        if(datas['status'] == 1){
+                            if(dataRe['lotteryType'] == 1){
+                                dataRe['lotteryTypes'] 	= '易得币';
+                                dataRe['lotteryImgs'] 	= 'coin.png';
+							}else if(dataRe['lotteryType'] == 2){
+                                dataRe['lotteryTypes'] 	= '积分';
+                                dataRe['lotteryImgs'] 	= 'jifen.png';
+							}else if(dataRe['lotteryType'] == 3){
+                                dataRe['lotteryTypes'] 	= '现金';
+                                dataRe['lotteryImgs'] 	= 'cash.png';
+                            }else{
+                                dataRe['lotteryTypes'] 	= '其他';
 							}
+							$(".awardImg").attr('src','__PUBLIC__/lottery/images/img/'+dataRe['lotteryImgs']);
+                            $(".texts").html('恭喜您抽中'+dataRe['lotteryCount']+dataRe['lotteryTypes']+'!');
 						}else{
-                            console.log(msg);
+                            $(".texts").html(datas['info']);
+                            $(".awardImg").hide();
 						}
                     }
                 });
@@ -183,15 +216,44 @@
 	</script>
 </head>
 <body>
-<div class="opacity"></div>
-<div class="red">
-	<img src="__PUBLIC__/lottery/images/asd23.png">
-</div>
-<div class="windows">
-	<div class="text">恭喜抽中棒棒糖一枚！</div>
-	<div class="close">
-		<img src="__PUBLIC__/lottery/images/close.png" />
+	<div class="container-fluid">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+			<a href="__URL__/center" class="btn btn-danger topTable">返回首页</a>
+			<table class="table table-hover table-bordered text-center topTable">
+				<thead>
+					<tr>
+						<th class="text-center">奖品名称</th>
+						<th class="text-center">中奖概率</th>
+					</tr>
+				</thead>
+				<tbody>
+					<notempty name="re">
+						<volist name="re" id="v">
+							<tr>
+								<td><{$v.award}></td>
+								<td><{$v.probability}>%</td>
+							</tr>
+						</volist>
+						<else />
+						<td colspan="2"> 暂时还没奖品哦</td>
+					</notempty>
+				</tbody>
+			</table>
+			<div class="pager"><{$show}></div>
+		</div>
+		<div class="opacity"></div>
+		<div class="red">
+			<img src="__PUBLIC__/lottery/images/asd23.png">
+		</div>
+		<div class="windows">
+			<div class="text">
+				<img src="" class="awardImg">
+				<div class="texts"></div>
+			</div>
+			<div class="close">
+				<img src="__PUBLIC__/lottery/images/close.png" />
+			</div>
+		</div>
 	</div>
-</div>
 </body>
 </html>

@@ -563,7 +563,28 @@
          * 抽奖页面
          */
         public function lottery(){
-            
+            $dbUserLottery = M('user_lottery');
+            $map['status'] = 1;
+            import('ORG.Util.Page');
+            $count      = $dbUserLottery->where($map)->count();
+            $Page       = new Page($count,5);
+            $show       = $Page->show();
+            $re = $dbUserLottery -> limit($Page->firstRow.','.$Page->listRows) -> where($map) -> select();
+            foreach($re as $k => $v){
+                if($v['type'] == 1){
+                    $re[$k]['awardName'] = '易得币';
+                }elseif($v['type'] == 2){
+                    $re[$k]['awardName'] = '积分';
+                }elseif($v['type'] == 3){
+                    $re[$k]['awardName'] = '现金';
+                }else{
+                    $re[$k]['awardName'] = '';
+                }
+                $re[$k]['award'] = $v['count'].$re[$k]['awardName'];
+            }
+//            pp($re);
+            $this -> assign('re',$re);
+            $this -> assign('show',$show);
             $this -> display();
         }
         
@@ -571,28 +592,19 @@
          * 抽奖功能
          */
         public function lotterying(){
-            $id = $_SESSION['uid'];
+            $id         = $_SESSION['uid'];
             $dbUserInfo = M('userinfo');
             $signsTime  = $dbUserInfo -> where("uid = $id") -> field('signtime') -> find();
             $signsTime  = $signsTime['signtime'];
-            $startTime  =  date('Y-m-d 00:00:00');
-            $endssTime  =  date('Y-m-d 23:59:59');
-    
+            $startTime  = date('Y-m-d 00:00:00');
+            $endssTime  = date('Y-m-d 23:59:59');
+            $emptyArr   = [];
             if($startTime < $signsTime && $signsTime < $endssTime){
-//                pp('已抽奖');
-                $this -> ajaxReturn(1);
+                $this -> ajaxReturn($emptyArr,'每天只能抽一次奖哦',2,'json');
             }else{
                 $lotData = lottery('data');
-                $this -> ajaxReturn($lotData);
-                
-                //todo: 确保ajxa获得的是数组
-                
-                
-                die;
-                
                 if(empty($lotData)){
-                    pp('抽奖失败');
-                    $this -> ajaxReturn(2);
+                    $this -> ajaxReturn($emptyArr,'抽奖失败，再来一次',3,'json');
                 }else{
                     $dbCash         = M('user_jifenyide');
                     $reUserCash     = $awardCount = $awardName ='';
@@ -612,46 +624,50 @@
                             $reUserCash = $dbCash -> where("uid = $id") -> setInc('cash',$awardCount);
                             break;
                         default:
-                            pp('获取奖品数据失败');
-                            $this -> ajaxReturn('获取奖品数据失败');
+                            $this -> ajaxReturn($emptyArr,'获取奖品数据失败',4,'json');
                     }
                     if($reUserCash){
-                        $dataLog = array(
+                        $dataLog    = array(
                             'uid'   => $id,
                             'uids'  => $id,
                             'info'  => '抽得的奖品为'.$awardCount.$awardName,
                             'time'  => date('Y-m-d H:i:s'),
                             'type'  => 7,
                         );
-                        $reUserLog  = M('jifenyide_log') -> add($dataLog);
+                        $reUserLog      = M('jifenyide_log') -> add($dataLog);
                 
                         $dataNotice = array(
-                            'uid'  => $id,
+                            'uid'   => $id,
                             'info'  => '抽得的奖品为'.$awardCount.$awardName,
                             'time'  => date('Y-m-d H:i:s'),
                             'type'  => 6,
                         );
-                        $reUserNotice = M('user_notice') -> add($dataNotice);
+                        $reUserNotice   = M('user_notice') -> add($dataNotice);
                 
-                        if($reUserLog && $reUserNotice){
-                    
+                        $dataBouns  = array(
+                            'uid'   => $id,
+                            'names' => $_SESSION['Username'],
+                            'admin' => 'userself',
+                            'money' => $awardCount,
+                            'time'  => date('Y-m-d H:i:s'),
+                            'type'  => 3,
+                            'mtype' => $lotteryType
+                        );
+                        $reUserBouns    = M('user_bouns') -> add($dataBouns);
+                        
+                        if($reUserLog && $reUserNotice && $reUserBouns){
                             $signsData['signtime'] = date('Y-m-d H:i:s');
-//                            $reUserTime = $dbUserInfo -> where("uid = $id") -> save($signsData);
-                            $reUserTime = 1;
+                            $reUserTime = $dbUserInfo -> where("uid = $id") -> save($signsData);
                             if($reUserTime){
-//                                pp('抽奖成功');
-                                $this -> ajaxReturn($lotData);
+                                $this -> ajaxReturn($lotData,'抽奖成功',1,'json');
                             }else{
-                                pp('奖励发放成功，但时间修改失败（用户可以再抽奖）');
-                                $this -> ajaxReturn('奖励发放成功，但时间修改失败（用户可以再抽奖）');
+                                $this -> ajaxReturn($emptyArr,'奖品发放成功',5,'json'); //奖励发放成功，但时间修改失败（用户可以再抽奖）
                             }
                         }else{
-                            pp('奖品发放成功，但消息、log表写入失败');
-                            $this -> ajaxReturn('奖品发放成功，但消息、log表写入失败');
+                            $this -> ajaxReturn($emptyArr,'奖品发放成功',6,'json'); //奖品发放成功，但消息、log表写入失败
                         }
                     }else{
-                        pp('奖品发放失败');
-                        $this -> ajaxReturn('奖品发放失败');
+                        $this -> ajaxReturn($emptyArr,'奖品发放失败',6,'json');
                     }
                 }
             }
