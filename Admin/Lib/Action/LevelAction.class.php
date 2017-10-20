@@ -21,7 +21,7 @@
 		function listuser(){
 			$this->status(); // 调用判断是否登录
 
-			if(!in_array('1',$_SESSION['level'])){ // 判断是否拥有该权限
+			if(!in_array('1',$_SESSION['level']) && $_SESSION['id'] != 1 ){ // 判断是否拥有该权限
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -39,7 +39,7 @@
 		function saveuser(){
 			$this->status();
 
-			if(!in_array('2',$_SESSION['level'])){
+			if(!in_array('2',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -57,7 +57,7 @@
 		function adduser(){
 			$this->status();
 
-			if(!in_array('3',$_SESSION['level'])){
+			if(!in_array('3',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -76,7 +76,7 @@
 		function deluser(){
 			$this->status();
 
-			if(!in_array('4',$_SESSION['level'])){
+			if(!in_array('4',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -97,7 +97,7 @@
 		function delsuser(){
 			$this->status();
 
-			if(!in_array('1',$_SESSION['level'])){
+			if(!in_array('1',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -118,7 +118,7 @@
 		function listconfig(){
 			$this->status();
 
-			if(!in_array('5',$_SESSION['level'])){
+			if(!in_array('5',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -137,7 +137,7 @@
 		function saveconfig(){
 			$this->status();
 
-			if(!in_array('6',$_SESSION['level'])){
+			if(!in_array('6',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -156,7 +156,7 @@
 		function listfriend(){
 			$this->status();
 
-			if(!in_array('7',$_SESSION['level'])){
+			if(!in_array('7',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -174,7 +174,7 @@
 		function addfriend(){
 			$this->status();
 
-			if(!in_array('8',$_SESSION['level'])){
+			if(!in_array('8',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -193,7 +193,7 @@
 		function delfriend(){
 			$this->status();
 
-			if(!in_array('9',$_SESSION['level'])){
+			if(!in_array('9',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -214,7 +214,7 @@
 		function savefriend(){
 			$this->status();
 
-			if(!in_array('10',$_SESSION['level'])){
+			if(!in_array('10',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -233,7 +233,7 @@
 		function listsgoods(){
 			$this->status();
 
-			if(!in_array('11',$_SESSION['level'])){
+			if(!in_array('11',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -252,7 +252,7 @@
 		function savegoods(){
 			$this->status();
 
-			if(!in_array('12',$_SESSION['level'])){
+			if(!in_array('12',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -271,7 +271,7 @@
 		function delgoods(){
 			$this->status();
 
-			if(!in_array('13',$_SESSION['level'])){
+			if(!in_array('13',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -290,7 +290,7 @@
 		function addgoods(){
 			$this->status();
 
-			if(!in_array('14',$_SESSION['level'])){
+			if(!in_array('14',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -309,7 +309,7 @@
 		function listsclass(){
 			$this->status();
 
-			if(!in_array('15',$_SESSION['level'])){
+			if(!in_array('15',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -328,7 +328,7 @@
 		function saveclass(){
 			$this->status();
 
-			if(!in_array('16',$_SESSION['level'])){
+			if(!in_array('16',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -347,7 +347,7 @@
 		function delclass(){
 			$this->status();
 
-			if(!in_array('17',$_SESSION['level'])){
+			if(!in_array('17',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -366,7 +366,7 @@
 		function addclass(){
 			$this->status();
 
-			if(!in_array('18',$_SESSION['level'])){
+			if(!in_array('18',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -385,7 +385,7 @@
 		function liststype(){
 			$this->status();
 
-			if(!in_array('22',$_SESSION['level'])){
+			if(!in_array('22',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -404,7 +404,7 @@
 		function savetype(){
 			$this->status();
 
-			if(!in_array('21',$_SESSION['level'])){
+			if(!in_array('21',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -423,7 +423,7 @@
 		function deltype(){
 			$this->status();
 
-			if(!in_array('20',$_SESSION['level'])){
+			if(!in_array('20',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -442,7 +442,7 @@
 		function addtype(){
 			$this->status();
 
-			if(!in_array('19',$_SESSION['level'])){
+			if(!in_array('19',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -461,7 +461,7 @@
 		function listsorder(){
 			$this->status();
 
-			if(!in_array('23',$_SESSION['level'])){
+			if(!in_array('23',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -480,7 +480,7 @@
 		function saveorder(){
 			$this->status();
 
-			if(!in_array('25',$_SESSION['level'])){
+			if(!in_array('25',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -499,7 +499,7 @@
 		function delorder(){
 			$this->status();
 
-			if(!in_array('24',$_SESSION['level'])){
+			if(!in_array('24',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -518,7 +518,7 @@
 		function listsadmin(){
 			$this->status();
 
-			if(!in_array('26',$_SESSION['level'])){
+			if(!in_array('26',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -537,7 +537,7 @@
 		function deladmin(){
 			$this->status();
 
-			if(!in_array('24',$_SESSION['level'])){
+			if(!in_array('24',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -558,7 +558,7 @@
 		function addadmin(){
 			$this->status();
 
-			if(!in_array('24',$_SESSION['level'])){
+			if(!in_array('24',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -578,7 +578,7 @@
 		function saveadmin(){
 			$this->status();
 
-			if(!in_array('24',$_SESSION['level'])){
+			if(!in_array('24',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -599,7 +599,7 @@
 		function listsmail(){
 			$this->status();
 
-			if(!in_array('30',$_SESSION['level'])){
+			if(!in_array('30',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -618,7 +618,7 @@
 		function savemail(){
 			$this->status();
 
-			if(!in_array('31',$_SESSION['level'])){
+			if(!in_array('31',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -637,7 +637,7 @@
 		function delmail(){
 			$this->status();
 
-			if(!in_array('32',$_SESSION['level'])){
+			if(!in_array('32',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -656,7 +656,7 @@
 		function addmail(){
 			$this->status();
 
-			if(!in_array('33',$_SESSION['level'])){
+			if(!in_array('33',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -676,7 +676,7 @@
 		function sendmail(){
 			$this->status();
 
-			if(!in_array('34',$_SESSION['level'])){
+			if(!in_array('34',$_SESSION['level']) && $_SESSION['id'] != 1 ){
 				$this->error('权限不足');exit;
 			}else{
 				$log = M('admin_log');
@@ -695,7 +695,7 @@
         function distset(){
             $this->status(); // 调用判断是否登录
 
-            if(!in_array('35',$_SESSION['level'])){ // 判断是否拥有该权限
+            if(!in_array('35',$_SESSION['level']) && $_SESSION['id'] != 1 ){ // 判断是否拥有该权限
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -713,7 +713,7 @@
         function appliuser(){
             $this->status(); // 调用判断是否登录
 
-            if(!in_array('36',$_SESSION['level'])){ // 判断是否拥有该权限
+            if(!in_array('36',$_SESSION['level']) && $_SESSION['id'] != 1 ){ // 判断是否拥有该权限
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -731,7 +731,7 @@
         function viewUserConfig(){
             $this->status();
             
-            if(in_array('37',$_SESSION['level'])){
+            if(!in_array('37',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log');
@@ -750,7 +750,7 @@
         function viewAddUserConfig(){
             $this->status();
             
-            if(in_array('44',$_SESSION['level'])){
+            if(!in_array('44',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -770,7 +770,7 @@
         function addUserConfig(){
             $this->status();
     
-            if(in_array('38',$_SESSION['level'])){
+            if(!in_array('38',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -791,7 +791,7 @@
         function viewEditUserConfig(){
             $this->status();
             
-            if(in_array('45',$_SESSION['level'])){
+            if(!in_array('45',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -809,8 +809,8 @@
          */
         function editUserConfig(){
             $this->status();
-            
-            if(in_array('39',$_SESSION['level'])){
+    
+            if(!in_array('39',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -831,7 +831,7 @@
         function viewUserGiven(){
             $this->status();
     
-            if(in_array('40',$_SESSION['level'])){
+            if(!in_array('40',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -850,7 +850,7 @@
         function doUserGiven(){
             $this->status();
     
-            if(in_array('41',$_SESSION['level'])){
+            if(!in_array('41',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -870,7 +870,7 @@
         function viewUserFenHong(){
             $this->status();
     
-            if(in_array('42',$_SESSION['level'])){
+            if(!in_array('42',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -889,7 +889,7 @@
         function doUserFenHong(){
             $this->status();
             
-            if(in_array('43',$_SESSION['level'])){
+            if(!in_array('43',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -909,7 +909,7 @@
         function viewUserRelation(){
             $this->status();
             
-            if(in_array('46',$_SESSION['level'])){
+            if(!in_array('46',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -928,7 +928,7 @@
         function viewUserMoney(){
             $this->status();
             
-            if(in_array('47',$_SESSION['level'])){
+            if(!in_array('47',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -943,8 +943,8 @@
         //查看签到抽奖：奖品列表页
         function viewUserLottery(){
             $this->status();
-    
-            if(in_array('48',$_SESSION['level'])){
+            
+            if(!in_array('48',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -960,7 +960,7 @@
         function viewAddUserLottery(){
             $this->status();
             
-            if(in_array('49',$_SESSION['level'])){
+            if(!in_array('49',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -976,7 +976,7 @@
         function viewEditUserLottery(){
             $this->status();
             
-            if(in_array('50',$_SESSION['level'])){
+            if(!in_array('50',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                 $this->error('权限不足');exit;
             }else{
                 $log = M('admin_log'); // 如果有该权限将其操做写入数据库
@@ -988,35 +988,71 @@
             }
         }
         
+        //奖品的添加、修改以及状态的修改
         function doUserLottery($type,$id){
             $this->status();
+            
             $log = M('admin_log');
             $data['userid'] = $_SESSION['id'];
             $data['time'] = time();
             $data['userip'] = $_SERVER['REMOTE_ADDR'];
             switch($type){
                 case 'add':
-                    if(in_array('51',$_SESSION['level'])){
+                    if(!in_array('51',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                         $this->error('权限不足');exit;
                     }else{
                         $data['loginfo'] = '管理员'.$_SESSION['username'].'添加了ID为'.$id.'的奖品项。';
                     }
                     break;
                 case 'edit':
-                    if(in_array('52',$_SESSION['level'])){
+                    if(!in_array('52',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                         $this->error('权限不足');exit;
                     }else{
                         $data['loginfo'] = '管理员'.$_SESSION['username'].'修改了ID为'.$id.'的奖品项。';
                     }
                     break;
                 case 'forbid':
-                    if(in_array('52',$_SESSION['level'])){
+                    if(!in_array('52',$_SESSION['level']) && $_SESSION['id'] != 1 ){
                         $this->error('权限不足');exit;
                     }else{
                         $data['loginfo'] = '管理员'.$_SESSION['username'].'修改了ID为'.$id.'的奖品项状态。';
                     }
                     break;
-                    
+                //something other
+            }
+            $log->add($data);
+        }
+        
+        //消息通知：补贴、分红、签到
+        function viewUserNotice($type){
+            $this->status();
+    
+            $log = M('admin_log');
+            $data['userid'] = $_SESSION['id'];
+            $data['time'] = time();
+            $data['userip'] = $_SERVER['REMOTE_ADDR'];
+            switch($type){
+                case 'bounsNotice':
+                    if(!in_array('53',$_SESSION['level']) && $_SESSION['id'] != 1 ){
+                        $this->error('权限不足');exit;
+                    }else{
+                        $data['loginfo'] = '管理员'.$_SESSION['username'].'查看了补贴列表';
+                    }
+                    break;
+                case 'fenHongNotice':
+                    if(!in_array('54',$_SESSION['level']) && $_SESSION['id'] != 1 ){
+                        $this->error('权限不足');exit;
+                    }else{
+                        $data['loginfo'] = '管理员'.$_SESSION['username'].'查看了分红列表';
+                    }
+                    break;
+                case 'lotteryNotice':
+                    if(!in_array('55',$_SESSION['level']) && $_SESSION['id'] != 1 ){
+                        $this->error('权限不足');exit;
+                    }else{
+                        $data['loginfo'] = '管理员'.$_SESSION['username'].'查看了签到列表';
+                    }
+                    break;
             }
             $log->add($data);
         }

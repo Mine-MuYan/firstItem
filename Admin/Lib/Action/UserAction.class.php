@@ -723,6 +723,7 @@
          * 签到抽奖：奖品列表页
          */
         public function userLottery(){
+//            pp($_SESSION);
             R('Level/viewUserLottery');
             $dbUserLottery = M('user_lottery');
             $re = $dbUserLottery -> select();
