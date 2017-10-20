@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 100125
 File Encoding         : 65001
 
-Date: 2017-10-19 17:38:44
+Date: 2017-10-20 16:20:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -59,7 +59,7 @@ CREATE TABLE `mss_admin_log` (
   `loginfo` varchar(255) NOT NULL,
   `userip` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=120 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_admin_log
@@ -143,6 +143,46 @@ INSERT INTO `mss_admin_log` VALUES ('76', '1508405874', '1', '管理员admin查�
 INSERT INTO `mss_admin_log` VALUES ('77', '1508405878', '1', '管理员admin查看了签到抽奖：奖品列表页', '127.0.0.1');
 INSERT INTO `mss_admin_log` VALUES ('78', '1508405881', '1', '管理员admin查看了签到抽奖：奖品列表页', '127.0.0.1');
 INSERT INTO `mss_admin_log` VALUES ('79', '1508405884', '1', '管理员admin查看了签到抽奖：奖品列表页', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('80', '1508405999', '1', '管理员admin查看了签到抽奖：奖品列表页', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('81', '1508469984', '1', '管理员admin查看了签到抽奖：奖品列表页', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('82', '1508469988', '1', '管理员admin查看了分红列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('83', '1508469997', '1', '管理员admin查看了用户配置', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('84', '1508470034', '1', '管理员admin查看了会员资金表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('85', '1508470051', '1', '管理员admin查看了会员资金表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('86', '1508470117', '1', '管理员admin查看了签到抽奖：奖品列表页', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('87', '1508470199', '1', '管理员admin查看了签到抽奖：奖品列表页', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('88', '1508470404', '1', '管理员admin查看了签到抽奖：奖品列表页', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('89', '1508470439', '1', '管理员admin查看了签到抽奖：奖品列表页', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('90', '1508470443', '1', '管理员admin查看了签到抽奖：奖品列表页', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('91', '1508470464', '1', '管理员admin查看了会员关系表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('92', '1508470621', '5', '管理员isellys查看了用户列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('93', '1508470643', '5', '管理员isellys查看了用户列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('94', '1508470645', '5', '管理员isellys查看了用户列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('95', '1508470657', '5', '管理员isellys查看了用户列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('96', '1508470707', '1', '管理员admin查看了会员关系表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('97', '1508470711', '1', '管理员admin查看了签到抽奖：奖品列表页', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('98', '1508470726', '1', '管理员admin查看了签到抽奖：奖品列表页', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('99', '1508470730', '1', '管理员admin查看了用户配置', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('100', '1508470749', '1', '管理员admin查看了编辑用户配置页面', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('101', '1508470783', '1', '管理员admin修改了配置，配置项ID为Array', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('102', '1508470784', '1', '管理员admin查看了用户配置', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('103', '1508470794', '1', '管理员admin查看了编辑用户配置页面', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('104', '1508470913', '1', '管理员admin修改了配置，配置项ID为Array', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('105', '1508470914', '1', '管理员admin查看了用户配置', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('106', '1508470922', '1', '管理员admin查看了添加用户配置页面', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('107', '1508470939', '1', '管理员admin增加了配置，配置项ID为Array', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('108', '1508470941', '1', '管理员admin查看了用户配置', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('109', '1508470961', '1', '管理员admin查看了用户列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('110', '1508479551', '4', '管理员selly查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('111', '1508479567', '4', '管理员selly编辑了管理员selly', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('112', '1508479568', '4', '管理员selly查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('113', '1508479984', '4', '管理员selly查看了友情链接列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('114', '1508479992', '4', '管理员selly查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('115', '1508480008', '4', '管理员selly编辑了管理员selly', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('116', '1508480009', '4', '管理员selly查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('117', '1508480066', '4', '管理员selly查看了管理员列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('118', '1508480091', '4', '管理员selly查看了分红列表', '127.0.0.1');
+INSERT INTO `mss_admin_log` VALUES ('119', '1508480095', '4', '管理员selly查看了签到抽奖：奖品列表页', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for mss_carts
@@ -4377,7 +4417,7 @@ CREATE TABLE `mss_user_admin` (
   `id` smallint(3) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL COMMENT '管理员用户名',
   `userpwd` char(32) NOT NULL COMMENT '管理员密码',
-  `level` varchar(100) NOT NULL COMMENT '用户权限组',
+  `level` varchar(255) NOT NULL COMMENT '用户权限组',
   `email` varchar(60) NOT NULL DEFAULT '' COMMENT '管理员邮箱',
   `addtime` int(11) NOT NULL DEFAULT '1495228821' COMMENT '添加时间',
   `logintime` int(11) NOT NULL DEFAULT '0' COMMENT '登录时间',
@@ -4388,10 +4428,10 @@ CREATE TABLE `mss_user_admin` (
 -- ----------------------------
 -- Records of mss_user_admin
 -- ----------------------------
-INSERT INTO `mss_user_admin` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36', 'ademo@qq.com', '1495228821', '1508396517');
+INSERT INTO `mss_user_admin` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1', 'ademo@qq.com', '1495228821', '1508469966');
 INSERT INTO `mss_user_admin` VALUES ('3', 'a2', '202cb962ac59075b964b07152d234b70', '1', 'a2@qq.com', '1390096173', '1498974887');
-INSERT INTO `mss_user_admin` VALUES ('4', 'selly', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36', 'ademo@qq.com', '1495228821', '1506475868');
-INSERT INTO `mss_user_admin` VALUES ('5', 'isellys', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4', 'isellys@qq.com', '1506476679', '1506476759');
+INSERT INTO `mss_user_admin` VALUES ('4', 'selly', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52', 'ademo@qq.com', '1495228821', '1508480084');
+INSERT INTO `mss_user_admin` VALUES ('5', 'isellys', 'e10adc3949ba59abbe56e057f20f883e', '1,2,3,4', 'isellys@qq.com', '1506476679', '1508470617');
 
 -- ----------------------------
 -- Table structure for mss_user_bouns
@@ -4407,7 +4447,7 @@ CREATE TABLE `mss_user_bouns` (
   `mtype` tinyint(1) DEFAULT NULL COMMENT '补贴金额类型 1、易得币；2、积分；3、现金',
   `time` datetime DEFAULT NULL COMMENT '发放时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_user_bouns
@@ -4427,12 +4467,12 @@ DROP TABLE IF EXISTS `mss_user_config`;
 CREATE TABLE `mss_user_config` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `value` int(11) DEFAULT NULL COMMENT '比例',
-  `ratio` float(8,2) DEFAULT '1.00' COMMENT '比率',
+  `ratio` float(3,2) unsigned DEFAULT '1.00' COMMENT '比率',
   `time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '添加时间',
-  `comment` varchar(255) DEFAULT NULL COMMENT '此配置项的简介',
-  `status` tinyint(1) DEFAULT '1' COMMENT '是否可用 0、禁用；1：可用',
+  `comment` varchar(150) DEFAULT NULL COMMENT '此配置项的简介',
+  `status` tinyint(1) unsigned DEFAULT '1' COMMENT '是否可用 0、禁用；1：可用',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mss_user_config
@@ -4452,8 +4492,9 @@ INSERT INTO `mss_user_config` VALUES ('12', '100', '1.00', '2017-05-20 05:20:21'
 INSERT INTO `mss_user_config` VALUES ('13', '30', '1.00', '2017-05-20 05:20:21', '团购用户购车前每天发放易得币数量', '1');
 INSERT INTO `mss_user_config` VALUES ('14', '100', '1.00', '2017-05-20 05:20:21', '购车前，给团购会员补贴易得币的会员数', '1');
 INSERT INTO `mss_user_config` VALUES ('15', '100', '1.00', '2017-05-20 05:20:21', '公司分红', '1');
-INSERT INTO `mss_user_config` VALUES ('16', '1', '1.00', '2017-10-16 10:32:26', '111', '1');
-INSERT INTO `mss_user_config` VALUES ('17', '20', '2.00', '2017-10-16 10:33:56', '222', '1');
+INSERT INTO `mss_user_config` VALUES ('16', '100', '1.00', '2017-10-20 11:39:43', '注册成为普通会员需要缴费数', '1');
+INSERT INTO `mss_user_config` VALUES ('17', '1000', '1.00', '2017-10-20 11:41:53', '注册成为业务员需要缴费数', '1');
+INSERT INTO `mss_user_config` VALUES ('18', '10000', '1.00', '2017-10-20 11:42:19', '注册成为经理需要缴费数', '1');
 
 -- ----------------------------
 -- Table structure for mss_user_jifenyide
@@ -4513,7 +4554,7 @@ INSERT INTO `mss_user_lottery` VALUES ('5', '2', '1000', '5', '2017-10-19 16:55:
 INSERT INTO `mss_user_lottery` VALUES ('6', '2', '100', '10', '2017-10-18 11:59:14', '1');
 INSERT INTO `mss_user_lottery` VALUES ('7', '2', '10', '15', '2017-10-18 11:59:14', '1');
 INSERT INTO `mss_user_lottery` VALUES ('8', '2', '1', '20', '2017-10-18 11:59:14', '1');
-INSERT INTO `mss_user_lottery` VALUES ('9', '3', '10000', '1', '2017-10-19 17:10:53', '0');
+INSERT INTO `mss_user_lottery` VALUES ('9', '3', '10000', '1', '2017-10-20 15:21:58', '0');
 INSERT INTO `mss_user_lottery` VALUES ('10', '3', '1000', '2', '2017-10-19 17:16:38', '0');
 INSERT INTO `mss_user_lottery` VALUES ('11', '3', '1000', '3', '2017-10-19 17:16:46', '0');
 
